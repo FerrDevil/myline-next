@@ -1,0 +1,26 @@
+{
+    "signInForm": {
+        "formTitle": "Авторизация",
+        "login" : "Номер телефона или email",
+        "password" : "Пароль",
+        "submitButton": "Войти",
+        "required": "Обязательное поле"
+    },
+    "registerForm": {
+        "formTitle": "Регистрация",
+        "fullName" : "ФИО",
+        "city": "Город проживания",
+        "phoneNumber" : "Номер телефона",
+        "password" : "Пароль",
+        "agreement" : "Согласие на обработку персональных данных",
+        "required": "Обязательное поле",
+        "submitButton": "Зарегистрироваться",
+        "notValidFullName": "ФИО введены некорректно",
+        "notValidCity": "Город проживания введен некорректно",
+        "notValidPhoneNumber": "Номер телефона введен некорректно",
+        "phoneNumberCharsLimitExceeded" : "Введенный номер телефона превышает максимальное значение поля",
+        "notValidEmail": "Email введен некорректно",
+        "notValidPassword": "Пароль введен некорректно"
+
+    }
+}

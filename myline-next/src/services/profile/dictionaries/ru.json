@@ -1,0 +1,18 @@
+{
+    "profileLayout": {
+        "greeting" : "Привет",
+        "layoutDescription": "Вся информация о твоём лечении лежит во вкладках",
+        "appointment": "Прием",
+        "treatment": "Лечение",
+        "instructions": "Инструкции"
+    },
+    "appointmentPage": {
+        "isAwaitingYou": "На приём ожидает",
+        "address": "Адрес",
+        "phoneNumber" : "Телефон врача",
+        "date": "Дата приема",
+        "time": "Время приема",
+        "delayAppointment": "Перенести на другое время",
+        "cancelAppointment": "Отменить прием"
+    }
+}

@@ -1,0 +1,26 @@
+{
+    "signInForm": {
+        "formTitle": "Sign in",
+        "login" : "Phone number or email",
+        "password" : "Password",
+        "submitButton": "Sign in",
+        "required": "Required"
+    },
+    "registerForm": {
+        "formTitle": "Registration",
+        "fullName" : "Full name",
+        "city": "City",
+        "phoneNumber" : "Phone number",
+        "password" : "Password",
+        "agreement" : "Agreement",
+        "required": "Required",
+        "submitButton": "Register",
+        "notValidFullName": "Full name is not valid",
+        "notValidCity": "City is not valid",
+        "notValidPhoneNumber": "Phone number is not valid",
+        "phoneNumberCharsLimitExceeded" : "Phone number's max lenght exceeded",
+        "notValidEmail": "Email is not valid",
+        "notValidPassword": "Password is not valid"
+
+    }
+}
