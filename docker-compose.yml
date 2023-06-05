@@ -1,0 +1,9 @@
+version: '3'
+services:
+  nextjs:
+    build: ./myline-next
+  nginx:
+    build: ./nginx
+    hostname: mylineda
+    ports:
+      - 80:80

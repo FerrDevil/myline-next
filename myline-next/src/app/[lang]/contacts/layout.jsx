@@ -6,7 +6,7 @@ export const metadata = {
 export default function Layout(ctx) {
   return (
     <>
-      {ctx.children}  da 
+      {ctx.children}
     </>    
   )
 }
