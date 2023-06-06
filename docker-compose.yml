@@ -2,8 +2,11 @@ version: '3'
 services:
   nextjs:
     build: ./myline-next
+    ports:
+      - "3000:3000"
   nginx:
     build: ./nginx
     hostname: mylineda
     ports:
-      - 80:80
+      - "80:80"
+      - "443:443"
