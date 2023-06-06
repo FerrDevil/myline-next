@@ -12,7 +12,7 @@ export default function Layout({children, params: {lang}}) {
     if (localeCookie !== lang){
         redirect(`/${localeCookie}`)
     }
-    const displayContent = false
+    const displayContent = true
     return (
     <BaseLayout>
         {

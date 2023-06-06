@@ -22,10 +22,10 @@ export const AboutPageCallMeWrapper = styled.button`
 `
 
 export const AboutPageCallMeText = styled.span`
-    font-size: clamp(14px, 7px + 1vw, 16px);
+    font-size: clamp(10px, 7px + 1vw, 16px);
     font-weight: 600;
     line-height: 120%;
-    letter-spacing: 0.01em;
+    
     text-transform: uppercase;
     z-index: 1;
     writing-mode: vertical-rl;
