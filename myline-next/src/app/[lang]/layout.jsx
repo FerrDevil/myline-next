@@ -1,6 +1,7 @@
 import BaseLayout from "@/components/BaseLayout/BaseLayout";
 import { cookies } from "next/headers";
 import { redirect } from "next/navigation";
+import Announcement from "../Announcement/Announcement";
 
 /* export async function generateStaticParams() {
     return [{ lang: 'en' }, { lang: 'ru' }];
@@ -11,9 +12,14 @@ export default function Layout({children, params: {lang}}) {
     if (localeCookie !== lang){
         redirect(`/${localeCookie}`)
     }
+    const displayContent = false
     return (
     <BaseLayout>
-        {children}
+        {
+          !displayContent?
+          <Announcement/>  :
+          children
+        }
     </BaseLayout>
             
     )

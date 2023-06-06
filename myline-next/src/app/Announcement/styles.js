@@ -4,75 +4,61 @@ import Image from "next/image"
 import styled from "styled-components"
 
 export const AnnouncementWrapper = styled.div`
+    background-color: #f5f5f5;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
     position: fixed;
     inset: 0;
-    background-color: #f5f5f5;
-    
-    z-index: 9999;
 `
 
 export const AnnouncementText = styled.span`
-    position: absolute;
-    left: 40%;
-    top: 20%;
-    font-size: 40px;
-    font-weight: 700;
-    text-transform: uppercase;
-
-`
-export const AnnouncementSecondText = styled.span`
-    position: absolute;
-    left: 20%;
-    bottom: 20%;
-    font-size: 40px;
+    font-size: clamp(20px, 10px + 2vw, 40px);
     font-weight: 700;
     text-transform: uppercase;
 
 `
 
 
-export const AnnouncementLogoWrapper = styled.div`
-    position: absolute;
-    width: 20%;
 
-    
-    top: 45%;
-    left: 20%;
+
+export const AnnouncementImageWrapper = styled.div`
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    inset: 0;
+    z-index: -1;
 
 `
 
-export const AnnouncementLogo = styled(Image).attrs(() => ({
+export const AnnouncementImage = styled(Image).attrs(() => ({
     width: 0,
     height: 0,
-    alt: "dog",
+    alt: "family",
     sizes: "100vw"
 }))`
     width: 100%;
     height: 100%;
-    object-fit: contain;
-    
+    object-fit: cover;
+    @media (max-width: 600px) {
+        display: none;
+    }
     
 `
 
-export const AnnouncementDogWrapper = styled.div`
-    position: absolute;
-    width: 50%;
-    aspect-ratio: 1;
-    
-    bottom: 0;
-    right: 0;
-
-`
-
-export const AnnouncementDog = styled(Image).attrs(() => ({
+export const AnnouncementMobileImage = styled(Image).attrs(() => ({
     width: 0,
     height: 0,
-    alt: "dog",
+    alt: "family",
     sizes: "100vw"
 }))`
     width: 100%;
     height: 100%;
     object-fit: cover;
     
-    
+    @media (min-width: 601px) {
+        display: none;
+    }
 `

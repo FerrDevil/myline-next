@@ -1,20 +1,13 @@
-import { AnnouncementDog, AnnouncementDogWrapper, AnnouncementLogo, AnnouncementLogoWrapper, AnnouncementSecondText, AnnouncementText, AnnouncementWrapper } from "./styles"
+import { AnnouncementDog, AnnouncementDogWrapper, AnnouncementImage, AnnouncementImageWrapper, AnnouncementLogo, AnnouncementLogoWrapper, AnnouncementMobileImage, AnnouncementSecondText, AnnouncementText, AnnouncementWrapper } from "./styles"
 
 const Announcement = () => {
     return(
         <AnnouncementWrapper>
-            <AnnouncementText>
-                Привет, я Кери!
-            </AnnouncementText>
-            <AnnouncementDogWrapper>
-                <AnnouncementDog src="/images/dog.gif"/>
-            </AnnouncementDogWrapper>
-            <AnnouncementLogoWrapper>
-                <AnnouncementLogo src="/myline-logo.png"/>
-            </AnnouncementLogoWrapper>
-           <AnnouncementSecondText>
-                Скоро увидимся!
-           </AnnouncementSecondText>
+            <AnnouncementText>Скоро увидимся!</AnnouncementText>
+            <AnnouncementImageWrapper>
+                <AnnouncementImage src="/images/announcement-bg.png"/>
+                <AnnouncementMobileImage src="/images/announcement-bg-mobile.png"/>
+            </AnnouncementImageWrapper>
         </AnnouncementWrapper>
     )
 }

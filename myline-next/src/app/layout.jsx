@@ -29,17 +29,17 @@ export const metadata = {
 
 
 export default async function RootLayout({children}) {
-  let lang = cookies().get("MYLINE-LOCALE-COOKIE")?.value || "ru"
-  let acceptCookies = cookies().get("accept-cookies")?.value
-  
+  const lang = cookies().get("MYLINE-LOCALE-COOKIE")?.value || "ru"
+  const acceptCookies = cookies().get("accept-cookies")?.value
 
   return (
     <html lang={lang} className={rubik.className}>
       <body>
         <Providers lang={lang}>
           <StyledComponentsRegistry>
-              
-              {children}
+              {
+                children
+              }
               <AcceptCookiesMessage acceptCookies={acceptCookies}/>
           </StyledComponentsRegistry>
         </Providers> 
