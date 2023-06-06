@@ -4,10 +4,4 @@ services:
     build: ./myline-next
     ports:
       - "3000:3000"
-  nginx:
-    build: ./nginx
-    restart: unless-stopped
-    volumes:
-      - ./data/nginx:/etc/nginx/conf.d
-    ports:
-      - "80:80"
+  
