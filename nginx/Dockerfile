@@ -10,7 +10,7 @@ RUN rm /etc/nginx/conf.d/*
 #COPY ./cert.pem /etc/nginx/certificates/
 #COPY ./key.pem /etc/nginx/certificates/
 
-# Expose the listening port
+EXPOSE 80
 EXPOSE 443
 
 # Launch NGINX
