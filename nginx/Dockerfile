@@ -6,12 +6,11 @@ RUN rm /etc/nginx/conf.d/*
 
 # Copy config files
 # *.conf files in conf.d/ dir get included in main config
-#COPY ./default.conf /etc/nginx/conf.d/
-#COPY ./cert.pem /etc/nginx/certificates/
-#COPY ./key.pem /etc/nginx/certificates/
+COPY ./conf/. /etc/nginx/conf.d/
+
 
 EXPOSE 80
 EXPOSE 443
 
 # Launch NGINX
-CMD [ "nginx", "-g", "daemon off;" ]
+CMD [ "nginx", "-t", "daemon off;" ]
