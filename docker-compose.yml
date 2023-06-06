@@ -5,7 +5,7 @@ services:
     ports:
       - "3000:3000"
   nginx:
-    build: .nginx
+    build: ./nginx
     depends_on:
       - nextjs
     ports:
