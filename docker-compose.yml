@@ -6,6 +6,8 @@ services:
       - "3000:3000"
   nginx:
     image: nginx:latest
+    depends_on:
+      - nextjs
     ports:
       - 80:80
       - 443:443
