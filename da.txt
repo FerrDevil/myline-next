@@ -3,3 +3,21 @@
     image: certbot/certbot:latest
     volumes:
       - ./certbot/www/:/var/www/certbot/:rw
+
+
+
+        server {
+    listen 80;
+    listen [::]:80;
+
+    server_name myline.clinic www.myline.clinic;
+    server_tokens off;
+
+    location /.well-known/acme-challenge/ {
+        root /var/www/certbot;
+    }
+
+    location / {
+        return 301 https://myline.clinic$request_uri;
+    }
+}
