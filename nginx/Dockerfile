@@ -10,7 +10,7 @@ COPY ./conf/nginx.conf /etc/nginx/conf.d/
 
 
 EXPOSE 80
-EXPOSE 443
+
 
 # Launch NGINX
-CMD [ "nginx", "-t", "daemon off;" ]
+#CMD [ "nginx", "-g", 'daemon off;' ]
