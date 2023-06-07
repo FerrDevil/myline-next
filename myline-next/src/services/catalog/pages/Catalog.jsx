@@ -28,8 +28,8 @@ const Catalog = ({products=[], isAuthorized=false, dictionary=null}) => {
                 <CatalogPageProductHeader>{product.title}</CatalogPageProductHeader>
                 <CatalogPageProductDescription>{product.briefDescription}</CatalogPageProductDescription>
                 <CatalogPageProductPriceWrapper>
-                  <CatalogPageProductPriceText>{dictionary.price}:</CatalogPageProductPriceText>
-                  <CatalogPageProductPrice>{intl.format(product.price)} ₽</CatalogPageProductPrice>
+                 {/*  <CatalogPageProductPriceText>{dictionary.price}:</CatalogPageProductPriceText>
+                  <CatalogPageProductPrice>{intl.format(product.price)} ₽</CatalogPageProductPrice> */}
                 </CatalogPageProductPriceWrapper>
                 <CatalogPageProductDetails onClick={() => {
                     setCurrentProductIndex(index)

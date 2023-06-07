@@ -4,11 +4,11 @@ import styled from "styled-components"
 
 import MenuSVG from "@/public/menu.svg"
 
-import TwitterSVG from "@/services/contacts/public/twitter.svg"
+import ViberSVG from "@/public/viber.svg"
 import YoutubeSVG from "@/services/contacts/public/youtube.svg"
-import InstagramSVG from "@/services/contacts/public/instagram.svg"
+import TelegramSVG from "@/public/telegram.svg"
 import VKSVG from "@/services/contacts/public/vk.svg"
-import FacebookSVG from "@/services/contacts/public/facebook.svg"
+import WhatsAppSVG from "@/public/whatsapp.svg"
 
 export const HeaderMenuWrapper = styled.div`
     position: relative;
@@ -107,7 +107,7 @@ export const HeaderMenuSidebarNavLinks = styled.div`
     flex-direction: column;
     align-items: flex-start;
     width: 100%;
-    gap: clamp(15px, 7px + 1vw, 25px);
+    gap: clamp(20px, 10px + 1vw, 25px);
 `
 
 
@@ -227,31 +227,36 @@ export const SocialsLink = styled.a`
     aspect-ratio: 1;
 `
 
-export const TwitterLinkSVG = styled(TwitterSVG)`
+export const ViberLinkSVG = styled(ViberSVG)`
+    display: block;
     width: 100%;
     height: 100%;
     object-fit: contain;
     fill: #fff;
 `
 export const YoutubeLinkSVG = styled(YoutubeSVG)`
+    display: block;
     width: 100%;
     height: 100%;
     object-fit: contain;
     fill: #fff;
 `
-export const InstagramLinkSVG = styled(InstagramSVG)`
+export const TelegramLinkSVG = styled(TelegramSVG)`
+    display: block;
     width: 100%;
     height: 100%;
     object-fit: contain;
     fill: #fff;
 `
 export const VKLinkSVG = styled(VKSVG)`
+    display: block;
     width: 100%;
     height: 100%;
     object-fit: contain;
     fill: #fff;
 `
-export const FacebookLinkSVG = styled(FacebookSVG)`
+export const WhatsAppLinkSVG = styled(WhatsAppSVG)`
+    display: block;
     width: 100%;
     height: 100%;
     object-fit: contain;

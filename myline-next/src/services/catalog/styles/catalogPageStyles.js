@@ -54,8 +54,8 @@ export const CatalogPageProduct = styled.div`
     gap: 10px;
     padding: clamp(10px, 5px + 1vw, 20px);
     border-radius: 8px;
+    height: 100%;
 `
-
 
 export const CatalogPageProductImageWrapper = styled.div`
     width: 100%;

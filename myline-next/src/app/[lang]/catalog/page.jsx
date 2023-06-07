@@ -8,10 +8,10 @@ export default async function CatalogPage({params: {lang}}) {
     {
       id: 1,
       logo: "/images/aligner.png",
-      title: "Пакет “МАЙЛАЙН-15”",
+      title: "Кейс mini",
       vendorCode: "75785057",
       stockCount: 15,
-      briefDescription: "Набор из 15 элайнеров",
+      briefDescription: "составление плана лечения изготовление элайнеров",
       fullDescription: "Данный пакет лечения содержит 15 элайнеров из биосиликона для самого простого и быстрого курса лечения. Такой вариант больше всего подходит для людей любого возраста с небольшим искривлением прикуса",
       price: 13_000,
       media: [
@@ -36,7 +36,7 @@ export default async function CatalogPage({params: {lang}}) {
     {
       id: 2,
       logo: "/images/aligner.png",
-      title: "Пакет “МАЙЛАЙН-30”",
+      title: "Кейс max",
       vendorCode: "75785058",
       stockCount: 30,
       briefDescription: "Набор из 30 элайнеров",
@@ -68,7 +68,7 @@ export default async function CatalogPage({params: {lang}}) {
     {
       id: 3,
       logo: "/images/aligner.png",
-      title: "Пакет “МАЙЛАЙН-60”",
+      title: "Кейс max+",
       vendorCode: "75785059",
       stockCount: 60,
       briefDescription: "Набор из 60 элайнеров",

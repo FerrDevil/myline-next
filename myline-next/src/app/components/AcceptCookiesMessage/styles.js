@@ -4,15 +4,15 @@ import styled from "styled-components"
 export const AcceptCookiesMessageWrapper = styled.div`
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
-    gap: 10px;
+    align-items: center;
+    gap: 15px;
     position: fixed;
     z-index: 1000;
     left: 0;
+    right: 0;
     bottom: 0;
     background-color: var(--color-main-gray);
-    max-width: 600px;
-    font-size: 10px;
+    font-size: clamp(10px, 5px + 1vw, 14px);
     font-weight: 400;
     color: #fff;
     padding: 20px;
@@ -20,14 +20,24 @@ export const AcceptCookiesMessageWrapper = styled.div`
     pointer-events: ${props => props.$isShown ? "all" : "none"};
     user-select: ${props => props.$isShown ? "all" : "none"};
     transition: opacity 0.4s;
+    text-align: justify;
 `
 
 export const AcceptCookiesMessageButton = styled.button`
     padding: 10px;
-    width: 50%;
+    max-width: 300px;
+    width: 100%;
     background-color: var(--color-aquamarine);
     border: 1px solid transparent;
     cursor: pointer;
-    font-size: 14px;
+    font-size: clamp(14px, 7px + 1vw, 18px);
     font-weight: 400;
+    border-radius: 4px;
+    transition: border-color 0.3s, color 0.3s, background-color 0.3s;
+
+    &:hover, &:focus-visible, &:active{
+        border-color: var(--color-aquamarine);
+        background-color: transparent;
+        color: var(--color-aquamarine);
+    }
 `

@@ -1,9 +1,8 @@
 "use client"
 import { useState } from "react"
-import { HeaderMenuLink, HeaderMenuLinkTitle, HeaderMenuSidebar, HeaderMenuSidebarNav, HeaderMenuToggleButton, HeaderMenuWrapper, HeaderMenuToggleButtonSVG, HeaderMenuLinkWrapper, HeaderMenuRegisterLink, HeaderMenuLoginLink, HeaderMenuFooter, HeaderMenuFooterText, HeaderMenuSidebarBackdrop, SocialsLinksContainer, SocialsLink, TwitterLinkSVG, YoutubeLinkSVG, FacebookLinkSVG, VKLinkSVG, InstagramLinkSVG, HeaderMenuProfileLink, HeaderMenuLogoutLink, HeaderMenuSidebarNavLinks, HeaderMenuSidebarNavLinksWrapper, HeaderMenuSidebarNavLinksHeader, HeaderMenuFooterInformationWarning, HeaderMenuFooterCreditInformation, HeaderMenuFooterInformationWarningLink } from "./styles"
+import { HeaderMenuLink, HeaderMenuLinkTitle, HeaderMenuSidebar, HeaderMenuSidebarNav, HeaderMenuToggleButton, HeaderMenuWrapper, HeaderMenuToggleButtonSVG, HeaderMenuLinkWrapper, HeaderMenuRegisterLink, HeaderMenuLoginLink, HeaderMenuFooter, HeaderMenuFooterText, HeaderMenuSidebarBackdrop, SocialsLinksContainer, SocialsLink, YoutubeLinkSVG, VKLinkSVG, InstagramLinkSVG, HeaderMenuProfileLink, HeaderMenuLogoutLink, HeaderMenuSidebarNavLinks, HeaderMenuSidebarNavLinksWrapper, HeaderMenuFooterInformationWarning, HeaderMenuFooterCreditInformation, HeaderMenuFooterInformationWarningLink, WhatsAppLinkSVG, TelegramLinkSVG, ViberLinkSVG } from "./styles"
 import { useParams, usePathname } from "next/navigation"
 import LanguageChanger from "../LanguageChanger/LanguageChanger"
-import Link from "next/link"
 
 
 const HeaderMenu = ({isAuthorized}) => {
@@ -22,18 +21,16 @@ const HeaderMenu = ({isAuthorized}) => {
                 <HeaderMenuSidebarNav>
                     <LanguageChanger isInMenu={true}/>
                     <HeaderMenuSidebarNavLinksWrapper>
-                        <HeaderMenuSidebarNavLinksHeader>
-                            Меню
-                        </HeaderMenuSidebarNavLinksHeader>
                         <HeaderMenuSidebarNavLinks>
                             <HeaderMenuLink href={`/${lang}`} onClick={() => {setShown(false)}}>
                                 <HeaderMenuLinkTitle> {lang === "ru" ? "Главная": "Main"} </HeaderMenuLinkTitle>
                             </HeaderMenuLink>
-                            <HeaderMenuLink href={`${lang}/about`} onClick={() => {setShown(false)}}>
-                                <HeaderMenuLinkTitle> {lang === "ru" ? "Кто мы?": "About us"} </HeaderMenuLinkTitle>
-                            </HeaderMenuLink>
+                           
                             <HeaderMenuLink href={`${lang}/catalog`} onClick={() => {setShown(false)}}>
                                 <HeaderMenuLinkTitle> {lang === "ru" ? "Каталог": "Catalog"} </HeaderMenuLinkTitle>
+                            </HeaderMenuLink>
+                            <HeaderMenuLink href={`${lang}/articles`} onClick={() => {setShown(false)}}>
+                                <HeaderMenuLinkTitle> {lang === "ru" ? "Пациентам": "Articles"} </HeaderMenuLinkTitle>
                             </HeaderMenuLink>
                             <HeaderMenuLink href={`${lang}/media`} onClick={() => {setShown(false)}}>
                                 <HeaderMenuLinkTitle> {lang === "ru" ? "Что могут элайнеры?": "Media"} </HeaderMenuLinkTitle>
@@ -41,51 +38,34 @@ const HeaderMenu = ({isAuthorized}) => {
                             <HeaderMenuLink href={`${lang}/news`} onClick={() => {setShown(false)}}>
                                 <HeaderMenuLinkTitle> {lang === "ru" ? "Новости": "News"} </HeaderMenuLinkTitle>
                             </HeaderMenuLink>
-                            <HeaderMenuLink href={`${lang}/news`} onClick={() => {setShown(false)}}>
-                                <HeaderMenuLinkTitle> {lang === "ru" ? "Статьи": "Articles"} </HeaderMenuLinkTitle>
+                            <HeaderMenuLink href={`${lang}/about`} onClick={() => {setShown(false)}}>
+                                <HeaderMenuLinkTitle> {lang === "ru" ? "О компании": "About us"} </HeaderMenuLinkTitle>
                             </HeaderMenuLink>
                             <HeaderMenuLink href={`${lang}/contacts`} onClick={() => {setShown(false)}}>
                                 <HeaderMenuLinkTitle> {lang === "ru" ? "Контакты": "Contacts"} </HeaderMenuLinkTitle>
                             </HeaderMenuLink>
-                        </HeaderMenuSidebarNavLinks>
-                    </HeaderMenuSidebarNavLinksWrapper>
-
-                    <HeaderMenuSidebarNavLinksWrapper>
-                        <HeaderMenuSidebarNavLinksHeader>
-                            Прочая информация
-                        </HeaderMenuSidebarNavLinksHeader>
-                        <HeaderMenuSidebarNavLinks>
-                           
                             <HeaderMenuLink href={`${lang}/catalog`} onClick={() => {setShown(false)}}>
-                                <HeaderMenuLinkTitle> {lang === "ru" ? "Политика конфиденциальности": "Conditions for receiving"} </HeaderMenuLinkTitle>
-                            </HeaderMenuLink>
-                            <HeaderMenuLink href={`${lang}/catalog`} onClick={() => {setShown(false)}}>
-                                <HeaderMenuLinkTitle> {lang === "ru" ? "Гарантия качества": "Company's politics"} </HeaderMenuLinkTitle>
-                            </HeaderMenuLink>
-                            <HeaderMenuLink href={`${lang}/catalog`} onClick={() => {setShown(false)}}>
-                                <HeaderMenuLinkTitle> {lang === "ru" ? "Лицензии и сертификаты": "Licenses and certificates"} </HeaderMenuLinkTitle>
+                                <HeaderMenuLinkTitle> {lang === "ru" ? "Документационные материалы": "Conditions for receiving"} </HeaderMenuLinkTitle>
                             </HeaderMenuLink>
                         </HeaderMenuSidebarNavLinks>
                     </HeaderMenuSidebarNavLinksWrapper>
-                    
-                   
                    
                     <HeaderMenuLinkWrapper>
                         {
                             isAuthorized ? 
                             <>
-                                <HeaderMenuProfileLink href={`${lang}/profile`}>
+                                <HeaderMenuProfileLink href={`${lang}/profile`} onClick={() => {setShown(false)}}>
                                     {lang === "ru" ? "Личный кабинет": "Profile"}
                                 </HeaderMenuProfileLink>
-                                <HeaderMenuLogoutLink >
+                                <HeaderMenuLogoutLink onClick={() => {setShown(false)}}>
                                     {lang === "ru" ? "Выйти": "Sign out"}
                                 </HeaderMenuLogoutLink>
                             </> :
                             <>
-                            <HeaderMenuRegisterLink href={`${lang}/register`}>
+                            <HeaderMenuRegisterLink href={`${lang}/register`} onClick={() => {setShown(false)}}>
                                 {lang === "ru" ? "Зарегистрироваться": "Register"}
                             </HeaderMenuRegisterLink>
-                            <HeaderMenuLoginLink href={`${lang}/signIn`}>
+                            <HeaderMenuLoginLink href={`${lang}/signIn`} onClick={() => {setShown(false)}}>
                                 {lang === "ru" ? "Войти": "Sign in"}
                             </HeaderMenuLoginLink>
                             </>
@@ -98,11 +78,11 @@ const HeaderMenu = ({isAuthorized}) => {
 
                 <HeaderMenuFooter>
                     <SocialsLinksContainer>
-                        <SocialsLink target="_blank" href="https://twitter.com/"><TwitterLinkSVG/></SocialsLink>
-                        <SocialsLink target="_blank" href="https://youtube.com/"><YoutubeLinkSVG/></SocialsLink>
-                        <SocialsLink target="_blank" href="https://facebook.com/"><FacebookLinkSVG/></SocialsLink>
                         <SocialsLink target="_blank" href="https://vk.com/mylinegroup"><VKLinkSVG/></SocialsLink>
-                        <SocialsLink target="_blank" href="https://instagram.com/"><InstagramLinkSVG/></SocialsLink>
+                        <SocialsLink target="_blank" href="https://youtube.com/"><YoutubeLinkSVG/></SocialsLink>
+                        <SocialsLink target="_blank" href="https://whatsapp.com/"><WhatsAppLinkSVG/></SocialsLink>
+                        <SocialsLink target="_blank" href="https://telegram.com/"><TelegramLinkSVG/></SocialsLink>
+                        <SocialsLink target="_blank" href="https://viber.com/"><ViberLinkSVG/></SocialsLink>
                     </SocialsLinksContainer>
 
                     <HeaderMenuFooterCreditInformation>

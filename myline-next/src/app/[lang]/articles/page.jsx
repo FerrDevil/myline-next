@@ -1,6 +1,6 @@
 import NewsSlider from "./components/Slider/NewsSlider";
-import { getNewsDictionary } from "@/services/news/dictionaries/dictionaries";
-import { NewsPageContainer, NewsPageDescription, NewsPageHeader, NewsPageLinkImage, NewsPageLinkImageWrapper, NewsPageLinkInsidesWrapper, NewsPageLinkSocialsLink, NewsPageLinkTitle, NewsPageLinkWrapper } from "./styles"
+import { getNewsDictionary } from "@/app/[lang]/articles/dictionaries/dictionaries";
+import { NewsPageContainer, NewsPageDescription, NewsPageHeader } from "./styles"
 import { ArticleModalOrderedList, ArticleModalParagraph } from "./components/ArticleModal/styles";
 
 export default async function NewsPage({params: {lang}}) {
@@ -8,7 +8,7 @@ export default async function NewsPage({params: {lang}}) {
     const links = [
         {
             id: 1,
-            image: "/images/aligner.png",
+            image: "/images/articles/article1.png",
             title: "Что такое элайнеры?",
             article: (
                 <>
@@ -28,7 +28,7 @@ export default async function NewsPage({params: {lang}}) {
         },
         {
             id: 2,
-            image: "/images/aligner.png",
+            image: "/images/articles/article2.png",
             title: "Почему элайнеры это технологично?",
             article: (
                 <>
@@ -55,7 +55,7 @@ export default async function NewsPage({params: {lang}}) {
         },
         {
             id: 3,
-            image: "/images/aligner.png",
+            image: "/images/articles/article3.png",
             title: "Элайнеры – это комфортно?",
             article: (
                 <>

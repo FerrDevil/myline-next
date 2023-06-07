@@ -11,7 +11,7 @@ export const AboutPageCallMeWrapper = styled.button`
     
     position: fixed;
 
-    background: #404342;
+    background-color: #CE5250;
     border-radius: 8px 0px 0px 8px;
     right: 0;
     top: 50%;
@@ -37,6 +37,7 @@ export const AboutPageCallMeSVG = styled(PhoneCallSVG)`
     display: block;
     width: 100%;
     aspect-ratio: 1;
+    fill: #fff;
 `
 
 export const JoinUsForm = styled.form`

@@ -20,7 +20,7 @@ const ProductModal = ({product, isOpen, setOpen, isAuthorized, setNoAuthModalOpe
             <ProductModalProductWrapper>
               <ProductModalProductTitle>{product.title}</ProductModalProductTitle>
               <ProductModalProductVendorCode>{dictionary.vendorCode}: {product.vendorCode}</ProductModalProductVendorCode>
-              <ProductModalProductPrice>{new Intl.NumberFormat(undefined, {useGrouping: true}).format(product.price)} ₽</ProductModalProductPrice>
+             {/*  <ProductModalProductPrice>{new Intl.NumberFormat(undefined, {useGrouping: true}).format(product.price)} ₽</ProductModalProductPrice> */}
               <ProductModalProductStockWrapper>
                 <ProductModalProductStockHeader>{dictionary.stock}:</ProductModalProductStockHeader>
                 <ProductModalProductStockCount>{product.stockCount}</ProductModalProductStockCount>

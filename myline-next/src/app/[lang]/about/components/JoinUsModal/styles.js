@@ -5,20 +5,22 @@ export const AboutPageJoinUsPopupButton = styled.button`
     display: block;
     font-size: 16px;
     white-space: nowrap;
-    background-color: var(--color-aquamarine);
-    box-shadow: 0px 25px 45px -20px rgba(97, 218, 251, 0.65), 0px 3px 0px 1px rgba(97, 218, 251, 0.5), inset 0px 0px 10px rgba(255, 255, 255, 0.35);
-    color:var(--color-main-gray);
+    background-color: #CE5250;
+    color: #fff;
+    
     text-align: center;
     padding: 30px;
     width: 100%;
     border-radius: 4px;
     font-weight: 600;
     border: 1px solid transparent;
-    transition: background-color 0.3s;
+    transition: background-color 0.3s, color 0.3s, border-color 0.3s;
     cursor: pointer;
     &:hover, &:focus-visible, &:active{
         outline: 1px solid transparent;
-        background-color: #00C2FF ;  
+        background-color: transparent ; 
+        color:var(--color-main-gray);
+        border-color: #CE5250;
     }
     @media (max-width: 620px) {
        width: 100%;

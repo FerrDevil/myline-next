@@ -100,7 +100,6 @@ export const RegisterLink = styled(Link)`
     white-space: nowrap;
     font-size: 16px;
     background-color: var(--color-aquamarine);
-    box-shadow: 0px 25px 45px -20px rgba(97, 218, 251, 0.65), 0px 3px 0px 1px rgba(97, 218, 251, 0.5), inset 0px 0px 10px rgba(255, 255, 255, 0.35);
     color: #333;
     text-align: center;
     padding: clamp(20px, 10px + 1vh, 30px) 80px;

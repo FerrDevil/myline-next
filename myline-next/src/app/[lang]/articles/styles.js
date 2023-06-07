@@ -39,7 +39,12 @@ export const NewsPageLinkWrapper = styled.div`
 
 export const NewsPageLinkImageWrapper = styled.div`
     width: 100%;
-    max-height: 100%;
+    max-width: 100%;
+    
+    margin: auto;
+    @media (min-width: 1000px) {
+        max-height: 400px;
+    }
 `
 
 export const NewsPageLinkImage = styled(Image).attrs(() => ({
@@ -51,7 +56,7 @@ export const NewsPageLinkImage = styled(Image).attrs(() => ({
       display: block;
       width: 100%;
       height: 100%;
-      object-fit: cover;
+      object-fit: fill;
   `
 
 export const NewsPageLinkInsidesWrapper = styled.div`
