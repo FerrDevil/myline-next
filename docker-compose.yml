@@ -1,6 +1,7 @@
 version: '3.9'
 services:
   nextjs:
+    container_name: 'nextjs'
     build: ./myline-next
     ports:
       - "3000:3000"
@@ -12,14 +13,10 @@ services:
     ports:
       - "80:80"
       - "443:443"
-    volumes:
-      - ./nginx/conf/:/etc/nginx/conf.d/
+
     networks:
       - docker-network
-  certbot:
-    image: certbot/certbot:latest
-    volumes:
-      - ./certbot/www/:/var/www/certbot/:rw
+ 
 networks:
   docker-network:
     driver: bridge

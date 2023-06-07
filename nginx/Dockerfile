@@ -6,7 +6,7 @@ RUN rm /etc/nginx/conf.d/*
 
 # Copy config files
 # *.conf files in conf.d/ dir get included in main config
-COPY ./conf/. /etc/nginx/conf.d/
+COPY ./conf/nginx.conf /etc/nginx/conf.d/
 
 
 EXPOSE 80
