@@ -16,6 +16,7 @@ services:
 
     networks:
       - docker-network
+    command: "sudo nginx -t"
  
 networks:
   docker-network:
