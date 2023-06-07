@@ -24,5 +24,5 @@ services:
     volumes:
       - ./certbot/www/:/var/www/certbot/:rw
       - ./certbot/conf/:/etc/letsencrypt/:rw
-    command: certonly --webroot -w /var/www/certbot/ --force-renewal --email ferrdevil220@gmail.com  -d myline.clinic -d www.myline.clinic --agree-tos
+    command: certonly --webroot -w /var/www/certbot/ --email ferrdevil220@gmail.com  -d myline.clinic -d www.myline.clinic --agree-tos
  
