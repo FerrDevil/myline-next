@@ -1,9 +1,9 @@
 "use client"
 import { useState } from "react"
-import ConfirmationModal from "../components/ConfirmationModal/ConfirmationModal"
-import NoAuthModal from "../components/NoAuthModal/NoAuthModal"
-import ProductModal from "../components/ProductModal/ProductModal"
-import { CatalogPageContainer, CatalogPageDescription, CatalogPageHeader, CatalogPageProduct, CatalogPageProductDescription, CatalogPageProductDetails, CatalogPageProductHeader, CatalogPageProductImage, CatalogPageProductImageWrapper, CatalogPageProductPrice, CatalogPageProductPriceText, CatalogPageProductPriceWrapper, CatalogPageProducts } from "../styles/catalogPageStyles"
+import ConfirmationModal from "../ConfirmationModal/ConfirmationModal"
+import NoAuthModal from "../NoAuthModal/NoAuthModal"
+import ProductModal from "../ProductModal/ProductModal"
+import { CatalogPageContainer, CatalogPageDescription, CatalogPageHeader, CatalogPageProduct, CatalogPageProductDescription, CatalogPageProductDetails, CatalogPageProductHeader, CatalogPageProductImage, CatalogPageProductImageWrapper, CatalogPageProductPrice, CatalogPageProductPriceText, CatalogPageProductPriceWrapper, CatalogPageProducts } from "@/app/[lang]/catalog/styles"
 
 const Catalog = ({products=[], isAuthorized=false, dictionary=null}) => {
     const [currentProductIndex, setCurrentProductIndex] = useState(0)

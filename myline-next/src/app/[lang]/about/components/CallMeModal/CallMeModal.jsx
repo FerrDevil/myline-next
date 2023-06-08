@@ -3,8 +3,8 @@
 import Modal from "@/components/Modal/Modal"
 import { useEffect, useState } from "react"
 import { AboutPageCallMeSVG, AboutPageCallMeText, AboutPageCallMeWrapper, AboutPageJoinUsPopupButton, JoinUsForm, JoinUsFormContainer, JoinUsFormHeader, JoinUsFormSubmitButton } from "./styles"
-import InputField from "../InputField/InputField"
-import CheckboxField from "../CheckboxField/CheckboxField"
+import InputField from "../../../../../components/InputField/InputField"
+import CheckboxField from "../../../../../components/CheckboxField/CheckboxField"
 
 export default function CallMeModal({dictionary}) {
     const [isOpen, setOpen] = useState(false)
@@ -76,7 +76,7 @@ export default function CallMeModal({dictionary}) {
                         <InputField 
                             name="name" 
                             onChange={changeFieldbyName("name")} 
-                            placeholder={dictionary.name} type="tel" 
+                            placeholder={dictionary.name}
                             isValid={!(validationErrors.name.noInput || validationErrors.name.notValidName)} 
                             errorMessage={validationErrors.name.noInput && dictionary.required || validationErrors.name.notValidName && dictionary.notValidName || ""}
                         />

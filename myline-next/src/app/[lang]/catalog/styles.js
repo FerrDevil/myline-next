@@ -109,6 +109,7 @@ export const CatalogPageProductPrice = styled.span`
 
 export const CatalogPageProductDetails = styled.button`
     margin-top: clamp(15px, 8px + 1vw, 20px);
+    color: var(--color-main-gray);
     font-size: 16px;
     font-weight: 600;
     text-align: center;

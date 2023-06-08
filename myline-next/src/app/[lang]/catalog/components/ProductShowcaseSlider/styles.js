@@ -1,8 +1,8 @@
 "use client"
 
 import styled from "styled-components"
-import LeftArrowSVG from "@/services/catalog/public/left-arrow.svg"
-import RightArrowSVG from "@/services/catalog/public/right-arrow.svg"
+import LeftArrowSVG from "@/app/[lang]/catalog/public/left-arrow.svg"
+import RightArrowSVG from "@/app/[lang]/catalog/public/right-arrow.svg"
 import Image from "next/image"
 
 export const ProductShowcaseWrapper = styled.div`

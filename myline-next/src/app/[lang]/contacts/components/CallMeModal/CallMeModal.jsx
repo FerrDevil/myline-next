@@ -2,14 +2,14 @@
 
 import Modal from "@/components/Modal/Modal"
 import { useEffect, useState } from "react"
-import { AboutPageJoinUsPopupButton, JoinUsForm, JoinUsFormContainer, JoinUsFormHeader, JoinUsFormSubmitButton } from "./styles"
-import InputField from "../../../../../components/InputField/InputField"
-import CheckboxField from "../../../../../components/CheckboxField/CheckboxField"
+import { ContactPageFreePhoneCall, JoinUsForm, JoinUsFormContainer, JoinUsFormHeader, JoinUsFormSubmitButton } from "./styles"
+import InputField from "@/components/InputField/InputField"
+import CheckboxField from "@/components/CheckboxField/CheckboxField"
 
-export default function JoinUsModal({dictionary}) {
+export default function CallMeModal({dictionary}) {
     const [isOpen, setOpen] = useState(false)
 
-    const [joinUsInfo, setJoinUsInfo] = useState({
+    const [callMeInfo, setCallMeUsInfo] = useState({
         name: " ",
         phoneNumber: " ",
         agreement: false
@@ -19,28 +19,27 @@ export default function JoinUsModal({dictionary}) {
 
     const changeFieldbyName = (fieldName) => {
         return (event) => {
-            setJoinUsInfo(prev => ({...prev, [fieldName]: event.target.value}))
+            setCallMeUsInfo(prev => ({...prev, [fieldName]: event.target.value}))
         }
     }
 
     const changeCheckboxbyName = (fieldName) => {
         return (event) => {
-            setJoinUsInfo(prev => ({...prev, [fieldName]: event.target.checked}))
+            setCallMeUsInfo(prev => ({...prev, [fieldName]: event.target.checked}))
         }
     }
 
     const validationErrors = {
         name:{
-            noInput: joinUsInfo.name.length === 0 ,
-            notValidName: joinUsInfo.name.trim().length > 0 && (joinUsInfo.name.match(/[a-zа-я ]+/gi) === null || joinUsInfo.name.match(/[a-zа-я ]+/gi)[0] !== joinUsInfo.name)
+            noInput: callMeInfo.name.length === 0 ,
+            notValidName: callMeInfo.name.trim().length > 0 && (callMeInfo.name.match(/[a-zа-я ]+/gi) === null || callMeInfo.name.match(/[a-zа-я ]+/gi)[0] !== callMeInfo.name)
         },
         phoneNumber:{
-            maxLengthLimit: joinUsInfo.phoneNumber.length > 11,
-            noInput: joinUsInfo.phoneNumber.length === 0 ,
-            notValidPhoneNumber: joinUsInfo.phoneNumber.trim().length > 0 && (joinUsInfo.phoneNumber.match(/[0-9]+/gi) === null || joinUsInfo.phoneNumber.match(/[a-z0-9]+/gi)[0] !== joinUsInfo.phoneNumber)
+            noInput: callMeInfo.phoneNumber.length === 0 ,
+            notValidPhoneNumber: callMeInfo.phoneNumber.trim().length > 0 && callMeInfo.phoneNumber.replace(/[+ -_()0-9]/gi, "") !== "" || callMeInfo.phoneNumber.length < 18
         },
         agreement:{
-            noInput: !joinUsInfo.agreement,
+            noInput: !callMeInfo.agreement,
         }
     }
 
@@ -48,8 +47,8 @@ export default function JoinUsModal({dictionary}) {
         () => {
         
             if (
-                validationErrors.name.noInput || validationErrors.name.notValidName || joinUsInfo.name.trim().length === 0 ||
-                validationErrors.phoneNumber.noInput || validationErrors.phoneNumber.notValidPhoneNumber || validationErrors.phoneNumber.maxLengthLimit || joinUsInfo.phoneNumber.trim().length === 0 ||
+                validationErrors.name.noInput || validationErrors.name.notValidName || callMeInfo.name.trim().length === 0 ||
+                validationErrors.phoneNumber.noInput || validationErrors.phoneNumber.notValidPhoneNumber || validationErrors.phoneNumber.maxLengthLimit || callMeInfo.phoneNumber.trim().length === 0 ||
                 validationErrors.agreement.noInput
             ){
 
@@ -57,7 +56,7 @@ export default function JoinUsModal({dictionary}) {
                 return
             }
             setSubmitButtonDisabled(false) 
-        }, [joinUsInfo]
+        }, [callMeInfo]
     )
 
     const sendForm = (event) => {
@@ -65,7 +64,7 @@ export default function JoinUsModal({dictionary}) {
     }
     return(
         <>
-            <AboutPageJoinUsPopupButton onClick={() => {setOpen(true)}}>Оставить заявку</AboutPageJoinUsPopupButton>
+           <ContactPageFreePhoneCall onClick={() => {setOpen(true)}}>{dictionary.freeCall}</ContactPageFreePhoneCall>
             <Modal isOpen={isOpen} setOpen={setOpen}>
                 <JoinUsForm>
                     <JoinUsFormHeader>{dictionary.formTitle}</JoinUsFormHeader>
@@ -82,9 +81,9 @@ export default function JoinUsModal({dictionary}) {
                             onChange={changeFieldbyName("phoneNumber")} 
                             placeholder={dictionary.phoneNumber} 
                             type="tel"
-                            value={joinUsInfo.value}
                             isValid={!(validationErrors.phoneNumber.noInput || validationErrors.phoneNumber.notValidPhoneNumber || validationErrors.phoneNumber.maxLengthLimit)} 
                             errorMessage={validationErrors.phoneNumber.noInput && dictionary.required || validationErrors.phoneNumber.notValidPhoneNumber && dictionary.notValidPhoneNumber || validationErrors.phoneNumber.maxLengthLimit  && dictionary.phoneNumberCharsLimitExceeded || ""}
+                            value={callMeInfo.phoneNumber}
                         />
                         <CheckboxField 
                             onChange={changeCheckboxbyName("agreement")} 

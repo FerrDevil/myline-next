@@ -1,0 +1,19 @@
+{
+    "pageTitle": "Контакты",
+    "socialsLinks" : "Ссылки на социальные сети",
+    "workingTime" : "Ежедневно с 8:00 до 19:00",
+    "headquarters": "Адрес",
+    "callMeForm": {
+        "freeCall" : "Бесплатный звонок",
+        "formTitle": "Оставить заявку",
+        "name" : "Ваше имя",
+        "phoneNumber" : "Номер телефона",
+        "agreement" : "Согласие на обработку персональных данных",
+        "required": "Обязательное поле",
+        "submitButton": "Зарегистрироваться",
+        "notValidName": "Имя введено некорректно",
+        "notValidPhoneNumber": "Номер телефона введен некорректно",
+        "phoneNumberCharsLimitExceeded" : "Введенный номер телефона превышает максимальное значение поля"
+    }
+
+}

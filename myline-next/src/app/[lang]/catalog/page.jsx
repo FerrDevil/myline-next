@@ -1,5 +1,5 @@
-import { getCatalogDictionary } from "@/services/catalog/dictionaries/dictionaries";
-import Catalog from "@/services/catalog/pages/Catalog";
+import { getCatalogDictionary } from "./dictionaries/dictionaries";
+import Catalog from "./components/Catalog/Catalog";
 
 
 export default async function CatalogPage({params: {lang}}) {
@@ -11,7 +11,7 @@ export default async function CatalogPage({params: {lang}}) {
       title: "Кейс mini",
       vendorCode: "75785057",
       stockCount: 15,
-      briefDescription: "составление плана лечения изготовление элайнеров",
+      briefDescription: "Набор из 15 элайнеров",
       fullDescription: "Данный пакет лечения содержит 15 элайнеров из биосиликона для самого простого и быстрого курса лечения. Такой вариант больше всего подходит для людей любого возраста с небольшим искривлением прикуса",
       price: 13_000,
       media: [

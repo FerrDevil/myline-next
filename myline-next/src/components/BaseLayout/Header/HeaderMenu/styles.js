@@ -5,9 +5,9 @@ import styled from "styled-components"
 import MenuSVG from "@/public/menu.svg"
 
 import ViberSVG from "@/public/viber.svg"
-import YoutubeSVG from "@/services/contacts/public/youtube.svg"
+import YoutubeSVG from "@/public/youtube.svg"
 import TelegramSVG from "@/public/telegram.svg"
-import VKSVG from "@/services/contacts/public/vk.svg"
+import VKSVG from "@/public/vk.svg"
 import WhatsAppSVG from "@/public/whatsapp.svg"
 
 export const HeaderMenuWrapper = styled.div`

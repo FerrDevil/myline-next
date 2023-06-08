@@ -1,7 +1,8 @@
-import { ContactInformationEmailSVG, ContactInformationPhoneCallSVG, ContactInformationTelephoneSVG, ContactPageAddress, ContactPageAddressSVG, ContactPageAddresses, ContactPageAddressesContainer, ContactPageAddressesHeader, ContactPageAddressesWrapper, ContactPageContactInformation, ContactPageContactInformationContact, ContactPageContactInformationContactWrapper, ContactPageContactInformationContacts, ContactPageContactInformationText, ContactPageContacts, ContactPageContainer, ContactPageFacebookLinkSVG, ContactPageFreePhoneCall, ContactPageHeader, ContactPageInstagramLinkSVG, ContactPageSocialsContainer, ContactPageSocialsLink, ContactPageSocialsLinks, ContactPageSocialsLinksContainer, ContactPageSocialsText, ContactPageTelegramSVG, ContactPageTwitterLinkSVG, ContactPageVKLinkSVG, ContactPageViberSVG, ContactPageWhatsAppSVG, ContactPageWrapper, ContactPageYoutubeLinkSVG } from "@/services/contacts/styles/contactsPageStyles"
+import { ContactInformationEmailSVG, ContactInformationPhoneCallSVG, ContactInformationTelephoneSVG, ContactPageAddress, ContactPageAddressSVG, ContactPageAddresses, ContactPageAddressesContainer, ContactPageAddressesHeader, ContactPageAddressesWrapper, ContactPageContactInformation, ContactPageContactInformationContact, ContactPageContactInformationContactWrapper, ContactPageContactInformationContacts, ContactPageContactInformationText, ContactPageContacts, ContactPageContainer, ContactPageFacebookLinkSVG, ContactPageFreePhoneCall, ContactPageHeader, ContactPageInstagramLinkSVG, ContactPageSocialsContainer, ContactPageSocialsLink, ContactPageSocialsLinks, ContactPageSocialsLinksContainer, ContactPageSocialsText, ContactPageTelegramSVG, ContactPageTwitterLinkSVG, ContactPageVKLinkSVG, ContactPageViberSVG, ContactPageWhatsAppSVG, ContactPageWrapper, ContactPageYoutubeLinkSVG } from "@/app/[lang]/contacts/styles"
 
-import Maps from "@/services/contacts/components/Maps/Maps"
-import { getContactsDictionary } from "@/services/contacts/dictionaries/dictionaries"
+import Maps from "@/app/[lang]/contacts/components/Maps/Maps"
+import { getContactsDictionary } from "@/app/[lang]/contacts/dictionaries/dictionaries"
+import CallMeModal from "./components/CallMeModal/CallMeModal"
 
 export default async function ContactsPage({params: {lang}})  {
   const dictionary = await getContactsDictionary(lang)
@@ -14,27 +15,23 @@ export default async function ContactsPage({params: {lang}})  {
                 <ContactPageSocialsContainer>
                   <ContactPageSocialsLinks>
                     <ContactPageSocialsLinksContainer>
-                      <ContactPageSocialsLink><ContactPageWhatsAppSVG/></ContactPageSocialsLink>
-                      <ContactPageSocialsLink><ContactPageTelegramSVG/></ContactPageSocialsLink>
-                      <ContactPageSocialsLink><ContactPageViberSVG/></ContactPageSocialsLink>
+                      <ContactPageSocialsLink target="_blank" href="https://wa.me/79048304445"><ContactPageWhatsAppSVG/></ContactPageSocialsLink>
+                      <ContactPageSocialsLink target="_blank" href="https://t.me/da"><ContactPageTelegramSVG/></ContactPageSocialsLink>
+                      <ContactPageSocialsLink target="_blank" href="viber://chat?number=%2B79048304445"><ContactPageViberSVG/></ContactPageSocialsLink>
                       
                     </ContactPageSocialsLinksContainer>
                     <ContactPageSocialsText $isLink={false}>+7 (904) 830-44-45</ContactPageSocialsText>
                   </ContactPageSocialsLinks>
-                  <ContactPageSocialsLinks target="_blank" href="https://www.youtube.com/@Myline.inform">
+
+                  <ContactPageSocialsLinks >
                     <ContactPageSocialsLinksContainer>
-                      <ContactPageSocialsLink ><ContactPageYoutubeLinkSVG/></ContactPageSocialsLink>
+                      <ContactPageSocialsLink target="_blank" href="https://www.youtube.com/@Myline.inform" ><ContactPageYoutubeLinkSVG/></ContactPageSocialsLink>
+                      <ContactPageSocialsLink target="_blank" href="https://vk.com/mylinegroup"><ContactPageVKLinkSVG/></ContactPageSocialsLink>
                     </ContactPageSocialsLinksContainer>
-                    <ContactPageSocialsText $isLink={true}>https://www.youtube.com/@Myline.inform</ContactPageSocialsText>
-                  </ContactPageSocialsLinks>
-                  <ContactPageSocialsLinks target="_blank" href="https://vk.com/mylinegroup">
-                    <ContactPageSocialsLinksContainer >
-                      <ContactPageSocialsLink><ContactPageVKLinkSVG/></ContactPageSocialsLink>
-                    </ContactPageSocialsLinksContainer>
-                    <ContactPageSocialsText $isLink={true}>https://vk.com/mylinegroup</ContactPageSocialsText>
                   </ContactPageSocialsLinks>
 
                 </ContactPageSocialsContainer>
+
                 <ContactPageContactInformation>
                   <ContactPageContactInformationContacts>
                     <ContactPageContactInformationContactWrapper>
@@ -58,7 +55,7 @@ export default async function ContactsPage({params: {lang}})  {
                   </ContactPageContactInformationContacts>
                   
                 </ContactPageContactInformation>
-                <ContactPageFreePhoneCall>{dictionary.freeCall}</ContactPageFreePhoneCall>
+                <CallMeModal dictionary={dictionary.callMeForm}/>
 
                 <ContactPageAddressesWrapper>
                   <ContactPageAddressesContainer>

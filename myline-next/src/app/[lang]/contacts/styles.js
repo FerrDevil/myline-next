@@ -2,18 +2,17 @@
 import styled from "styled-components"
 
 
-import YoutubeSVG from "@/services/contacts/public/youtube.svg"
-import VKSVG from "@/services/contacts/public/vk.svg"
-import FacebookSVG from "@/services/contacts/public/facebook.svg"
+import YoutubeSVG from "@/public/youtube.svg"
+import VKSVG from "@/public/vk.svg"
 
 import ViberSVG from "@/public/viber.svg"
 import TelegramSVG from "@/public/telegram.svg"
 import WhatsAppSVG from "@/public/whatsapp.svg"
 
-import EmailSVG from "@/services/contacts/public/email.svg"
-import PhoneCallSVG from "@/services/contacts/public/phone-call.svg"
-import TelephoneSVG from "@/services/contacts/public/telephone.svg"
-import LocationSVG from "@/services/contacts/public/location.svg"
+import EmailSVG from "@/app/[lang]/contacts/public/email.svg"
+import PhoneCallSVG from "@/app/[lang]/contacts/public/phone-call.svg"
+import TelephoneSVG from "@/app/[lang]/contacts/public/telephone.svg"
+import LocationSVG from "@/app/[lang]/contacts/public/location.svg"
 
 
 
@@ -67,7 +66,6 @@ export const ContactPageSocialsText = styled.span`
     font-weight: 500;
     font-size: clamp(14px, 7px + 1vw, 18px);
     color: var(--color-light-gray);
-    text-decoration: ${props => props.$isLink? "underline": "none"};
     transition: text-decoration 0.3s;
 `
 
@@ -78,22 +76,23 @@ export const ContactPageSocialsLinksContainer = styled.div`
     gap: 6px;
 `
 
-export const ContactPageSocialsLinks = styled.a`
+export const ContactPageSocialsLinks = styled.div`
     display: flex;  
     flex-direction: row;
     align-items: center;
     gap: clamp(5px, 1vw, 15px);
     flex-wrap: wrap;
 
-    &:hover > span, &:focus-visible > span, &:active > span{
-        text-decoration: none;
-    }
 `
 
-export const ContactPageSocialsLink = styled.div`
+export const ContactPageSocialsLink = styled.a`
     display: block;
     width: 24px;
     height: 24px;
+
+    &:hover > svg, &:focus-visible > svg, &:active > svg{
+        fill: #00C2FF;
+    }
 `
 
 
@@ -102,6 +101,7 @@ export const ContactPageYoutubeLinkSVG = styled(YoutubeSVG)`
     width: 100%;
     height: 100%;
     object-fit: contain;
+    transition: fill 0.3s;
     fill: var(--color-aquamarine);
 `
 
@@ -109,6 +109,7 @@ export const ContactPageVKLinkSVG = styled(VKSVG)`
     width: 100%;
     height: 100%;
     object-fit: contain;
+    transition: fill 0.3s;
     fill: var(--color-aquamarine);
 `
 
@@ -116,6 +117,7 @@ export const ContactPageViberSVG = styled(ViberSVG)`
     width: 100%;
     height: 100%;
     object-fit: contain;
+    transition: fill 0.3s;
     fill: var(--color-aquamarine);
 `
 
@@ -123,18 +125,16 @@ export const ContactPageTelegramSVG = styled(TelegramSVG)`
     width: 100%;
     height: 100%;
     object-fit: contain;
+    transition: fill 0.3s;
     fill: var(--color-aquamarine);
 `
 export const ContactPageWhatsAppSVG = styled(WhatsAppSVG)`
     width: 100%;
     height: 100%;
     object-fit: contain;
+    transition: fill 0.3s;
     fill: var(--color-aquamarine);
 `
-
-
-
-
 
 export const ContactPageContactInformation = styled.div`
     display: grid;
@@ -191,23 +191,7 @@ export const ContactInformationPhoneCallSVG = styled(PhoneCallSVG)`
     fill: var(--color-aquamarine);
 `
 
-export const ContactPageFreePhoneCall = styled.button`
-    border: 2px solid var(--color-aquamarine);
-    background-color: transparent;
-    color: var(--color-aquamarine);
-    font-weight: 600;
-    font-size: 16px;
-    padding: 20px 50px;
-    border-radius: 4px;
-    cursor: pointer;
-    transition: background-color 0.3s, color 0.3s;
 
-    &:hover, &:focus-visible, &:active{
-        outline: 1px solid transparent;
-        background-color: var(--color-aquamarine);
-        color: #fff;
-    }
-`
 
 
 export const ContactPageAddressesWrapper = styled.div`

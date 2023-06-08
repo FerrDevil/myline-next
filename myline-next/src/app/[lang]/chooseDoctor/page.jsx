@@ -1,5 +1,5 @@
-import DoctorMaps from "@/services/catalog/components/DoctorMaps/DoctorMaps";
-import { ChooseDoctorPageHeader, ChooseDoctorPageWrapper } from "@/services/catalog/styles/chooseDoctorPageStyles";
+import DoctorMaps from "./components/DoctorMaps/DoctorMaps";
+import { ChooseDoctorPageHeader, ChooseDoctorPageWrapper } from "@/app/[lang]/chooseDoctor/styles";
 
 export default async function ChooseDoctorPage({params: {lang}}){
     return (
