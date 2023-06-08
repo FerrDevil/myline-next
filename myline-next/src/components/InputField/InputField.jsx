@@ -1,14 +1,8 @@
 "use client"
 
-
 import PasswordField from "./Fields/PasswordField"
 import TelephoneField from "./Fields/TelephoneField"
 import TextField from "./Fields/TextField"
-import { ErrorMessage, Input, InputWrapper } from "./styles"
-
-
-
-
 
 const InputField = (props) => {
 

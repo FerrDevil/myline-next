@@ -1,6 +1,6 @@
 "use client"
-import CheckboxField from "@/services/auth/components/CheckboxField/CheckboxField";
-import InputField from "@/services/auth/components/InputField/InputField";
+import CheckboxField from "@/components/CheckboxField/CheckboxField";
+import InputField from "@/components/InputField/InputField";
 import { AuthPageForm, AuthPageFormContainer, AuthPageFormHeader, AuthPageFormSubmitButton, AuthPageWrapper } from "@/services/auth/styles/authStyles";
 import { useState, useEffect } from "react"
 

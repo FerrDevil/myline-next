@@ -10,6 +10,7 @@ export const AuthPageWrapper = styled.div`
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    padding-block: 20px;
 `
 
 export const AuthPageForm = styled.form`
@@ -44,7 +45,8 @@ export const AuthPageFormContainer = styled.div`
 export const AuthPageFormSubmitButton = styled.button`
     background-color: var(--color-aquamarine);
     border: 1px solid var(--color-aquamarine);
-    padding: 20px 90px;
+    padding: 20px;
+    width: 100%;
     border-radius: 4px;
     font-size: 16px;
     font-weight: 600;

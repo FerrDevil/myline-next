@@ -15,7 +15,9 @@ export default function AcceptCookiesMessage({acceptCookies}) {
     }
     return(
         <AcceptCookiesMessageWrapper $isShown={areCookiesNotAcceptable}>
-            <p>{"Этот сайт использует файлы cookies и сервисы сбора технических данных посетителей (данные об IP-адресе, местоположении и др.) для обеспечения работоспособности и улучшения качества обслуживания. Продолжая использовать наш сайт, вы автоматически соглашаетесь с использованием данных технологий."}</p>
+            <p>
+                Мы используем различные технологии для персонализации функциональных возможностей нашего веб-сайта, определения уровня использования и производительности веб-сайта и предоставления таргетированной рекламы. Дополнительную информацию можно найти в нашем <a href="/cookies">уведомлении о файлах cookie.</a>
+            </p>
            < AcceptCookiesMessageButton onClick={acceptCookiesRequest}>Подтвердить</AcceptCookiesMessageButton>
         </AcceptCookiesMessageWrapper>
     )

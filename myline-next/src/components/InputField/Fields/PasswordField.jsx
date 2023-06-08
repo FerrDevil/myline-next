@@ -1,6 +1,9 @@
+"use client"
+
+import { useState } from "react"
 import { ErrorMessage, Input, InputPasswordHiddenSVG, InputPasswordSwitchButton, InputPasswordVisibleSVG, InputPasswordWrapper, InputWrapper } from "../styles"
 
-const PasswordField = ({ name, onChange, type="password", placeholder="", isValid=false, errorMessage="", value="" }) => {
+const PasswordField = ({ name, onChange, placeholder="", isValid=false, errorMessage="" }) => {
     const [isPasswordVisible, setPasswordVisible] = useState(false)
     return(
         <InputWrapper>

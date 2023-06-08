@@ -38,7 +38,6 @@ export const NotFoundErrorAdditionalMessage = styled.p`
     font-weight: 400;
     font-size: clamp(16px, 8px + 1vw, 22px);
     line-height: 135%;
-    /* or 30px */
 
     display: flex;
     align-items: center;
@@ -51,7 +50,6 @@ export const NotFoundBackLink = styled.button`
     font-weight: 600;
     font-size: clamp(14px, 7px + 1vw, 16px);
     line-height: 113%;
-    /* identical to box height */
 
     letter-spacing: 0.01em;
 

@@ -36,7 +36,7 @@ export default function CallMeModal({dictionary}) {
         },
         phoneNumber:{
             noInput: callMeInfo.phoneNumber.length === 0 ,
-            notValidPhoneNumber: callMeInfo.phoneNumber.trim().length > 0 && callMeInfo.phoneNumber.replace(/[+ -_()0-9]/gi, "") !== "" || callMeInfo.phoneNumber.length < 18
+            notValidPhoneNumber: callMeInfo.phoneNumber.trim().length > 0 && (callMeInfo.phoneNumber.match(/[0-9]/gi)?.length !== 11 || callMeInfo.phoneNumber.length < 18)
         },
         agreement:{
             noInput: !callMeInfo.agreement,
@@ -48,7 +48,7 @@ export default function CallMeModal({dictionary}) {
         
             if (
                 validationErrors.name.noInput || validationErrors.name.notValidName || callMeInfo.name.trim().length === 0 ||
-                validationErrors.phoneNumber.noInput || validationErrors.phoneNumber.notValidPhoneNumber || validationErrors.phoneNumber.maxLengthLimit || callMeInfo.phoneNumber.trim().length === 0 ||
+                validationErrors.phoneNumber.noInput || validationErrors.phoneNumber.notValidPhoneNumber || callMeInfo.phoneNumber.trim().length === 0 ||
                 validationErrors.agreement.noInput
             ){
 
@@ -81,8 +81,8 @@ export default function CallMeModal({dictionary}) {
                             onChange={changeFieldbyName("phoneNumber")} 
                             placeholder={dictionary.phoneNumber} 
                             type="tel"
-                            isValid={!(validationErrors.phoneNumber.noInput || validationErrors.phoneNumber.notValidPhoneNumber || validationErrors.phoneNumber.maxLengthLimit)} 
-                            errorMessage={validationErrors.phoneNumber.noInput && dictionary.required || validationErrors.phoneNumber.notValidPhoneNumber && dictionary.notValidPhoneNumber || validationErrors.phoneNumber.maxLengthLimit  && dictionary.phoneNumberCharsLimitExceeded || ""}
+                            isValid={!(validationErrors.phoneNumber.noInput || validationErrors.phoneNumber.notValidPhoneNumber)} 
+                            errorMessage={validationErrors.phoneNumber.noInput && dictionary.required || validationErrors.phoneNumber.notValidPhoneNumber && dictionary.notValidPhoneNumber || ""}
                             value={callMeInfo.phoneNumber}
                         />
                         <CheckboxField 

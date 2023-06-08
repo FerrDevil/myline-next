@@ -1,5 +1,5 @@
 "use client"
-import { useState } from "react"
+import { useLayoutEffect, useState } from "react"
 import { HeaderMenuLink, HeaderMenuLinkTitle, HeaderMenuSidebar, HeaderMenuSidebarNav, HeaderMenuToggleButton, HeaderMenuWrapper, HeaderMenuToggleButtonSVG, HeaderMenuLinkWrapper, HeaderMenuRegisterLink, HeaderMenuLoginLink, HeaderMenuFooter, HeaderMenuFooterText, HeaderMenuSidebarBackdrop, SocialsLinksContainer, SocialsLink, YoutubeLinkSVG, VKLinkSVG, InstagramLinkSVG, HeaderMenuProfileLink, HeaderMenuLogoutLink, HeaderMenuSidebarNavLinks, HeaderMenuSidebarNavLinksWrapper, HeaderMenuFooterInformationWarning, HeaderMenuFooterCreditInformation, HeaderMenuFooterInformationWarningLink, WhatsAppLinkSVG, TelegramLinkSVG, ViberLinkSVG } from "./styles"
 import { useParams, usePathname } from "next/navigation"
 import LanguageChanger from "../LanguageChanger/LanguageChanger"
@@ -9,7 +9,14 @@ const HeaderMenu = ({isAuthorized}) => {
     const { lang } = useParams()
     const pathname = usePathname()
     const [isShown, setShown] = useState(false)
-    
+
+
+    useLayoutEffect(() => {
+        if(!document) return
+        isShown ?
+        (document.body.style.overflow = "hidden"):
+        (document.body.style.overflow = "auto" )
+    }, [isShown])
     return (
         <HeaderMenuWrapper>
             <HeaderMenuToggleButton $shouldChangeColor={`/${lang}` !== pathname} onClick={() => {setShown(prev => !prev)}}>

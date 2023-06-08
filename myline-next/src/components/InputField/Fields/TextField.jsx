@@ -1,3 +1,4 @@
+"use client"
 import { ErrorMessage, Input, InputWrapper } from "../styles"
 
 const TextField = ({ name, onChange, placeholder="",  isValid=false, errorMessage="" }) => {

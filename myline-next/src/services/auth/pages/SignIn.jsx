@@ -1,7 +1,7 @@
 "use client"
 import { useEffect, useState } from "react"
 import { AuthPageForm, AuthPageFormContainer, AuthPageFormHeader, AuthPageFormSubmitButton, AuthPageWrapper } from "../styles/authStyles"
-import InputField from "../components/InputField/InputField"
+import InputField from "@/components/InputField/InputField";
 
 
 const SignIn = ({dictionary=null}) => {
