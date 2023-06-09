@@ -35,9 +35,8 @@ export default function CallMeModal({dictionary}) {
             notValidName: callMeInfo.name.trim().length > 0 && (callMeInfo.name.match(/[a-zа-я ]+/gi) === null || callMeInfo.name.match(/[a-zа-я ]+/gi)[0] !== callMeInfo.name)
         },
         phoneNumber:{
-            maxLengthLimit: callMeInfo.phoneNumber.length > 11,
             noInput: callMeInfo.phoneNumber.length === 0 ,
-            notValidPhoneNumber: callMeInfo.phoneNumber.trim().length > 0 && (callMeInfo.phoneNumber.match(/[0-9]+/gi) === null || callMeInfo.phoneNumber.match(/[a-z0-9]+/gi)[0] !== callMeInfo.phoneNumber)
+            notValidPhoneNumber: callMeInfo.phoneNumber.trim().length > 0 && (callMeInfo.phoneNumber.match(/[0-9]/gi)?.length !== 11 || callMeInfo.phoneNumber.length < 18)
         },
         agreement:{
             noInput: !callMeInfo.agreement,
@@ -87,6 +86,7 @@ export default function CallMeModal({dictionary}) {
                             type="tel"
                             isValid={!(validationErrors.phoneNumber.noInput || validationErrors.phoneNumber.notValidPhoneNumber || validationErrors.phoneNumber.maxLengthLimit)} 
                             errorMessage={validationErrors.phoneNumber.noInput && dictionary.required || validationErrors.phoneNumber.notValidPhoneNumber && dictionary.notValidPhoneNumber || validationErrors.phoneNumber.maxLengthLimit  && dictionary.phoneNumberCharsLimitExceeded || ""}
+                            value={callMeInfo.phoneNumber}
                         />
                         <CheckboxField 
                             onChange={changeCheckboxbyName("agreement")} 

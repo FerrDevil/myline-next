@@ -1,5 +1,5 @@
-import TreatmentSlider from "@/services/profile/components/TreatmentSlider/TreatmentSlider";
-import { TreatmentPageDescription, TreatmentPageHeader, TreatmentPageWrapper } from "@/services/profile/styles/treatmentStyles";
+import TreatmentSlider from "@/app/[lang]/profile/treatment/components/TreatmentSlider/TreatmentSlider";
+import { TreatmentPageDescription, TreatmentPageHeader, TreatmentPageWrapper } from "@/app/[lang]/profile/treatment/styles";
 
 
 

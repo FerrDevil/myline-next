@@ -1,7 +1,7 @@
-import Slider from "@/services/media/components/Slider/Slider"
-import VideoPlayer from "@/services/media/components/VideoPlayer/VideoPlayer"
-import { getMediaDictionary } from "@/services/media/dictionaries/dictionaries"
-import { MediaPageContainer, MediaPageHeader, MediaPageSliderBlock, MediaPageVideoBlock, MediaPageVideoBlockDescription, MediaPageVideoBlockDescriptionText, MediaPageVideoBlockDescriptionTexts, SliderImage, SliderImageWrapper, YouTubeLink, YouTubeLinkSVG } from "@/services/media/styles/mediaPageStyles"
+import Slider from "./components/Slider/Slider"
+import VideoPlayer from "../../../components/VideoPlayer/VideoPlayer"
+import { getMediaDictionary } from "./dictionaries/dictionaries"
+import { MediaPageContainer, MediaPageHeader, MediaPageSliderBlock, MediaPageVideoBlock, MediaPageVideoBlockDescription, MediaPageVideoBlockDescriptionText, MediaPageVideoBlockDescriptionTexts, SliderImage, SliderImageWrapper, YouTubeLink, YouTubeLinkSVG } from "@/app/[lang]/media/styles"
 
 export default async function MediaPage({params: {lang}}) {
   const images = [
@@ -46,7 +46,7 @@ export default async function MediaPage({params: {lang}}) {
         <MediaPageVideoBlock>
 
           <MediaPageVideoBlockDescription>
-            <MediaPageHeader> {dictionary.firstPageTitle}  </MediaPageHeader>
+            {/* <MediaPageHeader> {dictionary.firstPageTitle}  </MediaPageHeader> */}
             <MediaPageVideoBlockDescriptionTexts>
               <MediaPageVideoBlockDescriptionText>
                 {dictionary.firstDescription}

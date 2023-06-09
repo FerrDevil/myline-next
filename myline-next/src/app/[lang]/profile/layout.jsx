@@ -1,4 +1,4 @@
-import ProfileLayout from "@/services/profile/components/ProfileLayout/ProfileLayout"
+import ProfileLayout from "@/app/[lang]/profile/components/ProfileLayout/ProfileLayout"
 
 export const metadata = {
   title: 'Личный кабинет',

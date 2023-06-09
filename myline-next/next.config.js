@@ -10,8 +10,17 @@ const nextConfig = {
                 options: { icon: true },
           },
         ],
-    });
-    return config;
+      });
+      config.module.rules.push({
+        test: /\.pdf$/i,
+        type: 'asset/source',
+        use: [
+          {
+            loader: 'file-loader',
+          },
+        ],
+      })
+      return config;
     },
     async redirects() {
       return [

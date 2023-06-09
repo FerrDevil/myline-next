@@ -21,7 +21,7 @@ export const ConfirmationModalWrapper = styled.div`
 export const ConfirmationModalHeader = styled.h2`
     font-size: clamp(20px, 10px + 1vw, 22px);
     font-weight: 700;
-    color: #404342;
+    color: var(--color-main-gray);
     width: 100%;
     padding: 25px;
     border-bottom: 1px solid #D9D9D9;
@@ -45,7 +45,7 @@ export const ConfirmationModalDescription = styled.p`
     display: block;
     font-size: clamp(16px, 8px + 1vw, 18px);
     font-weight: 400;
-    color: #4f4f4f;
+    color: var(--color-light-gray);
     text-align: left;
     max-width: 41ch;
 `
@@ -55,7 +55,7 @@ export const ConfirmationModalRemark = styled.p`
     font-size: clamp(16px, 8px + 1vw, 18px);
     font-weight: 500;
     font-style: italic;
-    color: #4f4f4f;
+    color: var(--color-light-gray);
     text-align: left;
     max-width: 41ch;
 `
@@ -81,7 +81,7 @@ export const ProcedeLink = styled(Link)`
     white-space: nowrap;
     font-size: 16px;
     background-color: var(--color-aquamarine);
-    color: #404342;
+    color: var(--color-main-gray);
     text-align: center;
     padding: clamp(15px, 8px + 1vh, 20px);
     border-radius: 4px;

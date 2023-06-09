@@ -1,0 +1,18 @@
+{
+    "profileLayout": {
+        "greeting" : "Hello",
+        "layoutDescription": "All your treatment information is in the tabs",
+        "appointment": "Appointment",
+        "treatment": "Treatment",
+        "instructions": "Instructions"
+    },
+    "appointmentPage": {
+        "isAwaitingYou": "Is awaiting you for the appointment",
+        "address": "Address",
+        "phoneNumber" : "Phone number",
+        "date": "Date",
+        "time": "Time",
+        "delayAppointment": "Delay the appointment",
+        "cancelAppointment": "Cancel the appointment"
+    }
+}

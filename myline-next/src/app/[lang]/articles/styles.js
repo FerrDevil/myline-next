@@ -17,7 +17,7 @@ export const NewsPageHeader = styled.h2`
     font-size: clamp(30px, 15px + 5vw, 60px);
     font-weight: 700;
     text-transform: uppercase;
-    color: #404342;
+    color: var(--color-main-gray);
     
 `
 export const NewsPageDescription = styled.p`
@@ -71,7 +71,7 @@ export const NewsPageLinkInsidesWrapper = styled.div`
 export const NewsPageLinkTitle = styled.h2`
     font-weight: 700;
     font-size: clamp(20px, 10px + 1vw, 22px);
-    color: #404342; 
+    color: var(--color-main-gray); 
    
 `
 

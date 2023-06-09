@@ -1,0 +1,11 @@
+{
+    "documentsLayout": {
+        "layoutDescription": "Вся информация о твоём лечении лежит во вкладках",
+        "confidentialityPolicy": "Политика конфиденциальности",
+        "qualityAssurance": "Гарантия качества",
+        "licences": "Лицензии и сертификаты"
+    },
+    "confidentialityPolicy": {
+        "title": "Политика конфиденциальности"
+    }
+}

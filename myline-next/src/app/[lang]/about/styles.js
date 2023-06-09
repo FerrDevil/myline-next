@@ -2,10 +2,11 @@
 import styled from "styled-components"
 
 
-import ToothBracesSVG from "@/app/[lang]/about/public/tooth-braces.svg"
-import TimeManagementSVG from "@/app/[lang]/about/public/time-management.svg"
+import TechnologiesSVG from "@/app/[lang]/about/public/technologies.svg"
+import TimeSVG from "@/app/[lang]/about/public/time.svg"
 import LikeSVG from "@/app/[lang]/about/public/like.svg"
-import HeadsetSVG from "@/app/[lang]/about/public/headset.svg"
+import JoySVG from "@/app/[lang]/about/public/joy.svg"
+import Image from "next/image"
 
 
 export const AboutPageContainer = styled.div`
@@ -28,7 +29,7 @@ export const AboutPageMainContentWrapper = styled.div`
 export const AboutPageHeader = styled.h1`
     font-size: clamp(30px, 15px + 5vw, 60px);
     font-weight: 700;
-    color: #404342;
+    color: var(--color-main-gray);
     text-transform: uppercase;
     
 `
@@ -97,23 +98,49 @@ export const AboutPageJoinUsWrapper = styled.div`
     display: flex;
     flex-direction: row;
     align-items: center;
+    justify-content: space-between;
     border: 2px dashed var(--color-aquamarine);
-    gap: clamp(25px, 13px + 1vw, 30px);
+    gap: clamp(30px, 15px + 2vw, 50px);
     padding: 30px;
     border-radius: 10px;
+    width: 100%;
     @media (max-width: 600px) {
         flex-direction: column;
     }
     
 `
-export const AboutPageJoinUsMessage = styled.h2`
-    font-weight: 700;
+export const AboutPageJoinUsMessage = styled.div`
+    font-weight: 400;
     font-size: clamp(18px, 9px + 1vw, 22px);
     line-height: 115%;
 
     color: var(--color-main-gray);
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    & > p {
+        white-space: nowrap;
+    }
 `
 
+export const AboutPageJoinUsLogoWrapper = styled.div`
+    width: 100%;
+    aspect-ratio: 2 / 1;
+`
+
+export const AboutPageJoinUsLogo = styled(Image).attrs({
+    width: 0,
+    height: 0,
+    sizes: "100vw",
+    src: "/myline-logo.png",
+    alt: "joinUsLogo"
+})`
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+`
 
 
 
@@ -154,10 +181,10 @@ export const AboutPageCard = styled.div`
         background-color: ${props => props.$isAlternated ? "#fff" : "var(--color-aquamarine)" };
     }
     & > h2 {
-        color: ${props => props.$isAlternated ? "#fff" : "#404342" };
+        color: ${props => props.$isAlternated ? "#fff" : "var(--color-main-gray)" };
     }
     & > p {
-        color: ${props => props.$isAlternated ? "#fff" : "#4f4f4f" };
+        color: ${props => props.$isAlternated ? "#fff" : "var(--color-light-gray)" };
     }
 `
 
@@ -169,14 +196,14 @@ export const AboutPageCardIconWrapper = styled.div`
     padding: 25px;
 `
 
-export const ToothBracesIconSVG = styled(ToothBracesSVG)`
+export const TechnologiesIconSVG = styled(TechnologiesSVG)`
     display: block;
     width: 100%;
     height: 100%;
     object-fit: contain;
     fill: #fff;
 `
-export const TimeManagementIconSVG = styled(TimeManagementSVG)`
+export const TimeIconSVG = styled(TimeSVG)`
     display: block;
     width: 100%;
     height: 100%;
@@ -190,7 +217,7 @@ export const LikeIconSVG = styled(LikeSVG)`
     object-fit: contain;
     fill: #fff;
 `
-export const HeadsetIconSVG = styled(HeadsetSVG)`
+export const JoyIconSVG = styled(JoySVG)`
     display: block;
     width: 100%;
     height: 100%;
@@ -202,13 +229,13 @@ export const HeadsetIconSVG = styled(HeadsetSVG)`
 export const AboutPageCardHeader = styled.h2`
     font-size: clamp(20px, 10px + 1vw, 22px);
     font-weight: 700;
-    color: #404342;
+    color: var(--color-main-gray);
 `
 
 export const AboutPageCardDescription = styled.p`
     font-size: clamp(16px, 8px + 1vw, 18px);
     font-weight: 400;
-    color: #4f4f4f;
+    color: var(--color-light-gray);
 `
 
 

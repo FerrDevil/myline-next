@@ -1,4 +1,3 @@
-import ProfileLayout from "@/services/profile/components/ProfileLayout/ProfileLayout"
 
 export const metadata = {
   title: 'Прием',

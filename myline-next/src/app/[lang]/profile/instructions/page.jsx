@@ -1,5 +1,5 @@
-import VideoPlayer from "@/services/media/components/VideoPlayer/VideoPlayer";
-import { InstructionsPageVideoTitle, InstructionsPageVideoWrapper, InstructionsPageWrapper } from "@/services/profile/styles/instructionsStyles";
+import VideoPlayer from "@/components/VideoPlayer/VideoPlayer";
+import { InstructionsPageVideoTitle, InstructionsPageVideoWrapper, InstructionsPageWrapper } from "@/app/[lang]/profile/instructions/styles";
 
 export default async function InstructionsPage({ params : { lang } }) {
     return(

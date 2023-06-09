@@ -51,7 +51,7 @@ const HeaderMenu = ({isAuthorized}) => {
                             <HeaderMenuLink href={`${lang}/contacts`} onClick={() => {setShown(false)}}>
                                 <HeaderMenuLinkTitle> {lang === "ru" ? "Контакты": "Contacts"} </HeaderMenuLinkTitle>
                             </HeaderMenuLink>
-                            <HeaderMenuLink href={`${lang}/catalog`} onClick={() => {setShown(false)}}>
+                            <HeaderMenuLink href={`${lang}/documents/confidentialityPolicy`} onClick={() => {setShown(false)}}>
                                 <HeaderMenuLinkTitle> {lang === "ru" ? "Документационные материалы": "Conditions for receiving"} </HeaderMenuLinkTitle>
                             </HeaderMenuLink>
                         </HeaderMenuSidebarNavLinks>
@@ -86,15 +86,17 @@ const HeaderMenu = ({isAuthorized}) => {
                 <HeaderMenuFooter>
                     <SocialsLinksContainer>
                         <SocialsLink target="_blank" href="https://vk.com/mylinegroup"><VKLinkSVG/></SocialsLink>
-                        <SocialsLink target="_blank" href="https://youtube.com/"><YoutubeLinkSVG/></SocialsLink>
-                        <SocialsLink target="_blank" href="https://whatsapp.com/"><WhatsAppLinkSVG/></SocialsLink>
-                        <SocialsLink target="_blank" href="https://telegram.com/"><TelegramLinkSVG/></SocialsLink>
-                        <SocialsLink target="_blank" href="https://viber.com/"><ViberLinkSVG/></SocialsLink>
+                        <SocialsLink target="_blank" href="https://www.youtube.com/@Myline.inform"><YoutubeLinkSVG/></SocialsLink>
+                        <SocialsLink target="_blank" href="https://wa.me/79048304445"><WhatsAppLinkSVG/></SocialsLink>
+                        <SocialsLink target="_blank" href="https://t.me/da"><TelegramLinkSVG/></SocialsLink>
+                        <SocialsLink target="_blank" href="viber://chat?number=%2B79048304445"><ViberLinkSVG/></SocialsLink>
                     </SocialsLinksContainer>
 
                     <HeaderMenuFooterCreditInformation>
-                        ИНН: 1840119469
-                       <p> КПП: 184001001 ОГРН: 1231800004523</p>
+                        <p> ООО “МАЙЛАЙН» </p>
+                        <p> ОГРН 1231800004523 </p>
+                        <p> ИНН 1840119469 </p>
+                        <p>Лицензия – оставить место </p>
                     </HeaderMenuFooterCreditInformation>
                     <HeaderMenuFooterText>
                         © {lang === "ru" ? "МАЙЛАЙН": "MYLINE"}, 2023

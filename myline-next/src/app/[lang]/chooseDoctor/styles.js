@@ -14,7 +14,7 @@ export const ChooseDoctorPageWrapper = styled.div`
 export const ChooseDoctorPageHeader = styled.h1`
     font-size: clamp(30px, 15px + 5vw, 60px);
     font-weight: 700;
-    color: #404342;
+    color: var(--color-main-gray);
     text-transform: uppercase;
     
 `

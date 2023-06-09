@@ -21,6 +21,9 @@ export const AcceptCookiesMessageWrapper = styled.div`
     user-select: ${props => props.$isShown ? "all" : "none"};
     transition: opacity 0.4s;
     text-align: justify;
+    & > p{
+        opacity: 0.7;
+    }
 `
 
 export const AcceptCookiesMessageButton = styled.button`

@@ -13,13 +13,13 @@ export const AboutPageJoinUsPopupButton = styled.button`
     width: 100%;
     border-radius: 4px;
     font-weight: 600;
-    border: 1px solid transparent;
+    border: 2px solid transparent;
     transition: background-color 0.3s, color 0.3s, border-color 0.3s;
     cursor: pointer;
     &:hover, &:focus-visible, &:active{
         outline: 1px solid transparent;
         background-color: transparent ; 
-        color:var(--color-main-gray);
+        color: #CE5250;
         border-color: #CE5250;
     }
     @media (max-width: 620px) {
@@ -44,7 +44,7 @@ export const JoinUsForm = styled.form`
 export const JoinUsFormHeader = styled.h2`
     font-size: 22px;
     font-weight: 700;
-    color: #404342;
+    color: var(--color-main-gray);
     width: 100%;
     padding: 25px;
     border-bottom: 1px solid #D9D9D9;

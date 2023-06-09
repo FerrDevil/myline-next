@@ -3,7 +3,7 @@
 import Modal from "@/components/Modal/Modal"
 import { useParams } from "next/navigation"
 import { useState } from "react"
-import { ProductModalWrapper, ProductModalContainer, ProductModalProductWrapper, ProductModalProductTitle, ProductModalProductVendorCode, ProductModalProductPrice, ProductModalProductStockWrapper, ProductModalProductStockHeader, ProductModalProductStockCount, ProductModalProductSelectButton, ProductModalProductDescription, ProductModalProductCaution } from "./styles"
+import { ProductModalWrapper, ProductModalContainer, ProductModalProductWrapper, ProductModalProductTitle, ProductModalProductVendorCode, ProductModalProductPrice, ProductModalProductStockWrapper, ProductModalProductStockHeader, ProductModalProductStockCount, ProductModalProductSelectButton, ProductModalProductDescription, ProductModalProductCaution, ProductModalProductDescriptionList } from "./styles"
 import ProductShowcaseSlider from "../ProductShowcaseSlider/ProductShowcaseSlider"
 
 const ProductModal = ({product, isOpen, setOpen, isAuthorized, setNoAuthModalOpened, setConfirmationModalOpened, dictionary=null}) => {
@@ -19,12 +19,20 @@ const ProductModal = ({product, isOpen, setOpen, isAuthorized, setNoAuthModalOpe
 
             <ProductModalProductWrapper>
               <ProductModalProductTitle>{product.title}</ProductModalProductTitle>
-              <ProductModalProductVendorCode>{dictionary.vendorCode}: {product.vendorCode}</ProductModalProductVendorCode>
+             {/*  <ProductModalProductVendorCode>{dictionary.vendorCode}: {product.vendorCode}</ProductModalProductVendorCode> */}
              {/*  <ProductModalProductPrice>{new Intl.NumberFormat(undefined, {useGrouping: true}).format(product.price)} ₽</ProductModalProductPrice> */}
-              <ProductModalProductStockWrapper>
+              {/* <ProductModalProductStockWrapper>
                 <ProductModalProductStockHeader>{dictionary.stock}:</ProductModalProductStockHeader>
                 <ProductModalProductStockCount>{product.stockCount}</ProductModalProductStockCount>
-              </ProductModalProductStockWrapper>
+              </ProductModalProductStockWrapper> */}
+
+              <ProductModalProductDescriptionList>
+                {product.descriptionList.map((description, index) => (
+                  <li key={index}>
+                    {description}
+                  </li>
+                ))}
+              </ProductModalProductDescriptionList>
               <ProductModalProductSelectButton onClick={() => {
                 setOpen(false)
                 if (!isAuthorized){
@@ -36,12 +44,6 @@ const ProductModal = ({product, isOpen, setOpen, isAuthorized, setNoAuthModalOpe
               }}> {dictionary.chooseDoctor} </ProductModalProductSelectButton>
             </ProductModalProductWrapper>
         </ProductModalContainer>
-        <ProductModalProductDescription>
-          {product.fullDescription}
-        </ProductModalProductDescription>
-        <ProductModalProductCaution>
-          {dictionary.caution}
-        </ProductModalProductCaution>
       </ProductModalWrapper>
     </Modal>
   )

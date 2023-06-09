@@ -75,7 +75,7 @@ export const DoctorName = styled.h2`
     font-size: clamp(20px, 10px + 1vw, 22px);
     line-height: 115%;
     font-weight: 700;
-    color: #404342;
+    color: var(--color-main-gray);
     margin-bottom: 5px;
 `
 
@@ -83,7 +83,7 @@ export const DoctorAddress = styled.p`
     font-size: 16px;
     font-weight: 400;
     line-height: 135%;
-    color: #4F4F4F;
+    color: var(--color-light-gray);
     margin-bottom: 10px;
 `
 
@@ -92,7 +92,7 @@ export const DoctorChooseButton = styled.button`
     font-size: clamp(14px, 7px + 1vw, 16px);
     font-weight: 600;
     width: 100%;
-    color: #404342;
+    color: var(--color-main-gray);
     padding: 10px 40px;
     background-color: var(--color-aquamarine);
     border: 1px solid transparent;

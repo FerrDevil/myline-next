@@ -1,6 +1,6 @@
-import AppoinmentControls from "@/services/profile/components/AppointmentControls/AppointmentControls";
-import { getProfileDictionary } from "@/services/profile/dictionaries/dictionaries";
-import { AppointmentLowerInfo, AppointmentLowerInfoParameter, AppointmentLowerInfoValue, AppointmentLowerInfoWrapper, AppointmentPageWrapper, AppointmentUpperInfo, AppointmentUpperInfoImage, AppointmentUpperInfoImageWrapper, AppointmentUpperInfoName, AppointmentUpperInfoNameDescription, AppointmentUpperInfoNameWrapper, AppointmentWrapper} from "@/services/profile/styles/appointmentStyles";
+import AppoinmentControls from "@/app/[lang]/profile/appointment/components/AppointmentControls/AppointmentControls";
+import { getProfileDictionary } from "@/app/[lang]/profile/dictionaries/dictionaries";
+import { AppointmentLowerInfo, AppointmentLowerInfoParameter, AppointmentLowerInfoValue, AppointmentLowerInfoWrapper, AppointmentPageWrapper, AppointmentUpperInfo, AppointmentUpperInfoImage, AppointmentUpperInfoImageWrapper, AppointmentUpperInfoName, AppointmentUpperInfoNameDescription, AppointmentUpperInfoNameWrapper, AppointmentWrapper} from "./styles";
 
 
 export default async function TreatmentPage({params: {lang}}) {

@@ -27,10 +27,11 @@ const Catalog = ({products=[], isAuthorized=false, dictionary=null}) => {
                 
                 <CatalogPageProductHeader>{product.title}</CatalogPageProductHeader>
                 <CatalogPageProductDescription>{product.briefDescription}</CatalogPageProductDescription>
-                <CatalogPageProductPriceWrapper>
-                 {/*  <CatalogPageProductPriceText>{dictionary.price}:</CatalogPageProductPriceText>
-                  <CatalogPageProductPrice>{intl.format(product.price)} ₽</CatalogPageProductPrice> */}
-                </CatalogPageProductPriceWrapper>
+                {/* <CatalogPageProductPriceWrapper>
+                  <CatalogPageProductPriceText>{dictionary.price}:</CatalogPageProductPriceText>
+                  <CatalogPageProductPrice>{intl.format(product.price)} ₽</CatalogPageProductPrice>
+                </CatalogPageProductPriceWrapper> 
+                */}
                 <CatalogPageProductDetails onClick={() => {
                     setCurrentProductIndex(index)
                     setProductModalOpened(true)

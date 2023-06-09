@@ -22,7 +22,7 @@ export const ProductModalContainer = styled.div`
     display: grid;
     flex-direction: row;
     align-items: center;
-    gap: clamp(15px,  1vw, 20px);
+    gap: clamp(25px,  13px + 1vw, 45px);
     @media (min-width: 680px) {
         grid-template-columns: 1fr 1fr;
     }
@@ -33,14 +33,23 @@ export const ProductModalProductWrapper = styled.div`
     display: flex;
     flex-direction: column;
     align-items: flex-start;
+    gap: 10px;
 `
 
 export const ProductModalProductTitle = styled.h2`
     font-size: clamp(22px, 11px + 2vw, 30px);
     font-weight: 700;
-    color: #404342;
+    color: var(--color-main-gray);
     white-space: nowrap;
     
+`
+export const ProductModalProductDescriptionList = styled.ul`
+    font-size: clamp(14px, 7px + 1vw, 18px);
+    font-weight: 400;
+    line-height: 135%;
+    color: var(--color-light-gray);
+    text-align: justify;
+    margin-left: 1em;
 `
 
 export const ProductModalProductVendorCode = styled.span`
@@ -75,22 +84,22 @@ export const ProductModalProductStockWrapper = styled.div`
 export const ProductModalProductStockHeader = styled.span`
     font-size: clamp(16px, 8px + 1vw, 18px);
     font-weight: 400;
-    color: #4f4f4f;
+    color: var(--color-light-gray);
     
 `
 export const ProductModalProductStockCount = styled.span`
     font-size: clamp(16px, 8px + 1vw, 18px);
     font-weight: 500;
-    color: #404342;
+    color: var(--color-main-gray);
     
 `
 
 export const ProductModalProductSelectButton = styled.button`
     font-size: 16px;
     font-weight: 600;
-    color: #404342;
+    color: var(--color-main-gray);
     padding: clamp(15px, 8px + 1vw, 20px) 60px;
-    margin-top: clamp(10px,  1vw, 25px);;
+    margin-top: 10px;
     border: 1px solid transparent;
     background-color: var(--color-aquamarine);
     border-radius: 4px;
@@ -110,7 +119,7 @@ export const ProductModalProductSelectButton = styled.button`
 export const ProductModalProductDescription = styled.p`
     font-size: clamp(16px, 8px + 1vw, 18px);
     font-weight: 400;
-    color: #4F4F4F;
+    color: var(--color-light-gray);
     text-align: left;
     max-width: 61ch;
 `

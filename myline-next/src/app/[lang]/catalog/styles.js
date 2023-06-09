@@ -15,7 +15,7 @@ export const CatalogPageContainer = styled.div`
 export const CatalogPageHeader = styled.h1`
     font-size: clamp(30px, 15px + 5vw, 60px);
     font-weight: 700;
-    color: #404342;
+    color: var(--color-main-gray);
     text-transform: uppercase;
     
 `
@@ -76,7 +76,7 @@ export const CatalogPageProductImage = styled(Image).attrs(() => ({
 export const CatalogPageProductHeader = styled.h2`
     font-size: clamp(18px, 9px + 1vw, 20px);
     font-weight: 700;
-    color: #404342;
+    color: var(--color-main-gray);
     white-space: nowrap;
 `
 

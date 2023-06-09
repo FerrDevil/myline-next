@@ -2,7 +2,7 @@
 import CallMeModal from "./components/CallMeModal/CallMeModal"
 import JoinUsModal from "./components/JoinUsModal/JoinUsModal"
 import { getAboutDictionary } from "./dictionaries/dictionaries"
-import { AboutPageCard, AboutPageCardDescription, AboutPageCardHeader, AboutPageCardIconWrapper, AboutPageCards, AboutPageContainer, AboutPageDecriptionList, AboutPageDescription, AboutPageDescriptions, AboutPageHeader, AboutPageJoinUsMessage, AboutPageJoinUsWrapper, AboutPageMainContent, AboutPageMainContentWrapper, HeadsetIconSVG, LikeIconSVG, TimeManagementIconSVG, ToothBracesIconSVG } from "./styles"
+import { AboutPageCard, AboutPageCardDescription, AboutPageCardHeader, AboutPageCardIconWrapper, AboutPageCards, AboutPageContainer, AboutPageDecriptionList, AboutPageDescription, AboutPageDescriptions, AboutPageHeader, AboutPageJoinUsLogo, AboutPageJoinUsLogoWrapper, AboutPageJoinUsMessage, AboutPageJoinUsWrapper, AboutPageMainContent, AboutPageMainContentWrapper, HeadsetIconSVG, JoyIconSVG, LikeIconSVG, TechnologiesIconSVG, TimeIconSVG, TimeManagementIconSVG, ToothBracesIconSVG } from "./styles"
 
 export default async function AboutPage({params: { lang }}) {
 
@@ -36,7 +36,10 @@ export default async function AboutPage({params: { lang }}) {
 
           <AboutPageJoinUsWrapper>
             <AboutPageJoinUsMessage>
-              Чтобы стать частью нашей команды, оставьте заявку и мы свяжемся с вами!
+              <p>сотрудничество с</p>
+              <AboutPageJoinUsLogoWrapper>
+                <AboutPageJoinUsLogo/>
+              </AboutPageJoinUsLogoWrapper>
             </AboutPageJoinUsMessage>
             <JoinUsModal dictionary={dictionary.joinUsForm}/>
           </AboutPageJoinUsWrapper>
@@ -47,7 +50,7 @@ export default async function AboutPage({params: { lang }}) {
       <AboutPageCards>
         <AboutPageCard>
             <AboutPageCardIconWrapper>
-              <ToothBracesIconSVG/>
+              <TechnologiesIconSVG/>
             </AboutPageCardIconWrapper>
             <AboutPageCardHeader> {dictionary.firstCardTitle} </AboutPageCardHeader>
             <AboutPageCardDescription> {dictionary.firstCardDescription} </AboutPageCardDescription>
@@ -55,7 +58,7 @@ export default async function AboutPage({params: { lang }}) {
 
           <AboutPageCard>
             <AboutPageCardIconWrapper>
-              <LikeIconSVG/>
+              <TimeIconSVG/>
             </AboutPageCardIconWrapper>
             <AboutPageCardHeader> {dictionary.secondCardTitle} </AboutPageCardHeader>
             <AboutPageCardDescription> {dictionary.secondCardDescription} </AboutPageCardDescription>
@@ -63,7 +66,7 @@ export default async function AboutPage({params: { lang }}) {
 
           <AboutPageCard>
             <AboutPageCardIconWrapper>
-              <TimeManagementIconSVG/>
+              <LikeIconSVG/>
             </AboutPageCardIconWrapper>
             <AboutPageCardHeader> {dictionary.thirdCardTitle} </AboutPageCardHeader>
             <AboutPageCardDescription> {dictionary.thirdCardDescription} </AboutPageCardDescription>
@@ -71,7 +74,7 @@ export default async function AboutPage({params: { lang }}) {
 
           <AboutPageCard $isAlternated={true}>
             <AboutPageCardIconWrapper>
-              <HeadsetIconSVG/>
+              <JoyIconSVG/>
             </AboutPageCardIconWrapper>
             <AboutPageCardHeader> {dictionary.fourthCardTitle} </AboutPageCardHeader>
             <AboutPageCardDescription> {dictionary.fourthCardDescription} </AboutPageCardDescription>

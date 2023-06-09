@@ -29,7 +29,7 @@ export const AuthPageForm = styled.form`
 export const AuthPageFormHeader = styled.h1`
     font-size: 22px;
     font-weight: 700;
-    color: #404342;
+    color: var(--color-main-gray);
     width: 100%;
     padding: 25px;
     border-bottom: 1px solid #D9D9D9;

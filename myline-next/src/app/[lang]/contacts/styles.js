@@ -29,7 +29,7 @@ export const ContactPageHeader = styled.h1`
     font-size: clamp(30px, 15px + 3vw, 60px);
     font-weight: 700;
     text-transform: uppercase;
-    color: #404342;
+    color: var(--color-main-gray);
 `
 export const ContactPageContainer = styled.div`
     display: grid;
@@ -158,7 +158,7 @@ export const ContactPageContactInformationContactWrapper = styled.span`
 export const ContactPageContactInformationContact = styled.span`
     font-size: clamp(16px, 8px + 1vw, 20px);
     font-weight: 600;
-    color: #404342;
+    color: var(--color-main-gray);
     white-space: nowrap;
     display: flex;
     gap: 5px;
@@ -207,7 +207,7 @@ export const ContactPageAddressesContainer = styled.div`
 export const ContactPageAddressesHeader = styled.h2`
     font-weight: 700;
     font-size: clamp(20px, 10px + 1vw, 22px);
-    color: #404342;
+    color: var(--color-main-gray);
 `
 
 export const ContactPageAddresses = styled.div`
