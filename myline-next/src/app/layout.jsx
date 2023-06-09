@@ -2,8 +2,6 @@ import './globals.css'
 import StyledComponentsRegistry from './stylesheet'
 import Providers from './providers'
 import { rubik } from './font'
-
-import Announcement from './Announcement/Announcement'
 import { cookies } from 'next/dist/client/components/headers'
 import AcceptCookiesMessage from './components/AcceptCookiesMessage/AcceptCookiesMessage'
 
