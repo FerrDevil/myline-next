@@ -9,10 +9,10 @@ services:
     container_name: nginx
     build: ./nginx
     volumes:
-      - ./nginx/conf/:/etc/nginx/conf.d/:ro
-      - ./certbot/www:/var/www/certbot/:ro
-      - ./certbot/conf/:/etc/letsencrypt/:ro
-      - ./certbot/conf/:/etc/nginx/ssl/:ro
+      - ./nginx/conf/:/etc/nginx/conf.d/:rw
+      - ./certbot/www:/var/www/certbot/:rw
+      - ./certbot/conf/:/etc/letsencrypt/:rw
+      - ./certbot/conf/:/etc/nginx/ssl/:rw
     ports:
       - "80:80"
       - "443:443"
