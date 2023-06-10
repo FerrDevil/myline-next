@@ -6,6 +6,7 @@ import PhoneCallSVG from "@/app/[lang]/about/public/phone-call.svg"
 export const AboutPageCallMeWrapper = styled.button`
     display: flex;
     flex-direction: column-reverse;
+    align-items: center;
     gap: 10px;
     transform: translateY(-50%) ;
     
@@ -24,7 +25,6 @@ export const AboutPageCallMeWrapper = styled.button`
 export const AboutPageCallMeText = styled.span`
     font-size: clamp(10px, 7px + 1vw, 16px);
     font-weight: 600;
-    line-height: 120%;
     
     text-transform: uppercase;
     z-index: 1;
