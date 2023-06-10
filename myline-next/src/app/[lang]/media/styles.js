@@ -3,6 +3,7 @@ import styled from "styled-components"
 import Image from "next/image"
 
 import YoutubeSVG from "./public/youtube.svg"
+import ZoomInSVG from "@/app/[lang]/media/public/zoom-in.svg"
 
 export const MediaPageContainer = styled.div`
     display: flex;
@@ -96,7 +97,12 @@ export const MediaPageSliderBlock = styled.div`
 export const SliderImageWrapper = styled.div`
     width: 100%;
     height: 100%;
-
+    position: relative;
+    &:hover > button, &:focus-visible > button, &:active > button{
+        opacity: 1;
+        pointer-events: all;
+        user-select: all;
+    }
 
 `
 export const SliderImage = styled(Image).attrs(() => ({
@@ -111,4 +117,29 @@ export const SliderImage = styled(Image).attrs(() => ({
       object-fit: cover;
       
       border-radius: 6px;
+  `
+
+export const SliderImageFullViewButton = styled.button`
+    display: grid;
+    place-items: center;
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    pointer-events: none;
+    user-select: none;
+    transition: opacity 0.5s;
+
+    background-color: #00000066;
+    border: 1px solid transparent;
+    padding: 20px;
+
+    cursor: pointer;
+  `
+
+
+export const ZoomInIconSVG = styled(ZoomInSVG)`
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+
   `

@@ -46,7 +46,6 @@ export default async function MediaPage({params: {lang}}) {
 
         <MediaPageSliderBlock>
           <MediaPageHeader> { dictionary.pageTitle } </MediaPageHeader>
-
           <Slider images={images}/>
           
         </MediaPageSliderBlock>

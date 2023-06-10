@@ -17,7 +17,8 @@ export const ModalDialog = styled.dialog`
     max-width: 100%;
     max-height: 100%;
     background-color: transparent;
-    
+    padding: 20px;
+    isolation: isolate;
 
     opacity: ${props => props.$isOpen ? 1 : 0};
     pointer-events: ${props => props.$isOpen ? "all" : "none"};
@@ -30,9 +31,16 @@ export const ModalDialog = styled.dialog`
       outline: 1px solid transparent;
     }
 `
+
+export const ModalDialogBackdrop = styled.div`
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+`
+
 export const ModalDialogContent = styled.div`
     display: grid;
     overflow: auto;
     border-radius: 5px;
-    margin-inline: 20px;
+    ;
 `
