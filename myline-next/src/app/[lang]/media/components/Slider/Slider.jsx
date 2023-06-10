@@ -68,7 +68,7 @@ const Slider = ({images=[]}) => {
         </SliderContainer>
         <SliderArrowButton>
           <SliderRightArrowButtonSVG onClick={() => {
-          setCurrentItemIndex(prev => prev === content.length - 1 ? prev : prev + 1)
+          setCurrentItemIndex(prev => prev === images.length - 1 ? prev : prev + 1)
         }}/>
         </SliderArrowButton>
         
