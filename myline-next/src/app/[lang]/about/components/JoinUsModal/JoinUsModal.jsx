@@ -6,9 +6,11 @@ import { AboutPageJoinUsPopupButton, JoinUsForm, JoinUsFormContainer, JoinUsForm
 import InputField from "../../../../../components/InputField/InputField"
 import CheckboxField from "../../../../../components/CheckboxField/CheckboxField"
 
+
 export default function JoinUsModal({dictionary}) {
     const [isOpen, setOpen] = useState(false)
 
+    
     const [joinUsInfo, setJoinUsInfo] = useState({
         name: " ",
         phoneNumber: " ",

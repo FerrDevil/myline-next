@@ -5,8 +5,6 @@ import { ErrorMessage, Input, InputPasswordWrapper, InputWrapper } from "../styl
 
 const TelephoneField = ({ name, onChange, placeholder="", isValid=true, errorMessage="", value="" }) => {
 
-    console.log(value)
-
     return(
         <InputWrapper>
             <InputPasswordWrapper>

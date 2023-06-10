@@ -13,8 +13,13 @@ export const SliderWrapper = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
+    align-self: center;
     gap: 20px;
     user-select: none;
+
+    @media (min-width: 1024px){
+        max-width: 1024px;
+    }
 `
 
 export const SliderContainerWrapper = styled.div`
@@ -22,6 +27,7 @@ export const SliderContainerWrapper = styled.div`
     display: flex;
     flex-direction: row;
     align-items: center;
+    width: 100%;
     gap: 10px;
 `
 
@@ -69,14 +75,14 @@ export const SliderContainer = styled.div`
 export const SliderItems = styled.div`
     display: flex;
     flex-grow: 1;
-    --_gap: 20px;
+    --_gap: 10px;
     gap: var(--_gap);
-    --_one-element: calc((100% - (var(--_gap) * 4)) / 5 );
+    --_one-element: calc((100% - (var(--_gap) * 2)) / 3 );
 
     transform: translateX(calc( -1 * (var(--_one-element) + var(--_gap)) * ${props => props.$currentGroupIndex }));
     transition: transform 0.8s;
     & > * {
-        flex: 0 0 calc((100% - (var(--_gap) * 4)) / 5 );
+        flex: 0 0 var(--_one-element);
     }
     @media (max-width: 1024px) {
         transform: translateX(${props => -100 / 2.5 * props.$currentGroupIndex}%);

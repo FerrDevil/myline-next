@@ -3,10 +3,10 @@
 import Modal from "@/components/Modal/Modal"
 import { useEffect, useState } from "react"
 import { AboutPageCallMeSVG, AboutPageCallMeText, AboutPageCallMeWrapper, AboutPageJoinUsPopupButton, JoinUsForm, JoinUsFormContainer, JoinUsFormHeader, JoinUsFormSubmitButton } from "./styles"
-import InputField from "../../../../../components/InputField/InputField"
-import CheckboxField from "../../../../../components/CheckboxField/CheckboxField"
+import InputField from "../../InputField/InputField"
+import CheckboxField from "../../CheckboxField/CheckboxField"
 
-export default function CallMeModal({dictionary}) {
+export default function CallMeModal() {
     const [isOpen, setOpen] = useState(false)
 
     const [callMeInfo, setCallMeUsInfo] = useState({
@@ -14,6 +14,20 @@ export default function CallMeModal({dictionary}) {
         phoneNumber: " ",
         agreement: false
     })
+
+    const dictionary = {
+        formTitle: "Оставить заявку",
+        name : "Ваше имя",
+        phoneNumber : "Номер телефона",
+        agreement : "Согласие на обработку персональных данных",
+        required: "Обязательное поле",
+        submitButton: "Зарегистрироваться",
+        notValidName: "Имя введено некорректно",
+        notValidPhoneNumber: "Номер телефона введен некорректно",
+        phoneNumberCharsLimitExceeded : "Введенный номер телефона превышает максимальное значение поля"
+    }
+
+
 
     const [isSubmitButtonDisabled, setSubmitButtonDisabled] = useState(true)
 

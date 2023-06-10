@@ -15,7 +15,7 @@ export const AboutPageCallMeWrapper = styled.button`
     border-radius: 8px 0px 0px 8px;
     right: 0;
     top: 50%;
-    
+    max-width: 40px;
     padding: 10px;
     border: 1px solid transparent;
     cursor: pointer;
@@ -28,7 +28,8 @@ export const AboutPageCallMeText = styled.span`
     
     text-transform: uppercase;
     z-index: 1;
-    writing-mode: vertical-rl;
+    white-space: nowrap;
+    writing-mode: vertical-lr;
     transform: rotate(-180deg);
     color: #FFFFFF;
 `

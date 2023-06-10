@@ -7,8 +7,8 @@ import YoutubeSVG from "./public/youtube.svg"
 export const MediaPageContainer = styled.div`
     display: flex;
     flex-direction: column;
-    
     padding-top: clamp(40px, 20px + 3vw, 80px);
+    padding-bottom: 20px;
     gap: 20px;
     
 
@@ -32,7 +32,7 @@ export const MediaPageVideoBlock = styled.div`
     row-gap: 30px;
     @media (min-width: 1000px) {
         display: grid;
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: 3fr 2fr;
 
     }
 `
@@ -62,7 +62,10 @@ export const YouTubeLink = styled.a`
     background-color: var(--color-aquamarine);
     color: var(--color-main-gray);
     text-align: center;
-    padding: 30px clamp(75px, 38px + 3vw, 80px);
+    padding: 30px;
+    width: 100%;
+    justify-content: center;
+    max-width: 320px;
    
     border-radius: 4px;
     font-weight: 600;
@@ -87,11 +90,14 @@ export const MediaPageSliderBlock = styled.div`
     align-items: flex-start;
     gap: 30px;
     padding-bottom: 20px;
+    
 `
 
 export const SliderImageWrapper = styled.div`
     width: 100%;
     height: 100%;
+
+
 `
 export const SliderImage = styled(Image).attrs(() => ({
     width: 0,
@@ -103,6 +109,6 @@ export const SliderImage = styled(Image).attrs(() => ({
       width: 100%;
       height: 100%;
       object-fit: cover;
-      aspect-ratio: 16 / 9;
+      
       border-radius: 6px;
   `

@@ -1,5 +1,4 @@
 
-import CallMeModal from "./components/CallMeModal/CallMeModal"
 import JoinUsModal from "./components/JoinUsModal/JoinUsModal"
 import { getAboutDictionary } from "./dictionaries/dictionaries"
 import { AboutPageCard, AboutPageCardDescription, AboutPageCardHeader, AboutPageCardIconWrapper, AboutPageCards, AboutPageContainer, AboutPageDecriptionList, AboutPageDescription, AboutPageDescriptions, AboutPageHeader, AboutPageJoinUsLogo, AboutPageJoinUsLogoWrapper, AboutPageJoinUsMessage, AboutPageJoinUsWrapper, AboutPageMainContent, AboutPageMainContentWrapper, HeadsetIconSVG, JoyIconSVG, LikeIconSVG, TechnologiesIconSVG, TimeIconSVG, TimeManagementIconSVG, ToothBracesIconSVG } from "./styles"
@@ -10,7 +9,6 @@ export default async function AboutPage({params: { lang }}) {
 
   return (
     <AboutPageContainer>
-      <CallMeModal dictionary={dictionary.callMeForm}/>
       <AboutPageMainContentWrapper>
         <AboutPageHeader>{dictionary.pageTitle}</AboutPageHeader>
         <AboutPageMainContent>

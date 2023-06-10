@@ -14,8 +14,8 @@ const HeaderMenu = ({isAuthorized}) => {
     useLayoutEffect(() => {
         if(!document) return
         isShown ?
-        (document.body.style.overflow = "hidden"):
-        (document.body.style.overflow = "auto" )
+        (document.body.style.overflowY = "hidden"):
+        (document.body.style.overflowY = "auto" )
     }, [isShown])
     return (
         <HeaderMenuWrapper>
@@ -52,7 +52,7 @@ const HeaderMenu = ({isAuthorized}) => {
                                 <HeaderMenuLinkTitle> {lang === "ru" ? "Контакты": "Contacts"} </HeaderMenuLinkTitle>
                             </HeaderMenuLink>
                             <HeaderMenuLink href={`${lang}/documents/confidentialityPolicy`} onClick={() => {setShown(false)}}>
-                                <HeaderMenuLinkTitle> {lang === "ru" ? "Документационные материалы": "Conditions for receiving"} </HeaderMenuLinkTitle>
+                                <HeaderMenuLinkTitle> {lang === "ru" ? "Документы": "Conditions for receiving"} </HeaderMenuLinkTitle>
                             </HeaderMenuLink>
                         </HeaderMenuSidebarNavLinks>
                     </HeaderMenuSidebarNavLinksWrapper>
