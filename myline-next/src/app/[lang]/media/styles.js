@@ -131,15 +131,14 @@ export const SliderImageFullViewButton = styled.button`
 
     background-color: #00000066;
     border: 1px solid transparent;
-    padding: 20px;
 
     cursor: pointer;
   `
 
 
 export const ZoomInIconSVG = styled(ZoomInSVG)`
-    width: 100%;
-    height: 100%;
+    width: 60px;
+    height: 60px;
     object-fit: cover;
 
   `

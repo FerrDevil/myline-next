@@ -45,6 +45,7 @@ export const AuthPageFormContainer = styled.div`
 export const AuthPageFormSubmitButton = styled.button`
     background-color: var(--color-aquamarine);
     border: 1px solid var(--color-aquamarine);
+    color: var(--color-main-gray);
     padding: 20px;
     width: 100%;
     border-radius: 4px;

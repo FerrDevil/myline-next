@@ -46,7 +46,7 @@ export const MainPageStatistics = styled.div`
     
     width: 100%;
     gap: 30px;
-    @media (max-width: 768px) {
+    @media (max-width: 900px) {
         grid-auto-flow: row;
         grid-template-columns: 1fr 1fr;
         
@@ -57,7 +57,7 @@ export const MainPageStatistics = styled.div`
 export const MainPageStatistic = styled.div`
     display: flex;
     flex-direction: column;
-    @media (max-width: 768px) {
+    @media (max-width: 900px) {
         text-align: center;
         align-items: center;
     }
@@ -84,7 +84,7 @@ export const AuthorizationButtons = styled.div`
     flex-direction: row;
     align-items: center;
     gap: clamp(10px, 5px + 3vw, 20px);
-    @media (max-width: 600px) {
+    @media (max-width: 900px) {
         width: 100%;
         flex-direction: column;
     }

@@ -8,7 +8,7 @@ const PasswordField = ({ name, onChange, placeholder="", isValid=false, errorMes
     return(
         <InputWrapper>
             <InputPasswordWrapper>
-                <Input $isValid={isValid} id={name} name={name} type={isPasswordVisible ? "text" : "password"} onChange={onChange} placeholder={placeholder} />
+                <Input $isValid={isValid} name={name} type={isPasswordVisible ? "text" : "password"} onChange={onChange} placeholder={placeholder} />
                 <InputPasswordSwitchButton onClick={(event) => {
                     event.preventDefault()
                     setPasswordVisible(prev => !prev)

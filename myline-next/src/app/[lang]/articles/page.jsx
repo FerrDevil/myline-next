@@ -1,6 +1,6 @@
 import NewsSlider from "./components/Slider/NewsSlider";
 import { getNewsDictionary } from "@/app/[lang]/articles/dictionaries/dictionaries";
-import { NewsPageContainer, NewsPageDescription, NewsPageHeader } from "./styles"
+import { NewsPageAddition, NewsPageContainer, NewsPageDescription, NewsPageDescriptions, NewsPageHeader } from "./styles"
 import { ArticleModalOrderedList, ArticleModalParagraph } from "./components/ArticleModal/styles";
 
 export default async function NewsPage({params: {lang}}) {
@@ -23,8 +23,6 @@ export default async function NewsPage({params: {lang}}) {
                     </ArticleModalParagraph>
                 </>
             )
-              
-            
         },
         {
             id: 2,
@@ -92,9 +90,13 @@ export default async function NewsPage({params: {lang}}) {
     return(
         <NewsPageContainer>
             <NewsPageHeader>{dictionary.pageTitle}</NewsPageHeader>
-            <NewsPageDescription>
-                {dictionary.pageDescription}
-            </NewsPageDescription>
+            <NewsPageDescriptions>
+                <NewsPageDescription>
+                    {dictionary.pageDescription}
+                </NewsPageDescription>
+                <NewsPageAddition>{dictionary.addition}</NewsPageAddition>
+            </NewsPageDescriptions>
+           
             <NewsSlider dictionary={dictionary} content={links}/>
         </NewsPageContainer>
     )

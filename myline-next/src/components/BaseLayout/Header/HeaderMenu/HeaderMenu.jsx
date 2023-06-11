@@ -1,15 +1,16 @@
 "use client"
 import { useLayoutEffect, useState } from "react"
-import { HeaderMenuLink, HeaderMenuLinkTitle, HeaderMenuSidebar, HeaderMenuSidebarNav, HeaderMenuToggleButton, HeaderMenuWrapper, HeaderMenuToggleButtonSVG, HeaderMenuLinkWrapper, HeaderMenuRegisterLink, HeaderMenuLoginLink, HeaderMenuFooter, HeaderMenuFooterText, HeaderMenuSidebarBackdrop, SocialsLinksContainer, SocialsLink, YoutubeLinkSVG, VKLinkSVG, InstagramLinkSVG, HeaderMenuProfileLink, HeaderMenuLogoutLink, HeaderMenuSidebarNavLinks, HeaderMenuSidebarNavLinksWrapper, HeaderMenuFooterInformationWarning, HeaderMenuFooterCreditInformation, HeaderMenuFooterInformationWarningLink, WhatsAppLinkSVG, TelegramLinkSVG, ViberLinkSVG } from "./styles"
+import { HeaderMenuLink, HeaderMenuLinkTitle, HeaderMenuSidebar, HeaderMenuSidebarNav, HeaderMenuToggleButton, HeaderMenuWrapper, HeaderMenuToggleButtonSVG, HeaderMenuLinkWrapper, HeaderMenuRegisterLink, HeaderMenuLoginLink, HeaderMenuFooter, HeaderMenuFooterText, HeaderMenuSidebarBackdrop, SocialsLinksContainer, SocialsLink, YoutubeLinkSVG, VKLinkSVG, InstagramLinkSVG, HeaderMenuProfileLink, HeaderMenuLogoutLink, HeaderMenuSidebarNavLinks, HeaderMenuSidebarNavLinksWrapper, HeaderMenuFooterInformationWarning, HeaderMenuFooterCreditInformation, HeaderMenuFooterInformationWarningLink, WhatsAppLinkSVG, TelegramLinkSVG, ViberLinkSVG, HeaderMenuButton } from "./styles"
 import { useParams, usePathname } from "next/navigation"
 import LanguageChanger from "../LanguageChanger/LanguageChanger"
+import DocumentsModal from "./DocumentsModal/DocumentsModal"
 
 
 const HeaderMenu = ({isAuthorized}) => {
     const { lang } = useParams()
     const pathname = usePathname()
     const [isShown, setShown] = useState(false)
-
+    const [isDocumentsModalOpen, setDocumentsModalOpen] = useState(false)
 
     useLayoutEffect(() => {
         if(!document) return
@@ -51,9 +52,15 @@ const HeaderMenu = ({isAuthorized}) => {
                             <HeaderMenuLink href={`${lang}/contacts`} onClick={() => {setShown(false)}}>
                                 <HeaderMenuLinkTitle> {lang === "ru" ? "Контакты": "Contacts"} </HeaderMenuLinkTitle>
                             </HeaderMenuLink>
-                            <HeaderMenuLink href={`${lang}/documents/confidentialityPolicy`} onClick={() => {setShown(false)}}>
+                            <HeaderMenuButton 
+                                onClick={() => {
+                                    setDocumentsModalOpen(true)
+                                    setShown(false)
+                                }}
+                            >
                                 <HeaderMenuLinkTitle> {lang === "ru" ? "Документы": "Conditions for receiving"} </HeaderMenuLinkTitle>
-                            </HeaderMenuLink>
+                            </HeaderMenuButton>
+                            <DocumentsModal isOpen={isDocumentsModalOpen} setOpen={setDocumentsModalOpen}/>
                         </HeaderMenuSidebarNavLinks>
                     </HeaderMenuSidebarNavLinksWrapper>
                    

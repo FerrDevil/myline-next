@@ -20,9 +20,22 @@ export const NewsPageHeader = styled.h2`
     color: #404342;
     
 `
+export const NewsPageDescriptions = styled.div`
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+
+`
 export const NewsPageDescription = styled.p`
     font-weight: 500;
     font-size: clamp(16px, 8px + 1vw, 18px);
+    max-width: 53ch;
+    color: #4f4f4f; 
+`
+
+export const NewsPageAddition = styled.p`
+    font-weight: 500;
+    font-size: clamp(12px, 6px + 1vw, 16px);
     max-width: 53ch;
     color: #4f4f4f; 
 `

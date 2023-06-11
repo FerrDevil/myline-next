@@ -7,10 +7,11 @@ export const NewsPageContainer = styled.div`
     display: flex;
     flex-direction: column;
     align-items: baseline;
-    padding-top: 80px;
+    padding-block: clamp(40px, 20px + 3vw, 80px) 20px;
     row-gap: 30px;
     @media (max-width: 1000px){
         display: grid;
+        max-height: 100%;
     }
 `
 export const NewsPageHeader = styled.h2`
@@ -20,9 +21,23 @@ export const NewsPageHeader = styled.h2`
     color: var(--color-main-gray);
     
 `
+
+export const NewsPageDescriptions = styled.div`
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+
+`
 export const NewsPageDescription = styled.p`
     font-weight: 500;
     font-size: clamp(16px, 8px + 1vw, 18px);
+    max-width: 53ch;
+    color: #4f4f4f; 
+`
+
+export const NewsPageAddition = styled.p`
+    font-weight: 500;
+    font-size: clamp(12px, 6px + 1vw, 16px);
     max-width: 53ch;
     color: #4f4f4f; 
 `
@@ -43,7 +58,7 @@ export const NewsPageLinkImageWrapper = styled.div`
     
     margin: auto;
     @media (min-width: 1000px) {
-        max-height: 400px;
+        max-height: 350px;
     }
 `
 
@@ -56,7 +71,7 @@ export const NewsPageLinkImage = styled(Image).attrs(() => ({
       display: block;
       width: 100%;
       height: 100%;
-      object-fit: fill;
+      object-fit: cover;
   `
 
 export const NewsPageLinkInsidesWrapper = styled.div`
@@ -65,7 +80,7 @@ export const NewsPageLinkInsidesWrapper = styled.div`
     flex-grow: 1;
     justify-content: space-between;
     gap: 15px;
-    padding: 20px;
+    padding: 0 20px 20px 20px;
 `
 
 export const NewsPageLinkTitle = styled.h2`

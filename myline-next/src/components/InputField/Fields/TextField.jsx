@@ -5,7 +5,7 @@ const TextField = ({ name, onChange, placeholder="",  isValid=false, errorMessag
    
     return (
         <InputWrapper>
-            <Input $isValid={isValid} id={name} name={name} type={'text'} onChange={onChange} placeholder={placeholder} />
+            <Input $isValid={isValid} name={name} type={'text'} onChange={onChange} placeholder={placeholder} />
             {!isValid && <ErrorMessage>{errorMessage}</ErrorMessage>}
         </InputWrapper>
     )

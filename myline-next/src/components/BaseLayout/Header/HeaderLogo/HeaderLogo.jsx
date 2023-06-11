@@ -8,7 +8,7 @@ const HeaderLogo = () => {
     const pathname = usePathname()
     const shouldPlaceDarkLogo = `/${lang}` === pathname
     return(
-        <HeaderLogoWrapper>
+        <HeaderLogoWrapper href={`/${lang}`}>
             <HeaderLogoImage src={shouldPlaceDarkLogo ? "/myline-logo-dark.png" : "/myline-logo.png"}/>
         </HeaderLogoWrapper>
     )

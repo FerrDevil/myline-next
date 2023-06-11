@@ -101,10 +101,10 @@ export const AboutPageJoinUsWrapper = styled.div`
     justify-content: space-between;
     border: 2px dashed var(--color-aquamarine);
     gap: clamp(30px, 15px + 2vw, 50px);
-    padding: 30px;
+    padding: clamp(15px, 8px + 1vw, 30px);
     border-radius: 10px;
     width: 100%;
-    @media (max-width: 600px) {
+    @media (max-width: 1250px) {
         flex-direction: column;
     }
     
@@ -191,7 +191,7 @@ export const AboutPageCard = styled.div`
 export const AboutPageCardIconWrapper = styled.div`
     width: clamp(70px, 35px + 4vw, 80px);
     aspect-ratio: 1;
-    border-radius: 50%;
+    border-radius: 1000vw;
     background-color: var(--color-aquamarine);
     padding: 25px;
 `

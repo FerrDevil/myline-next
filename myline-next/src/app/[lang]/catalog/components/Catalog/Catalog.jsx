@@ -26,7 +26,7 @@ const Catalog = ({products=[], isAuthorized=false, dictionary=null}) => {
                 </CatalogPageProductImageWrapper>
                 
                 <CatalogPageProductHeader>{product.title}</CatalogPageProductHeader>
-                <CatalogPageProductDescription>{product.briefDescription}</CatalogPageProductDescription>
+               {/*  <CatalogPageProductDescription>{product.briefDescription}</CatalogPageProductDescription> */}
                 {/* <CatalogPageProductPriceWrapper>
                   <CatalogPageProductPriceText>{dictionary.price}:</CatalogPageProductPriceText>
                   <CatalogPageProductPrice>{intl.format(product.price)} ₽</CatalogPageProductPrice>

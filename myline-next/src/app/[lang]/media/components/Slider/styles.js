@@ -17,8 +17,9 @@ export const SliderWrapper = styled.div`
     gap: 20px;
     user-select: none;
 
+
     @media (min-width: 1024px){
-        max-width: 1024px;
+        padding: 0 60px;
     }
 `
 
@@ -77,7 +78,7 @@ export const SliderItems = styled.div`
     flex-grow: 1;
     --_gap: 10px;
     gap: var(--_gap);
-    --_one-element: calc((100% - (var(--_gap) * 2)) / 3 );
+    --_one-element: calc((100% - (var(--_gap) * 3)) / 4 );
 
     transform: translateX(calc( -1 * (var(--_one-element) + var(--_gap)) * ${props => props.$currentGroupIndex }));
     transition: transform 0.8s;

@@ -1,6 +1,6 @@
 import NewsSlider from "@/services/news/Slider/NewsSlider";
 import { getNewsDictionary } from "@/services/news/dictionaries/dictionaries";
-import { NewsPageContainer, NewsPageDescription, NewsPageHeader, NewsPageLinkImage, NewsPageLinkImageWrapper, NewsPageLinkInsidesWrapper, NewsPageLinkSocialsLink, NewsPageLinkTitle, NewsPageLinkWrapper } from "@/services/news/styles/newsPageStyles";
+import { NewsPageAddition, NewsPageContainer, NewsPageDescription, NewsPageDescriptions, NewsPageHeader, NewsPageLinkImage, NewsPageLinkImageWrapper, NewsPageLinkInsidesWrapper, NewsPageLinkSocialsLink, NewsPageLinkTitle, NewsPageLinkWrapper } from "@/services/news/styles/newsPageStyles";
 
 export default async function NewsPage({params: {lang}}) {
     const dictionary = await getNewsDictionary(lang)
@@ -53,9 +53,15 @@ export default async function NewsPage({params: {lang}}) {
     return(
         <NewsPageContainer>
             <NewsPageHeader>{dictionary.pageTitle}</NewsPageHeader>
-            <NewsPageDescription>
-                {dictionary.pageDescription}
-            </NewsPageDescription>
+            <NewsPageDescriptions>
+                <NewsPageDescription>
+                    {dictionary.pageDescription}
+                </NewsPageDescription>
+                <NewsPageAddition>
+                    {dictionary.addition}
+                </NewsPageAddition>
+            </NewsPageDescriptions>
+            
             <NewsSlider content={linkElements}/>
         </NewsPageContainer>
     )

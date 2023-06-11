@@ -9,7 +9,7 @@ const TelephoneField = ({ name, onChange, placeholder="", isValid=true, errorMes
         <InputWrapper>
             <InputPasswordWrapper>
                 <ReactInputMask alwaysShowMask mask="+7 (999) 999-99-99" onChange={onChange} value={value}>
-                    {(inputProps => <Input {...inputProps} type="tel" $isValid={isValid} id={name} name={name} placeholder={placeholder} />)}
+                    {(inputProps => <Input {...inputProps} type="tel" $isValid={isValid} name={name} placeholder={placeholder} />)}
                 </ReactInputMask>
             </InputPasswordWrapper>
             {!isValid && <ErrorMessage>{errorMessage}</ErrorMessage>}

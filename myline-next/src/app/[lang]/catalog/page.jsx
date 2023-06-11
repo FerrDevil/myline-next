@@ -8,7 +8,7 @@ export default async function CatalogPage({params: {lang}}) {
     {
       id: 1,
       logo: "/images/aligner.png",
-      title: "Кейс mini",
+      title: "кейс MINI",
       vendorCode: "75785057",
       stockCount: 15,
       briefDescription: "Набор из 15 элайнеров",
@@ -43,7 +43,7 @@ export default async function CatalogPage({params: {lang}}) {
     {
       id: 2,
       logo: "/images/aligner.png",
-      title: "Кейс max",
+      title: "кейс MAX",
       vendorCode: "75785058",
       stockCount: 30,
       briefDescription: "Набор из 30 элайнеров",
@@ -83,7 +83,7 @@ export default async function CatalogPage({params: {lang}}) {
     {
       id: 3,
       logo: "/images/aligner.png",
-      title: "Кейс max+",
+      title: "кейс MAX+",
       vendorCode: "75785059",
       stockCount: 60,
       briefDescription: "Набор из 60 элайнеров",

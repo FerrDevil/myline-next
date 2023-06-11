@@ -35,7 +35,7 @@ export const CatalogPageProducts = styled.div`
     gap: clamp(20px, 10px + 1vw, 30px);
     padding-bottom: 20px;
     
-    @media (max-width: 768px) {
+    @media (max-width: 900px) {
         grid-auto-flow: row;
         width: 100%;
         & > *{

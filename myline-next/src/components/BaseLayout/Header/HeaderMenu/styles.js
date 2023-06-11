@@ -120,6 +120,17 @@ export const HeaderMenuLink = styled(Link)`
     }
 `
 
+export const HeaderMenuButton = styled.button`
+    display: grid;
+    grid-template-columns: 1fr;
+    cursor: pointer;
+    &:hover > span, &:focus-within > span{
+        color: var(--color-aquamarine);
+    }
+    background-color: transparent;
+    border: 1px solid transparent;
+`
+
 export const HeaderMenuLinkTitle = styled.span`
     font-weight: 400;
     font-size: clamp(16px, 8px + 1vw , 20px);

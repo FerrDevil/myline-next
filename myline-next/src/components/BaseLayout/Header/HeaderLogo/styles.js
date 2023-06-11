@@ -2,8 +2,9 @@
 
 import styled from "styled-components"
 import Image from "next/image"
+import Link from "next/link"
 
-export const HeaderLogoWrapper = styled.div`
+export const HeaderLogoWrapper = styled(Link)`
     aspect-ratio: 2/1;
     height: 100%;
     position: absolute;

@@ -39,13 +39,12 @@ const Register = ({dictionary=null}) => {
         notValidCity: registerInfo.city.trim().length > 0 && (registerInfo.city.match(/[a-zа-я]+/gi) === null || registerInfo.city.match(/[a-zа-я]+/gi)[0] !== registerInfo.city)
         },
         phoneNumber:{
-        maxLengthLimit: registerInfo.phoneNumber.length > 11,
-        noInput: registerInfo.phoneNumber.length === 0,
-        notValidPhoneNumber: registerInfo.phoneNumber.trim().length > 0 && (registerInfo.phoneNumber.match(/[0-9]+/gi) === null || registerInfo.phoneNumber.match(/[a-z0-9]+/gi)[0] !== registerInfo.phoneNumber)
+            noInput: registerInfo.phoneNumber.length === 0 ,
+            notValidPhoneNumber: registerInfo.phoneNumber.trim().length > 0 && (registerInfo.phoneNumber.match(/[0-9]/gi)?.length !== 11 || registerInfo.phoneNumber.length < 18)
         },
         email:{
             noInput: registerInfo.email.length === 0,
-            notValidEmail: registerInfo.email.trim().length > 0 && (!registerInfo.email.match(/[a-z0-9]+@[a-z]+[.][a-z]+/gi) || registerInfo.email.match(/[a-z0-9]+@[a-z]+[.][a-z]+/gi) && registerInfo.email.match(/[a-z0-9]+@[a-z]+[.][a-z]+/gi)[0] !== registerInfo.email)
+            notValidEmail: registerInfo.email.trim().length > 0 && registerInfo.email.replace(/\S+@[a-z]+[.][a-z]+/gi, "") !== ""
         },
         password:{
             noInput: registerInfo.password.length === 0,
@@ -62,7 +61,7 @@ const Register = ({dictionary=null}) => {
         
             if (validationErrors.fullName.noInput || validationErrors.fullName.notValidFullName || registerInfo.fullName.trim().length === 0 ||
             validationErrors.city.noInput || validationErrors.city.notValidCity || registerInfo.city.trim().length === 0 ||
-            validationErrors.phoneNumber.noInput || validationErrors.phoneNumber.notValidPhoneNumber || validationErrors.phoneNumber.maxLengthLimit || registerInfo.phoneNumber.trim().length === 0 ||
+            validationErrors.phoneNumber.noInput || validationErrors.phoneNumber.notValidPhoneNumber || registerInfo.phoneNumber.trim().length === 0 ||
             validationErrors.email.noInput || validationErrors.email.notValidEmail || registerInfo.email.trim().length === 0 ||
             validationErrors.password.noInput || validationErrors.password.notValidPassword || registerInfo.password.trim().length === 0 ||
             validationErrors.agreement.noInput
@@ -101,6 +100,8 @@ const Register = ({dictionary=null}) => {
                 <InputField 
                 name="phoneNumber" 
                 placeholder={dictionary.phoneNumber} 
+                type="tel"
+                value={registerInfo.phoneNumber}
                 onChange={changeFieldbyName("phoneNumber")}
                 isValid={!(validationErrors.phoneNumber.noInput || validationErrors.phoneNumber.notValidPhoneNumber || validationErrors.phoneNumber.maxLengthLimit)}
                 errorMessage={validationErrors.phoneNumber.noInput && dictionary.required || validationErrors.phoneNumber.notValidPhoneNumber && dictionary.notValidPhoneNumber || validationErrors.phoneNumber.maxLengthLimit  && dictionary.phoneNumberCharsLimitExceeded || ""}
