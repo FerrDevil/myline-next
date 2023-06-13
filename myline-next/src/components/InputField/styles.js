@@ -18,20 +18,20 @@ export const Input = styled.input`
     width: 100%;
     font-size: 18px;
     font-weight: 400;
-    color: #4F4F4F;
+    color: var(--color-light-gray);
     padding: 18px;
     border: 1px solid #D9D9D9;
     background-color: #FFFFFF;
     border-radius: 4px;
     outline: 1px solid ${props=> !props.$isValid? "#F9453A" : "transparent"};
     &::placeholder{
-        color: #4F4F4F;
+        color: var(--color-light-gray);
     }
 
     &:-webkit-autofill,
     &:-webkit-autofill:hover, 
     &:-webkit-autofill:focus {
-        -webkit-text-fill-color: #4F4F4F;
+        -webkit-text-fill-color: var(--color-light-gray);
         -webkit-box-shadow: 0 0 0px 40rem #ffff inset;
     }
 
@@ -67,7 +67,7 @@ export const InputPasswordHiddenSVG = styled(PasswordHiddenSVG)`
     width: 100%;
     height: 100%;
     object-fit: contain;
-    fill: #4f4f4f;
+    fill: var(--color-light-gray);
     transition: fill 0.2s;
 `
 
@@ -76,7 +76,7 @@ export const InputPasswordVisibleSVG = styled(PasswordVisibleSVG)`
     width: 100%;
     height: 100%;
     object-fit: contain;
-    fill: #4f4f4f;
+    fill: var(--color-light-gray);
     transition: fill 0.2s;
 `
 

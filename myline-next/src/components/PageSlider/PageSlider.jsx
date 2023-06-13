@@ -1,15 +1,26 @@
 "use client"
-import { useEffect, useState } from "react"
+import { createContext, useEffect, useState } from "react"
 import { Main } from "./styles"
 import { useParams, usePathname, useRouter } from "next/navigation"
+import PagePreloader from "./PagePreloader/PagePreloader"
+
+export const pageStore = createContext()
 
 const PageSlider = ({children, lang="ru"}) => {
     const pathname = usePathname()
-    usePageTransition(lang)
+    
+
+    const transitionParams = usePageTransition(lang)
     return (
-        <Main $shouldRemoveBG={`/${lang}` === pathname}>
-            {children}
-        </Main>
+        <pageStore.Provider value={transitionParams}>
+            <Main $shouldRemoveBG={`/${lang}` === pathname}>
+                <PagePreloader>
+                    {children}
+                </PagePreloader>
+                
+            </Main>
+        </pageStore.Provider>
+        
     )
 }
 
@@ -18,37 +29,64 @@ export default PageSlider
 
 const usePageTransition = (lang="ru") => {
     const pathname = usePathname()
-    const links = [`/${lang}`, `/${lang}/about`, `/${lang}/catalog`, `/${lang}/media`, `/${lang}/news`, `/${lang}/contacts`]
+    const links = [`/${lang}`, `/${lang}/catalog`, `/${lang}/articles`, `/${lang}/media`, `/${lang}/news`, `/${lang}/about`, `/${lang}/contacts`]
     const currentLinkId = links.findIndex(link => link === pathname)
     const [linkId, setLinkId] = useState(currentLinkId)
+    const [isLoading, setLoading] = useState(false)
     const router = useRouter()
     
     
     const changePage = (event) => {
+        if(isLoading) return
         if (event.wheelDelta > 0){
-            setLinkId(prev => prev === 0 ? 0 : prev - 1)
+            console.log(links[currentLinkId === 0 ? 0 : currentLinkId - 1])
+            router.push(links[linkId === 0 ? 0 : linkId - 1])
+            /* setLinkId(prev => prev === 0 ? 0 : prev - 1)  */
         }                            
         else if (event.wheelDelta < 0){
-            setLinkId(prev => prev === links.length-1 ? links.length-1 : prev + 1)
+            /* setLinkId(prev => prev === links.length-1 ? links.length-1 : prev + 1) */
+            console.log(links[linkId === links.length-1 ? links.length-1 : linkId + 1])
+            router.push(links[linkId === links.length-1 ? links.length-1 : linkId + 1])
         }
+        setLoading(true)
+        console.log("handle")
     }
 
-    useEffect(() => {
+/*     useEffect(() => {
         if (currentLinkId === -1){
             return
         }
-        router.push(links[linkId])
+        if (currentLinkId !== linkId){
+            setLoading(true)
+            console.log("loading", currentLinkId, linkId)
+        }
     }, [linkId])
     
 
-    useEffect(() => {
-        window.addEventListener("wheel", changePage)
-        
-    }, [])
+     */
 
     useEffect(() => {
+        if (isLoading){
+            console.log("net")
+            window.removeEventListener("wheel", changePage)
+            return
+        } 
+        window.addEventListener("wheel", changePage)
+        /* console.log("da") */
+    }, [isLoading])
+
+    useEffect(() => {
+        console.log(links[currentLinkId], pathname)
+        setLoading(false)
         setLinkId(links.findIndex(link => link === pathname))
     }, [pathname])
+
+    return {
+        loading: {
+            value: isLoading,
+            setter: setLoading
+        }
+    }
 }
     
     

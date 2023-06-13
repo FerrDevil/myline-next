@@ -1,4 +1,4 @@
-import { ControlButtons, CancelAppointmentButton, SelectNewTimeButton } from "./styles"
+import { ControlButtons, CancelAppointmentButton} from "./styles"
 
 const AppoinmentControls = ({dictionary=null}) => {
     return (

@@ -98,7 +98,7 @@ export const CatalogPageProductPriceWrapper = styled.div`
 export const CatalogPageProductPriceText = styled.span`
     font-size: 16px;
     font-weight: 500;
-    color: #4f4f4f;
+    color: var(--color-light-gray);
 `
 
 export const CatalogPageProductPrice = styled.span`

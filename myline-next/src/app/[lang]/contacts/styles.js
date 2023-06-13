@@ -167,7 +167,7 @@ export const ContactPageContactInformationContact = styled.span`
 export const ContactPageContactInformationText = styled.span`
     font-size: 12px;
     font-weight: 400;
-    color: #4f4f4f;
+    color: var(--color-light-gray);
 `
 
 export const ContactInformationEmailSVG = styled(EmailSVG)`
@@ -220,7 +220,7 @@ export const ContactPageAddress = styled.div`
     gap: 10px;
     font-size: clamp(16px, 8px + 1vw, 18px);
     font-weight: 400;
-    color: #4f4f4f;
+    color: var(--color-light-gray);
 `
 
 
