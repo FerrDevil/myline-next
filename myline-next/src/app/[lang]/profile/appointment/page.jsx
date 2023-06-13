@@ -38,7 +38,7 @@ export default async function TreatmentPage({params: {lang}}) {
                             ул. Ленина, 1
                         </AppointmentLowerInfoValue>
                     </AppointmentLowerInfo>
-                    <AppointmentLowerInfo>
+                    {/* <AppointmentLowerInfo>
                         <AppointmentLowerInfoParameter>
                         {dictionary.date}:
                         </AppointmentLowerInfoParameter>
@@ -53,7 +53,7 @@ export default async function TreatmentPage({params: {lang}}) {
                         <AppointmentLowerInfoValue>
                             14:00
                         </AppointmentLowerInfoValue>
-                    </AppointmentLowerInfo>
+                    </AppointmentLowerInfo> */}
                 </AppointmentLowerInfoWrapper>
                 
                 <AppoinmentControls dictionary={dictionary}/>

@@ -3,7 +3,7 @@ import { ControlButtons, CancelAppointmentButton, SelectNewTimeButton } from "./
 const AppoinmentControls = ({dictionary=null}) => {
     return (
         <ControlButtons>
-            <SelectNewTimeButton >{dictionary.delayAppointment}</SelectNewTimeButton>
+            {/* <SelectNewTimeButton >{dictionary.delayAppointment}</SelectNewTimeButton> */}
             <CancelAppointmentButton >{dictionary.cancelAppointment}</CancelAppointmentButton>
         </ControlButtons>
     )
