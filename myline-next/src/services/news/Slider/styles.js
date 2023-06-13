@@ -33,6 +33,7 @@ export const SliderGroupContainer = styled.div`
         grid-template-columns: 1fr;  
     }
     gap: 20px;
+    padding: 5px 5px;
 `
 
 export const SliderToggleGroupButtons = styled.div`

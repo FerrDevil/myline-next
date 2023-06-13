@@ -29,15 +29,15 @@ export const NewsPageDescriptions = styled.div`
 
 `
 export const NewsPageDescription = styled.p`
-    font-weight: 500;
+    font-weight: 400;
     font-size: clamp(16px, 8px + 1vw, 18px);
     max-width: 53ch;
     color: #4f4f4f; 
 `
 
 export const NewsPageAddition = styled.p`
-    font-weight: 500;
-    font-size: clamp(12px, 6px + 1vw, 16px);
+    font-size: clamp(12px, 6px + 1vw, 14px);
+    font-weight: 300;
     max-width: 53ch;
     color: #4f4f4f; 
 `

@@ -22,9 +22,9 @@ export const CatalogPageHeader = styled.h1`
 
 export const CatalogPageDescription = styled.p`
     font-size: clamp(16px, 8px + 2vw, 18px);
-    font-weight: 500;
+    font-weight: 400;
     max-width: 55ch;
-    color: #4f4f4f;
+    color: var(--color-light-gray);
 `
 
 export const CatalogPageProducts = styled.div`

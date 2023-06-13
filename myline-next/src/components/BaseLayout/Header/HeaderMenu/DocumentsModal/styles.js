@@ -34,6 +34,7 @@ export const DocumentsModalContainer = styled.div`
     flex-direction: column;
     padding: 25px;
     gap: 20px;
+    text-align: unset;
 `
 
 
@@ -42,11 +43,12 @@ export const DocumentsModalLink = styled(Link)`
     flex-direction: row;
     align-items: center;
     gap: clamp(10px, 5px + 1vw, 15px);
-    font-size: clamp(16px, 8px + 1vw, 18px);
+    font-size: clamp(14px, 7px + 1vw, 18px);
     font-weight: 400;
     color: var(--color-light-gray);
     text-decoration: underline;
     transition: text-decoration 0.3s;
+    
     &:hover, &:focus-visible, &:active{
         text-decoration: none;
     }

@@ -2,7 +2,7 @@
 
 import Modal from "@/components/Modal/Modal"
 import { useParams } from "next/navigation"
-import { AuthorizationButtons, DocumentsModalContainer, DocumentsModalHeader, DocumentsModalIconSVG, DocumentsModalIconWrapper, DocumentsModalLink, DocumentsModalWrapper} from "./styles"
+import { DocumentsModalContainer, DocumentsModalHeader, DocumentsModalIconSVG, DocumentsModalIconWrapper, DocumentsModalLink, DocumentsModalWrapper} from "./styles"
 
 const DocumentsModal = ({isOpen, setOpen}) => {
   const { lang } = useParams()
@@ -16,7 +16,7 @@ const DocumentsModal = ({isOpen, setOpen}) => {
     {
       id: 2,
       title: "Политика конфиденциальности",
-      link: "/pdf/sample.pdf"
+      link: "/pdf/политика конфиденциальности.pdf"
     },
     {
       id: 3,
