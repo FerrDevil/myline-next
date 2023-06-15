@@ -190,6 +190,7 @@ export const AboutPageCard = styled.div`
 
 export const AboutPageCardIconWrapper = styled.div`
     width: clamp(70px, 35px + 4vw, 80px);
+    height: clamp(70px, 35px + 4vw, 80px);
     aspect-ratio: 1;
     border-radius: 1000vw;
     background-color: var(--color-aquamarine);

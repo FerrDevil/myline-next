@@ -109,7 +109,7 @@ const HeaderMenu = ({isAuthorized}) => {
                         © {lang === "ru" ? "МАЙЛАЙН": "MYLINE"}, 2023
                     </HeaderMenuFooterText>
                    <HeaderMenuFooterInformationWarning>
-                    Отправляя любую форму на данном сайте вы соглашаетесь с <HeaderMenuFooterInformationWarningLink href={`${lang}/catalog`}>политикой конфиденциальности</HeaderMenuFooterInformationWarningLink>
+                    Отправляя любую форму на данном сайте вы соглашаетесь с <HeaderMenuFooterInformationWarningLink target="_blank" href={`/pdf/политика конфиденциальности.pdf`}>политикой конфиденциальности</HeaderMenuFooterInformationWarningLink>
                    </HeaderMenuFooterInformationWarning>
                 </HeaderMenuFooter>
                     

@@ -6,7 +6,9 @@ const Modal = ({children, isOpen, setOpen}) => {
   const modal = useRef(null)
   useEffect(() => {
     if(isOpen){
+      modal.current.inert = true
       modal.current.showModal()
+      modal.current.inert = false
       document.body.style.overflowY = "hidden"
     }
     else{
