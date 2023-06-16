@@ -12,7 +12,7 @@ export const LoadingScreenBackdrop = styled.div`
         content: "";
         position: absolute;
         inset: 0;
-        background: linear-gradient(90deg, transparent 0, #ffffff23 75%, #ffffff99 90%, transparent);
+        background: linear-gradient(90deg, transparent 0, #51CACD23 75%, #51CACD99 90%, transparent);
         animation: skeleton 2000ms infinite;
     }
     @keyframes skeleton {
