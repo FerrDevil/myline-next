@@ -7,7 +7,7 @@ export default function PagePreloader({children}) {
     const transitionParams = useContext(pageStore)
     useEffect(() => {
         if (transitionParams.loading.value){
-            transitionParams.loading.setter(false)
+            /* transitionParams.loading.setter(false) */
         }
     }, [children])
 

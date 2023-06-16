@@ -33,7 +33,9 @@ const HeaderMenu = ({isAuthorized}) => {
                             <HeaderMenuLink href={`/${lang}`} onClick={() => {setShown(false)}}>
                                 <HeaderMenuLinkTitle> {lang === "ru" ? "Главная": "Main"} </HeaderMenuLinkTitle>
                             </HeaderMenuLink>
-                           
+                            <HeaderMenuLink href={`${lang}/about`} onClick={() => {setShown(false)}}>
+                                <HeaderMenuLinkTitle> {lang === "ru" ? "О компании": "About us"} </HeaderMenuLinkTitle>
+                            </HeaderMenuLink>
                             <HeaderMenuLink href={`${lang}/catalog`} onClick={() => {setShown(false)}}>
                                 <HeaderMenuLinkTitle> {lang === "ru" ? "Каталог": "Catalog"} </HeaderMenuLinkTitle>
                             </HeaderMenuLink>
@@ -45,9 +47,6 @@ const HeaderMenu = ({isAuthorized}) => {
                             </HeaderMenuLink>
                             <HeaderMenuLink href={`${lang}/news`} onClick={() => {setShown(false)}}>
                                 <HeaderMenuLinkTitle> {lang === "ru" ? "Новости": "News"} </HeaderMenuLinkTitle>
-                            </HeaderMenuLink>
-                            <HeaderMenuLink href={`${lang}/about`} onClick={() => {setShown(false)}}>
-                                <HeaderMenuLinkTitle> {lang === "ru" ? "О компании": "About us"} </HeaderMenuLinkTitle>
                             </HeaderMenuLink>
                             <HeaderMenuLink href={`${lang}/contacts`} onClick={() => {setShown(false)}}>
                                 <HeaderMenuLinkTitle> {lang === "ru" ? "Контакты": "Contacts"} </HeaderMenuLinkTitle>

@@ -2,7 +2,7 @@
 
 import { Video, VideoWrapper } from "./styles"
 
-const VideoPlayer = ({url='https://www.youtube.com/watch?v=dQw4w9WgXcQ&ab_channel=RickAstley'}) => {
+const VideoPlayer = ({url='https://www.youtube.com/shorts/964n1voI1wI'}) => {
   return(
     <VideoWrapper >
       <Video style={{}} url={url}/>

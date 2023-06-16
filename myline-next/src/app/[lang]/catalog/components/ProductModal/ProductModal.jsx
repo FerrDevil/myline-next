@@ -33,7 +33,7 @@ const ProductModal = ({product, isOpen, setOpen, isAuthorized, setNoAuthModalOpe
                   </li>
                 ))}
               </ProductModalProductDescriptionList>
-              <ProductModalProductSelectButton onClick={() => {
+             {/*  <ProductModalProductSelectButton onClick={() => {
                 setOpen(false)
                 if (!isAuthorized){
                   setNoAuthModalOpened(true)
@@ -41,7 +41,7 @@ const ProductModal = ({product, isOpen, setOpen, isAuthorized, setNoAuthModalOpe
                 else{
                   setConfirmationModalOpened(true)
                 }
-              }}> {dictionary.chooseDoctor} </ProductModalProductSelectButton>
+              }}> {dictionary.chooseDoctor} </ProductModalProductSelectButton> */}
             </ProductModalProductWrapper>
         </ProductModalContainer>
       </ProductModalWrapper>
