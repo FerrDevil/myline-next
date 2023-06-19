@@ -9,9 +9,9 @@ export const credentials = {
 }
 
 export async function POST(request) {
-    const formInfo = await request.json()
-
     try{
+        const formInfo = await request.json()
+
         const info = await transporter.sendMail({
             ...credentials,
             subject: "Заявка на звонок", // Subject line
