@@ -73,8 +73,25 @@ export default function CallMeModal() {
         }, [callMeInfo]
     )
 
-    const sendForm = (event) => {
+    const sendForm = async (event) => {
         event.preventDefault()
+        try{
+            const response = await fetch("/api/sendContactForm", {
+                method: "POST",
+                body: JSON.stringify(callMeInfo)
+            })
+            if(!response.ok){
+                throw Error("Cannot reach the API endpoint")
+            }
+            const message = await response.json()
+            console.log(message)
+        }
+        catch(error){
+            console.error(error)
+        }
+        
+        
+
     }
     return(
         <>
