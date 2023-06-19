@@ -3,10 +3,10 @@
 import { Map } from "@pbe/react-yandex-maps"
 import styled from "styled-components"
 
-export const YandexMapWrapper = styled.div`
+export const YandexMapWrapper = styled.iframe`
     display: block;
-    max-width: 100%;
-    max-height: 100%;
+    width: 100%;
+    height: 100%;
     border-radius: 8px;
     margin-block: 20px;
     

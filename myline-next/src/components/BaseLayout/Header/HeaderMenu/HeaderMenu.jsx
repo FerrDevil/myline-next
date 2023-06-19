@@ -36,6 +36,9 @@ const HeaderMenu = ({isAuthorized}) => {
                             <HeaderMenuLink href={`${lang}/about`} onClick={() => {setShown(false)}}>
                                 <HeaderMenuLinkTitle> {lang === "ru" ? "О компании": "About us"} </HeaderMenuLinkTitle>
                             </HeaderMenuLink>
+                            <HeaderMenuLink href={`${lang}/doctor`} onClick={() => {setShown(false)}}>
+                                <HeaderMenuLinkTitle> {lang === "ru" ? "Врачам": "About us"} </HeaderMenuLinkTitle>
+                            </HeaderMenuLink>
                             <HeaderMenuLink href={`${lang}/catalog`} onClick={() => {setShown(false)}}>
                                 <HeaderMenuLinkTitle> {lang === "ru" ? "Каталог": "Catalog"} </HeaderMenuLinkTitle>
                             </HeaderMenuLink>
@@ -57,7 +60,7 @@ const HeaderMenu = ({isAuthorized}) => {
                                     setShown(false)
                                 }}
                             >
-                                <HeaderMenuLinkTitle> {lang === "ru" ? "Документы": "Conditions for receiving"} </HeaderMenuLinkTitle>
+                                <HeaderMenuLinkTitle> {lang === "ru" ? "Документы": "Documents"} </HeaderMenuLinkTitle>
                             </HeaderMenuButton>
                             <DocumentsModal isOpen={isDocumentsModalOpen} setOpen={setDocumentsModalOpen}/>
                         </HeaderMenuSidebarNavLinks>
@@ -108,7 +111,7 @@ const HeaderMenu = ({isAuthorized}) => {
                         © {lang === "ru" ? "МАЙЛАЙН": "MYLINE"}, 2023
                     </HeaderMenuFooterText>
                    <HeaderMenuFooterInformationWarning>
-                    Отправляя любую форму на данном сайте вы соглашаетесь с <HeaderMenuFooterInformationWarningLink target="_blank" href={`/pdf/политика конфиденциальности.pdf`}>политикой конфиденциальности</HeaderMenuFooterInformationWarningLink>
+                        Отправляя любую форму на данном сайте вы соглашаетесь с <HeaderMenuFooterInformationWarningLink target="_blank" href={`/pdf/политика конфиденциальности.pdf`}>политикой конфиденциальности</HeaderMenuFooterInformationWarningLink>
                    </HeaderMenuFooterInformationWarning>
                 </HeaderMenuFooter>
                     

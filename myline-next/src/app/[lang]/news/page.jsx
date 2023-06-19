@@ -11,30 +11,7 @@ export default async function NewsPage({params: {lang}}) {
             title: "МАЙЛАЙН запустили собственный мультсериал",
             link: "https://vk.com"
         },
-        {
-            id: 2,
-            image: "/images/aligner.png",
-            title: "МАЙЛАЙН запустили собственный мультсериал",
-            link: "https://vk.com"
-        },
-        {
-            id: 3,
-            image: "/images/aligner.png",
-            title: "МАЙЛАЙН запустили собственный мультсериал",
-            link: "https://vk.com"
-        },
-        {
-            id: 4,
-            image: "/images/aligner.png",
-            title: "МАЙЛАЙН запустили собственный мультсериал",
-            link: "https://vk.com"
-        },
-        {
-            id: 5,
-            image: "/images/aligner.png",
-            title: "МАЙЛАЙН запустили собственный мультсериал",
-            link: "https://vk.com"
-        },
+        
     ]
     const linkElements = links.map(link => (
         <NewsPageLinkWrapper key={link.id}>

@@ -1,17 +1,10 @@
 "use client"
 
-import { Placemark } from "@pbe/react-yandex-maps"
-import { YandexMap, YandexMapWrapper } from "./styles"
-
+import { YandexMapWrapper } from "./styles"
 
 const Maps = () => {
     return (
-        <YandexMapWrapper onWheel={(event) => {event.preventDefault()}}>
-            <YandexMap state={{ center: [56.861284602050425, 53.22282552562131], zoom: 18 }}>
-                <Placemark geometry={[56.861284602050425, 53.22282552562131]}/>
-            </YandexMap>
-        </YandexMapWrapper>
-        
+        <YandexMapWrapper src="https://yandex.ru/map-widget/v1/?z=12&ol=biz&oid=111104297735" width="560" height="400" frameborder="0"/>
     )
 }
 
