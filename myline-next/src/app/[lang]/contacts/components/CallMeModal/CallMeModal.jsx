@@ -5,6 +5,9 @@ import { useEffect, useState } from "react"
 import { ContactPageFreePhoneCall, JoinUsForm, JoinUsFormContainer, JoinUsFormHeader, JoinUsFormSubmitButton } from "./styles"
 import InputField from "@/components/InputField/InputField"
 import CheckboxField from "@/components/CheckboxField/CheckboxField"
+import { useNewMessage } from "@/components/ToastMessage/ToastMessageProvider"
+import ToastMessage from "@/components/ToastMessage/ToastMessage"
+import FormSubmit from "@/components/FormSubmit/FormSubmit"
 
 export default function CallMeModal({dictionary}) {
     const [isOpen, setOpen] = useState(false)
@@ -15,7 +18,13 @@ export default function CallMeModal({dictionary}) {
         agreement: false
     })
 
+    const setUnknownError = useNewMessage("Что-то пошло не так, повторите еще раз", true, 2000)
+	const setConnectionError = useNewMessage("Произошли некие неполадки, попробуйте снова", true, 2000)
+	const setSuccess = useNewMessage("Заявка успешно отправлена", false, 2000)
+
+
     const [isSubmitButtonDisabled, setSubmitButtonDisabled] = useState(true)
+    const [isResponseLoading, setResponseLoading] = useState(false)
 
     const changeFieldbyName = (fieldName) => {
         return (event) => {
@@ -59,14 +68,36 @@ export default function CallMeModal({dictionary}) {
         }, [callMeInfo]
     )
 
-    const sendForm = (event) => {
+    const sendForm = async (event) => {
         event.preventDefault()
+        try{
+            setResponseLoading(true)
+            const response = await fetch("/api/sendContactForm", {
+                method: "POST",
+                body: JSON.stringify(callMeInfo)
+            })
+            if(!response.ok){
+                setConnectionError()
+                setResponseLoading(false)
+                return
+            }
+            const message = await response.json()
+            setSuccess()
+            setOpen(false)
+        }
+        catch(error){
+            setUnknownError()
+            
+        }
+        setResponseLoading(false)
     }
+
     return(
         <>
            <ContactPageFreePhoneCall onClick={() => {setOpen(true)}}>{dictionary.freeCall}</ContactPageFreePhoneCall>
             <Modal isOpen={isOpen} setOpen={setOpen}>
                 <JoinUsForm>
+                    <ToastMessage/>
                     <JoinUsFormHeader>{dictionary.formTitle}</JoinUsFormHeader>
                     <JoinUsFormContainer>
                         <InputField 
@@ -90,9 +121,12 @@ export default function CallMeModal({dictionary}) {
                             label={dictionary.agreement} 
         
                         />
-                        <JoinUsFormSubmitButton disabled={isSubmitButtonDisabled} onClick={sendForm}>
-                            Отправить
-                        </JoinUsFormSubmitButton>
+                        <FormSubmit
+                            text={"Отправить"} 
+                            isLoading={isResponseLoading}
+                            disabled={isSubmitButtonDisabled}
+                            onClick={sendForm}
+                        />
                     </JoinUsFormContainer>
                 </JoinUsForm>
             </Modal>

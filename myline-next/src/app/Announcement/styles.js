@@ -18,6 +18,7 @@ export const AnnouncementText = styled.span`
     font-size: clamp(20px, 10px + 2vw, 40px);
     font-weight: 700;
     text-transform: uppercase;
+    color: #fff;
 
 `
 

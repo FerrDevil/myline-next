@@ -1,11 +1,13 @@
 "use client"
 import CheckboxField from "@/components/CheckboxField/CheckboxField";
+import FormSubmit from "@/components/FormSubmit/FormSubmit";
 import InputField from "@/components/InputField/InputField";
+import { useNewMessage } from "@/components/ToastMessage/ToastMessageProvider";
 import { AuthPageForm, AuthPageFormContainer, AuthPageFormHeader, AuthPageFormSubmitButton, AuthPageWrapper } from "@/services/auth/styles/authStyles";
 import { useState, useEffect } from "react"
 
 const Register = ({dictionary=null}) => {
-    const [isSubmitButtonDisabled, setSubmitButtonDisabled] = useState(true)
+    
     const [registerInfo, setRegisterInfo] = useState(
         {
         fullName: " ",
@@ -16,6 +18,13 @@ const Register = ({dictionary=null}) => {
         agreement: false
         }
     )
+
+    const setUnknownError = useNewMessage("Что-то пошло не так, повторите еще раз", true, 2000)
+	const setConnectionError = useNewMessage("Произошли некие неполадки, попробуйте снова", true, 2000)
+	const setSuccess = useNewMessage("Заявка успешно отправлена", false, 2000)
+
+    const [isResponseLoading, setResponseLoading] = useState(false)
+    const [isSubmitButtonDisabled, setSubmitButtonDisabled] = useState(true)
 
     const changeFieldbyName = (fieldName) => {
         return (event) => {
@@ -66,6 +75,7 @@ const Register = ({dictionary=null}) => {
             validationErrors.password.noInput || validationErrors.password.notValidPassword || registerInfo.password.trim().length === 0 ||
             validationErrors.agreement.noInput
             ){
+                console.log("da")
                 setSubmitButtonDisabled(true)
                 return
             }
@@ -74,9 +84,29 @@ const Register = ({dictionary=null}) => {
     )
     
 
-        const formSubmit = async (event) => {
-            event.preventDefault()
+    const formSubmit = async (event) => {
+        event.preventDefault()
+        try{
+            setResponseLoading(true)
+            const response = await fetch("", {
+                method: "POST",
+                body: JSON.stringify(registerInfo)
+            })
+            if(!response.ok){
+                setConnectionError()
+                setResponseLoading(false)
+                return
+            }
+            const message = await response.json()
+            setSuccess()
+            setOpen(false)
         }
+        catch(error){
+            setUnknownError()
+            
+        }
+        setResponseLoading(false)
+    }
     
     return (
         <AuthPageWrapper>
@@ -122,7 +152,12 @@ const Register = ({dictionary=null}) => {
                 errorMessage={validationErrors.password.noInput && dictionary.required || validationErrors.password.notValidPassword && dictionary.notValidPassword || ""}
                 />
                 <CheckboxField onChange={changeCheckboxbyName("agreement")} label={dictionary.agreement}/>
-                <AuthPageFormSubmitButton disabled={isSubmitButtonDisabled} onClick={formSubmit}>{dictionary.submitButton}</AuthPageFormSubmitButton>
+                <FormSubmit
+                    text={dictionary.submitButton} 
+                    isLoading={isResponseLoading}
+                    disabled={isSubmitButtonDisabled}
+                    onClick={formSubmit}
+                />
             </AuthPageFormContainer>
             </AuthPageForm>
         </AuthPageWrapper>

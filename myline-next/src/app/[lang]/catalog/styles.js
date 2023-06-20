@@ -60,6 +60,8 @@ export const CatalogPageProduct = styled.div`
 export const CatalogPageProductImageWrapper = styled.div`
     width: 100%;
     height: auto;
+    border-radius: 8px;
+    overflow: hidden;
   `
 
 export const CatalogPageProductImage = styled(Image).attrs(() => ({

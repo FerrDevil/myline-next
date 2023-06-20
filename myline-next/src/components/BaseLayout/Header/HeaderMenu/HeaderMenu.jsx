@@ -42,8 +42,8 @@ const HeaderMenu = ({isAuthorized}) => {
                             <HeaderMenuLink href={`${lang}/catalog`} onClick={() => {setShown(false)}}>
                                 <HeaderMenuLinkTitle> {lang === "ru" ? "Каталог": "Catalog"} </HeaderMenuLinkTitle>
                             </HeaderMenuLink>
-                            <HeaderMenuLink href={`${lang}/articles`} onClick={() => {setShown(false)}}>
-                                <HeaderMenuLinkTitle> {lang === "ru" ? "Пациентам": "Articles"} </HeaderMenuLinkTitle>
+                            <HeaderMenuLink href={`${lang}/patient`} onClick={() => {setShown(false)}}>
+                                <HeaderMenuLinkTitle> {lang === "ru" ? "Пациентам": "For patients"} </HeaderMenuLinkTitle>
                             </HeaderMenuLink>
                             <HeaderMenuLink href={`${lang}/media`} onClick={() => {setShown(false)}}>
                                 <HeaderMenuLinkTitle> {lang === "ru" ? "Что могут элайнеры?": "Media"} </HeaderMenuLinkTitle>
@@ -98,7 +98,7 @@ const HeaderMenu = ({isAuthorized}) => {
                         <SocialsLink target="_blank" href="https://www.youtube.com/@Myline.inform"><YoutubeLinkSVG/></SocialsLink>
                         <SocialsLink target="_blank" href="https://wa.me/79048304445"><WhatsAppLinkSVG/></SocialsLink>
                         <SocialsLink target="_blank" href="https://t.me/da"><TelegramLinkSVG/></SocialsLink>
-                        <SocialsLink target="_blank" href="viber://chat?number=%2B79048304445"><ViberLinkSVG/></SocialsLink>
+                        <SocialsLink target="_blank" href="https://viber.click/79048304445"><ViberLinkSVG/></SocialsLink>
                     </SocialsLinksContainer>
 
                     <HeaderMenuFooterCreditInformation>

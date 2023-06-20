@@ -4,6 +4,7 @@ import PageSlider from "../PageSlider/PageSlider"
 import LoadingScreen from "./LoadingScreen/LoadingScreen"
 import { cookies } from "next/dist/client/components/headers"
 import CallMeModal from "@/components/BaseLayout/CallMeModal/CallMeModal"
+import ToastMessage from "../ToastMessage/ToastMessage"
 
 
 const BaseLayout = ({ children }) => {
@@ -15,6 +16,7 @@ const BaseLayout = ({ children }) => {
                 {children}
                 <CallMeModal/>
             </PageSlider>
+            <ToastMessage/>
             <DogGifWrapper>
                 <DogGif src="/images/dog.gif"/>
             </DogGifWrapper>

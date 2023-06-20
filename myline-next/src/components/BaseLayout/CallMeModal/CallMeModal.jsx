@@ -5,6 +5,9 @@ import { useEffect, useState } from "react"
 import { AboutPageCallMeSVG, AboutPageCallMeText, AboutPageCallMeWrapper, AboutPageJoinUsPopupButton, JoinUsForm, JoinUsFormContainer, JoinUsFormHeader, JoinUsFormSubmitButton } from "./styles"
 import InputField from "../../InputField/InputField"
 import CheckboxField from "../../CheckboxField/CheckboxField"
+import { useNewMessage } from "@/components/ToastMessage/ToastMessageProvider"
+import ToastMessage from "@/components/ToastMessage/ToastMessage"
+import FormSubmit from "@/components/FormSubmit/FormSubmit"
 
 export default function CallMeModal() {
     const [isOpen, setOpen] = useState(false)
@@ -14,6 +17,12 @@ export default function CallMeModal() {
         phoneNumber: " ",
         agreement: false
     })
+
+    const setUnknownError = useNewMessage("Что-то пошло не так, повторите еще раз", true, 2000)
+	const setConnectionError = useNewMessage("Произошли некие неполадки, попробуйте снова", true, 2000)
+	const setSuccess = useNewMessage("Заявка успешно отправлена", false, 2000)
+
+    const [isResponseLoading, setResponseLoading] = useState(false)
 
     const dictionary = {
         formTitle: "Оставить заявку",
@@ -76,23 +85,27 @@ export default function CallMeModal() {
     const sendForm = async (event) => {
         event.preventDefault()
         try{
+            setResponseLoading(true)
             const response = await fetch("/api/sendContactForm", {
                 method: "POST",
                 body: JSON.stringify(callMeInfo)
             })
             if(!response.ok){
-                throw Error("Cannot reach the API endpoint")
+                setConnectionError()
+                setResponseLoading(false)
+                return
             }
             const message = await response.json()
-            console.log(message)
+            setSuccess()
+            setOpen(false)
         }
         catch(error){
-            console.error(error)
+            setUnknownError()
+            
         }
-        
-        
-
+        setResponseLoading(false)
     }
+
     return(
         <>
             <AboutPageCallMeWrapper onClick={() => {setOpen(true)}}>
@@ -101,6 +114,7 @@ export default function CallMeModal() {
             </AboutPageCallMeWrapper>
             <Modal isOpen={isOpen} setOpen={setOpen}>
                 <JoinUsForm>
+                    <ToastMessage/>
                     <JoinUsFormHeader>{dictionary.formTitle}</JoinUsFormHeader>
                     <JoinUsFormContainer>
                         <InputField 
@@ -124,9 +138,12 @@ export default function CallMeModal() {
                             label={dictionary.agreement} 
         
                         />
-                        <JoinUsFormSubmitButton disabled={isSubmitButtonDisabled} onClick={sendForm}>
-                            Отправить
-                        </JoinUsFormSubmitButton>
+                        <FormSubmit
+                            text={"Отправить"} 
+                            isLoading={isResponseLoading}
+                            disabled={isSubmitButtonDisabled}
+                            onClick={sendForm}
+                        />
                     </JoinUsFormContainer>
                 </JoinUsForm>
             </Modal>

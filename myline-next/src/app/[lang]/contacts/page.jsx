@@ -17,7 +17,7 @@ export default async function ContactsPage({params: {lang}})  {
                     <ContactPageSocialsLinksContainer>
                       <ContactPageSocialsLink target="_blank" href="https://wa.me/79048304445"><ContactPageWhatsAppSVG/></ContactPageSocialsLink>
                       <ContactPageSocialsLink target="_blank" href="https://t.me/da"><ContactPageTelegramSVG/></ContactPageSocialsLink>
-                      <ContactPageSocialsLink target="_blank" href="viber://chat?number=%2B79048304445"><ContactPageViberSVG/></ContactPageSocialsLink>
+                      <ContactPageSocialsLink target="_blank" href="https://viber.click/79048304445"><ContactPageViberSVG/></ContactPageSocialsLink>
                       
                     </ContactPageSocialsLinksContainer>
                     <ContactPageSocialsText $isLink={false}>+7 (904) 830-44-45</ContactPageSocialsText>

@@ -1,6 +1,6 @@
 import NewsSlider from "./components/Slider/NewsSlider";
-import { getNewsDictionary } from "@/app/[lang]/articles/dictionaries/dictionaries";
-import { NewsPageAddition, NewsPageContainer, NewsPageDescription, NewsPageDescriptions, NewsPageHeader } from "./styles"
+import { getNewsDictionary } from "@/app/[lang]/patient/dictionaries/dictionaries";
+import { BenefitCard, BenefitCardDescription, BenefitCardHeader, BenefitCardIconWrapper, BenefitCards, JoyIconSVG, LikeIconSVG, NewsPageAddition, NewsPageContainer, NewsPageDescription, NewsPageDescriptions, NewsPageHeader, TechnologiesIconSVG, TimeIconSVG } from "./styles"
 import { ArticleModalOrderedList, ArticleModalParagraph } from "./components/ArticleModal/styles";
 
 export default async function NewsPage({params: {lang}}) {
@@ -90,11 +90,45 @@ export default async function NewsPage({params: {lang}}) {
     return(
         <NewsPageContainer>
             <NewsPageHeader>{dictionary.pageTitle}</NewsPageHeader>
+            <BenefitCards>
+                <BenefitCard>
+                    <BenefitCardIconWrapper>
+                        <TechnologiesIconSVG/>
+                    </BenefitCardIconWrapper>
+                    <BenefitCardHeader> {dictionary.cards[0].title} </BenefitCardHeader>
+                    <BenefitCardDescription> {dictionary.cards[0].description} </BenefitCardDescription>
+                </BenefitCard>
+
+                <BenefitCard>
+                    <BenefitCardIconWrapper>
+                        <TimeIconSVG/>
+                    </BenefitCardIconWrapper>
+                    <BenefitCardHeader> {dictionary.cards[1].title} </BenefitCardHeader>
+                    <BenefitCardDescription> {dictionary.cards[1].description} </BenefitCardDescription>
+                </BenefitCard>
+
+                <BenefitCard>
+                    <BenefitCardIconWrapper>
+                        <LikeIconSVG/>
+                    </BenefitCardIconWrapper>
+                    <BenefitCardHeader> {dictionary.cards[2].title} </BenefitCardHeader>
+                    <BenefitCardDescription> {dictionary.cards[2].description} </BenefitCardDescription>
+                </BenefitCard>
+
+                <BenefitCard $isAlternated={true}>
+                    <BenefitCardIconWrapper>
+                        <JoyIconSVG/>
+                    </BenefitCardIconWrapper>
+                    <BenefitCardHeader> {dictionary.cards[3].title} </BenefitCardHeader>
+                    <BenefitCardDescription> {dictionary.cards[3].description} </BenefitCardDescription>
+                </BenefitCard>
+            </BenefitCards>
+
             <NewsPageDescriptions>
                 <NewsPageDescription>
                     {dictionary.pageDescription}
                 </NewsPageDescription>
-                <NewsPageAddition>{dictionary.addition}</NewsPageAddition>
+                {/* <NewsPageAddition>{dictionary.addition}</NewsPageAddition> */}
             </NewsPageDescriptions>
            
             <NewsSlider dictionary={dictionary} content={links}/>

@@ -2,16 +2,24 @@
 import { useEffect, useState } from "react"
 import { AuthPageForm, AuthPageFormContainer, AuthPageFormHeader, AuthPageFormSubmitButton, AuthPageWrapper } from "../styles/authStyles"
 import InputField from "@/components/InputField/InputField";
+import { useNewMessage } from "@/components/ToastMessage/ToastMessageProvider";
+import FormSubmit from "@/components/FormSubmit/FormSubmit";
 
 
 const SignIn = ({dictionary=null}) => {
+	const [signInInfo, setSignInInfo] = useState(
+		{
+			login: " ",
+			password: " ",
+		}
+  	)
+
+  	const setUnknownError = useNewMessage("Что-то пошло не так, повторите еще раз", true, 2000)
+	const setConnectionError = useNewMessage("Произошли некие неполадки, попробуйте снова", true, 2000)
+	const setSuccess = useNewMessage("Заявка успешно отправлена", false, 2000)
+
+    const [isResponseLoading, setResponseLoading] = useState(false)
     const [isSubmitButtonDisabled, setSubmitButtonDisabled] = useState(true)
-  const [signInInfo, setSignInInfo] = useState(
-    {
-      login: " ",
-      password: " ",
-    }
-  )
 
 
   const changeFieldbyName = (fieldName) => {
@@ -59,15 +67,36 @@ useEffect(
 )
   
 
-    const formSubmit = async (event) => {
-      event.preventDefault()
-    }
+const formSubmit = async (event) => {
+	event.preventDefault()
+	try{
+		setResponseLoading(true)
+		const response = await fetch("", {
+			method: "POST",
+			body: JSON.stringify(signInInfo)
+		})
+		if(!response.ok){
+			setConnectionError()
+			setResponseLoading(false)
+			return
+		}
+		const message = await response.json()
+		setSuccess()
+		setOpen(false)
+	}
+	catch(error){
+		setUnknownError()
+		console.error(error)
+	}
+	setResponseLoading(false)
+	}
+		
   
   return (
       <AuthPageWrapper>
         <AuthPageForm>
-          <AuthPageFormHeader>{dictionary.formTitle}</AuthPageFormHeader>
-          <AuthPageFormContainer>
+			<AuthPageFormHeader>{dictionary.formTitle}</AuthPageFormHeader>
+			<AuthPageFormContainer>
             
             {/* <InputField 
               name="phoneNumber" 
@@ -92,7 +121,12 @@ useEffect(
               errorMessage={validationErrors.password.noInput && dictionary.required || ""}
             />
            
-            <AuthPageFormSubmitButton disabled={isSubmitButtonDisabled} onClick={formSubmit}>{dictionary.submitButton}</AuthPageFormSubmitButton>
+		   <FormSubmit
+				text={dictionary.submitButton} 
+				isLoading={isResponseLoading}
+				disabled={isSubmitButtonDisabled}
+				onClick={formSubmit}
+			/>
           </AuthPageFormContainer>
         </AuthPageForm>
       </AuthPageWrapper>

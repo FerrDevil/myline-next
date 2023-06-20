@@ -1,3 +1,4 @@
+import { VideoBackground } from "../[lang]/styles"
 import { AnnouncementDog, AnnouncementDogWrapper, AnnouncementImage, AnnouncementImageWrapper, AnnouncementLogo, AnnouncementLogoWrapper, AnnouncementMobileImage, AnnouncementSecondText, AnnouncementText, AnnouncementWrapper } from "./styles"
 
 const Announcement = () => {
@@ -5,8 +6,7 @@ const Announcement = () => {
         <AnnouncementWrapper>
             <AnnouncementText>Скоро увидимся!</AnnouncementText>
             <AnnouncementImageWrapper>
-                <AnnouncementImage src="/images/announcement-bg.png"/>
-                <AnnouncementMobileImage src="/images/announcement-bg-mobile.png"/>
+                <VideoBackground autoPlay muted playsInline loop/>
             </AnnouncementImageWrapper>
         </AnnouncementWrapper>
     )
