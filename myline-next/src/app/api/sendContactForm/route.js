@@ -5,7 +5,7 @@ import { transporter } from '../emailTransporter';
 
 export const credentials = {
     from: '"Myline Clinic" <myline@myline.clinic>', // sender address
-    to: "ferrdevil220@gmail.com", // list of receivers
+    to: "myline.info@yandex.ru", // list of receivers
 }
 
 export async function POST(request) {
