@@ -9,7 +9,7 @@ export default function Layout({children, params: {lang}}) {
     if (localeCookie !== lang){
         notFound()
     }
-    const displayContent = false
+    const displayContent = true
     return (
     <BaseLayout>
         {
