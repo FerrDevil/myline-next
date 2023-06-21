@@ -3,8 +3,9 @@
     "socialsLinks" : "Ссылки на социальные сети",
     "workingTime" : "Ежедневно с 8:00 до 19:00",
     "headquarters": "Адрес",
+    "reviews": "Отзывы",
     "callMeForm": {
-        "freeCall" : "Бесплатный звонок",
+        "freeCall" : "Перезвоните мне",
         "formTitle": "Оставить заявку",
         "name" : "Ваше имя",
         "phoneNumber" : "Номер телефона",

@@ -53,7 +53,7 @@ const NewsSlider = ({ dictionary, content=[] }) => {
       </SliderContainer>
       <SliderToggleGroupButtons>
         {
-         /*  content.length - 1 >= sliderItemsLength && */
+         content.length - 1 >= sliderItemsLength && 
           Array.from(Array(contentGroupsCount).keys()).map(id => (
             <SliderToggleGroupButton key={id} onClick={() => {setCurrentGroupIndex(id)}} $isActive={id === currentGroupIndex} >
               {id + 1}

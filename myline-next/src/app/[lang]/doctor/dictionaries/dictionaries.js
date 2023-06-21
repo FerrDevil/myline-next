@@ -3,4 +3,4 @@ const dictionaries = {
     ru: () => import('./ru.json').then((module) => module.default),
   };
 
-export const getAboutDictionary = async (locale) => dictionaries[locale]();
+export const getDoctorDictionary = async (locale) => dictionaries[locale]();

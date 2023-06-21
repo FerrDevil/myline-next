@@ -13,6 +13,8 @@ import EmailSVG from "@/app/[lang]/contacts/public/email.svg"
 import PhoneCallSVG from "@/app/[lang]/contacts/public/phone-call.svg"
 import TelephoneSVG from "@/app/[lang]/contacts/public/telephone.svg"
 import LocationSVG from "@/app/[lang]/contacts/public/location.svg"
+import GisSVG from "@/app/[lang]/contacts/public/2gis.svg"
+import YandexSVG from "@/app/[lang]/contacts/public/yandex.svg"
 
 
 
@@ -229,5 +231,60 @@ export const ContactPageAddressSVG = styled(LocationSVG)`
     height: 24px;
     object-fit: contain;
     fill: var(--color-aquamarine);
+`
+
+
+export const ContactPageReviewsWrapper = styled.div`
+    display: grid;
+    gap: 30px;
+    width: 100%;
+`
+
+export const ContactPageReviewsContainer = styled.div`
+    display: grid;
+    gap: 15px;
+    width: 100%;
+`
+
+export const ContactPageReviewsHeader = styled.h2`
+    font-weight: 700;
+    font-size: clamp(20px, 10px + 1vw, 22px);
+    color: var(--color-main-gray);
+`
+
+export const ContactPageReviewsButtons = styled.div`
+    display: flex;
+    gap: 15px;
+    width: 100%;
+`
+
+export const ContactPageReviewsButton = styled.button`
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid transparent;
+    background-color: #fff;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.15);
+    border-radius: 8px;
+    padding: 12px 24px;
+    width: min(184px, 100%);
+    max-height: 75px;
+
+    cursor: pointer;
+`
+
+export const ContactPageGisSVG = styled(GisSVG)`
+    width: 100%;
+
+    height: 100%;
+    object-fit: cover;
+`
+
+export const ContactPageYandexSVG = styled(YandexSVG)`
+    width: 100%;
+
+    height: 100%;
+    
+    object-fit: contain;
 `
 

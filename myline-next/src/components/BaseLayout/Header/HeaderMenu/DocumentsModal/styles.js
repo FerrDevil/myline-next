@@ -38,7 +38,7 @@ export const DocumentsModalContainer = styled.div`
 `
 
 
-export const DocumentsModalLink = styled(Link)`
+export const DocumentsModalLink = styled.a`
     display: flex;
     flex-direction: row;
     align-items: center;

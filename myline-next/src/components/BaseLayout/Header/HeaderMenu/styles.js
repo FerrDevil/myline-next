@@ -115,7 +115,7 @@ export const HeaderMenuLink = styled(Link)`
     display: grid;
     grid-template-columns: 1fr;
     cursor: pointer;
-    &:hover > span, &:focus-within > span{
+    &:hover > span, &:focus-within > span, &:active > span{
         color: var(--color-aquamarine);
     }
 `
@@ -124,7 +124,7 @@ export const HeaderMenuButton = styled.button`
     display: grid;
     grid-template-columns: 1fr;
     cursor: pointer;
-    &:hover > span, &:focus-within > span{
+    &:hover > span, &:focus-within > span, &:active > span{
         color: var(--color-aquamarine);
     }
     background-color: transparent;

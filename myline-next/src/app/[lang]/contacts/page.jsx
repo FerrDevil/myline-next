@@ -1,4 +1,4 @@
-import { ContactInformationEmailSVG, ContactInformationPhoneCallSVG, ContactInformationTelephoneSVG, ContactPageAddress, ContactPageAddressSVG, ContactPageAddresses, ContactPageAddressesContainer, ContactPageAddressesHeader, ContactPageAddressesWrapper, ContactPageContactInformation, ContactPageContactInformationContact, ContactPageContactInformationContactWrapper, ContactPageContactInformationContacts, ContactPageContactInformationText, ContactPageContacts, ContactPageContainer, ContactPageFacebookLinkSVG, ContactPageFreePhoneCall, ContactPageHeader, ContactPageInstagramLinkSVG, ContactPageSocialsContainer, ContactPageSocialsLink, ContactPageSocialsLinks, ContactPageSocialsLinksContainer, ContactPageSocialsText, ContactPageTelegramSVG, ContactPageTwitterLinkSVG, ContactPageVKLinkSVG, ContactPageViberSVG, ContactPageWhatsAppSVG, ContactPageWrapper, ContactPageYoutubeLinkSVG } from "@/app/[lang]/contacts/styles"
+import { ContactInformationEmailSVG, ContactInformationPhoneCallSVG, ContactInformationTelephoneSVG, ContactPageAddress, ContactPageAddressSVG, ContactPageAddresses, ContactPageAddressesContainer, ContactPageAddressesHeader, ContactPageAddressesWrapper, ContactPageContactInformation, ContactPageContactInformationContact, ContactPageContactInformationContactWrapper, ContactPageContactInformationContacts, ContactPageContactInformationText, ContactPageContacts, ContactPageContainer, ContactPageFacebookLinkSVG, ContactPageFreePhoneCall, ContactPageGisSVG, ContactPageHeader, ContactPageInstagramLinkSVG, ContactPageReviewsButton, ContactPageReviewsButtons, ContactPageReviewsContainer, ContactPageReviewsHeader, ContactPageReviewsWrapper, ContactPageSocialsContainer, ContactPageSocialsLink, ContactPageSocialsLinks, ContactPageSocialsLinksContainer, ContactPageSocialsText, ContactPageTelegramSVG, ContactPageTwitterLinkSVG, ContactPageVKLinkSVG, ContactPageViberSVG, ContactPageWhatsAppSVG, ContactPageWrapper, ContactPageYandexSVG, ContactPageYoutubeLinkSVG } from "@/app/[lang]/contacts/styles"
 
 import Maps from "@/app/[lang]/contacts/components/Maps/Maps"
 import { getContactsDictionary } from "@/app/[lang]/contacts/dictionaries/dictionaries"
@@ -68,6 +68,21 @@ export default async function ContactsPage({params: {lang}})  {
                     </ContactPageAddresses>
                   </ContactPageAddressesContainer>
                 </ContactPageAddressesWrapper>
+
+                <ContactPageReviewsWrapper>
+                  <ContactPageReviewsContainer>
+                    <ContactPageReviewsHeader>{dictionary.reviews}:</ContactPageReviewsHeader>
+                    <ContactPageReviewsButtons>
+                      <ContactPageReviewsButton>
+                        <ContactPageYandexSVG/>
+                      </ContactPageReviewsButton>
+                      <ContactPageReviewsButton>
+                        <ContactPageGisSVG/>
+                      </ContactPageReviewsButton>
+                    </ContactPageReviewsButtons>
+                  </ContactPageReviewsContainer>
+                </ContactPageReviewsWrapper>
+
             </ContactPageContacts>
             
             <Maps/>

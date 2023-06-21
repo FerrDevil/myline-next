@@ -3,7 +3,7 @@ import styled from "styled-components"
 import Image from "next/image"
 
 
-export const DogGifWrapper = styled.div`
+export const DogGifWrapper = styled.button`
     display: block;
     position: fixed;
     bottom: 0;
@@ -11,8 +11,10 @@ export const DogGifWrapper = styled.div`
     
     width: clamp(133px, 66px + 10vw, 206px);
     aspect-ratio: 1;
-    pointer-events: none;
     user-select: none;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
     @media (max-width: 600px) {
         display: none;
     }

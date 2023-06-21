@@ -1,7 +1,7 @@
 
-import JoinUsModal from "./components/JoinUsModal/JoinUsModal"
+import CallMeModal from "./components/CallMeModal/CallMeModal"
 import { getAboutDictionary } from "./dictionaries/dictionaries"
-import { AboutPageCard, AboutPageCardDescription, AboutPageCardHeader, AboutPageCardIconWrapper, AboutPageCards, AboutPageContainer, AboutPageDecriptionList, AboutPageDescription, AboutPageDescriptions, AboutPageHeader, AboutPageJoinUsLogo, AboutPageJoinUsLogoWrapper, AboutPageJoinUsMessage, AboutPageJoinUsWrapper, AboutPageMainContent, AboutPageMainContentWrapper, HeadsetIconSVG, JoyIconSVG, LikeIconSVG, TechnologiesIconSVG, TimeIconSVG, TimeManagementIconSVG, ToothBracesIconSVG } from "./styles"
+import { AboutPageAlignerBG, AboutPageAlignerBGWrapper, AboutPageCard, AboutPageCardDescription, AboutPageCardHeader, AboutPageCardIconWrapper, AboutPageCards, AboutPageContainer, AboutPageDecriptionList, AboutPageDescription, AboutPageDescriptions, AboutPageHeader, AboutPageJoinUsLogo, AboutPageJoinUsLogoWrapper, AboutPageJoinUsMessage, AboutPageJoinUsWrapper, AboutPageLink, AboutPageLinkWrapper, AboutPageMainContent, AboutPageMainContentWrapper, HeadsetIconSVG, JoyIconSVG, LikeIconSVG, TechnologiesIconSVG, TimeIconSVG, TimeManagementIconSVG, ToothBracesIconSVG } from "./styles"
 
 export default async function AboutPage({params: { lang }}) {
 
@@ -31,16 +31,12 @@ export default async function AboutPage({params: { lang }}) {
               {dictionary.secondDescription}
             </AboutPageDescription>
           </AboutPageDescriptions>
-
-          <AboutPageJoinUsWrapper>
-            <AboutPageJoinUsMessage>
-              <p>сотрудничество с</p>
-              <AboutPageJoinUsLogoWrapper>
-                <AboutPageJoinUsLogo/>
-              </AboutPageJoinUsLogoWrapper>
-            </AboutPageJoinUsMessage>
-            <JoinUsModal dictionary={dictionary.joinUsForm}/>
-          </AboutPageJoinUsWrapper>
+          <AboutPageLinkWrapper>
+            <CallMeModal/>
+            <AboutPageAlignerBGWrapper>
+              <AboutPageAlignerBG/>
+            </AboutPageAlignerBGWrapper>
+          </AboutPageLinkWrapper>
         </AboutPageMainContent>
         
 

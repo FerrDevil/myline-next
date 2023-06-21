@@ -3,8 +3,8 @@
 import Modal from "@/components/Modal/Modal"
 import { useEffect, useState } from "react"
 import { AboutPageJoinUsPopupButton, JoinUsForm, JoinUsFormContainer, JoinUsFormHeader, JoinUsFormSubmitButton } from "./styles"
-import InputField from "../../../../../components/InputField/InputField"
-import CheckboxField from "../../../../../components/CheckboxField/CheckboxField"
+import InputField from "@/components/InputField/InputField"
+import CheckboxField from "@/components/CheckboxField/CheckboxField"
 
 
 export default function JoinUsModal({dictionary}) {

@@ -1,11 +1,11 @@
 
 import JoinUsModal from "./components/JoinUsModal/JoinUsModal"
-import { getAboutDictionary } from "./dictionaries/dictionaries"
-import { AboutPageCard, AboutPageCardDescription, AboutPageCardHeader, AboutPageCardIconWrapper, AboutPageCards, AboutPageContainer, AboutPageDecriptionList, AboutPageDescription, AboutPageDescriptions, AboutPageHeader, AboutPageJoinUsLogo, AboutPageJoinUsLogoWrapper, AboutPageJoinUsMessage, AboutPageJoinUsWrapper, AboutPageMainContent, AboutPageMainContentWrapper, HeadsetIconSVG, JoyIconSVG, LikeIconSVG, TechnologiesIconSVG, TimeIconSVG, TimeManagementIconSVG, ToothBracesIconSVG } from "./styles"
+import { getDoctorDictionary } from "./dictionaries/dictionaries"
+import { AboutPageCard, AboutPageCardDescription, AboutPageCardHeader, AboutPageCardIconWrapper, AboutPageCards, AboutPageContainer, AboutPageDecriptionList, AboutPageDescription, AboutPageDescriptions, AboutPageHeader, AboutPageJoinUsLogo, AboutPageJoinUsLogoWrapper, AboutPageJoinUsMessage, AboutPageJoinUsWrapper, AboutPageMainContent, AboutPageMainContentWrapper, AlignerIconSVG, DeliveryIconSVG, ScanIconSVG, ScheduleIconSVG, } from "./styles"
 
 export default async function AboutPage({params: { lang }}) {
 
-  const dictionary = await getAboutDictionary(lang)
+  const dictionary = await getDoctorDictionary(lang)
 
   return (
     <AboutPageContainer>
@@ -16,16 +16,16 @@ export default async function AboutPage({params: { lang }}) {
             <AboutPageDescription $isBold={true}>
               {dictionary.mainDescription}
             </AboutPageDescription>
+            <AboutPageDescription>
+              {dictionary.list.title}
+            </AboutPageDescription>
 
             <AboutPageDecriptionList>
-              <li>
-                <span>{dictionary.descriptionListFirstItem}</span>
-              </li>
-              <li>
-                <span>
-                  {dictionary.descriptionListSecondItem}
-                </span>
-              </li>
+              {dictionary.list.items.map((item, index) => (
+                <li key={index}>
+                  <span>{item}</span>
+                </li>
+              ))}
             </AboutPageDecriptionList>
             <AboutPageDescription>
               {dictionary.secondDescription}
@@ -48,34 +48,34 @@ export default async function AboutPage({params: { lang }}) {
       <AboutPageCards>
         <AboutPageCard>
             <AboutPageCardIconWrapper>
-              <TechnologiesIconSVG/>
+              <ScanIconSVG/>
             </AboutPageCardIconWrapper>
-            <AboutPageCardHeader> {dictionary.firstCardTitle} </AboutPageCardHeader>
-            <AboutPageCardDescription> {dictionary.firstCardDescription} </AboutPageCardDescription>
+            <AboutPageCardHeader> {dictionary.cards[0].title} </AboutPageCardHeader>
+            <AboutPageCardDescription> {dictionary.cards[0].description} </AboutPageCardDescription>
           </AboutPageCard>
 
           <AboutPageCard>
             <AboutPageCardIconWrapper>
-              <TimeIconSVG/>
+              <ScheduleIconSVG/>
             </AboutPageCardIconWrapper>
-            <AboutPageCardHeader> {dictionary.secondCardTitle} </AboutPageCardHeader>
-            <AboutPageCardDescription> {dictionary.secondCardDescription} </AboutPageCardDescription>
+            <AboutPageCardHeader> {dictionary.cards[1].title} </AboutPageCardHeader>
+            <AboutPageCardDescription> {dictionary.cards[1].description} </AboutPageCardDescription>
           </AboutPageCard>
 
           <AboutPageCard>
             <AboutPageCardIconWrapper>
-              <LikeIconSVG/>
+              <AlignerIconSVG/>
             </AboutPageCardIconWrapper>
-            <AboutPageCardHeader> {dictionary.thirdCardTitle} </AboutPageCardHeader>
-            <AboutPageCardDescription> {dictionary.thirdCardDescription} </AboutPageCardDescription>
+            <AboutPageCardHeader> {dictionary.cards[2].title} </AboutPageCardHeader>
+            <AboutPageCardDescription> {dictionary.cards[2].description} </AboutPageCardDescription>
           </AboutPageCard>
 
-          <AboutPageCard $isAlternated={true}>
+          <AboutPageCard >
             <AboutPageCardIconWrapper>
-              <JoyIconSVG/>
+              <DeliveryIconSVG/>
             </AboutPageCardIconWrapper>
-            <AboutPageCardHeader> {dictionary.fourthCardTitle} </AboutPageCardHeader>
-            <AboutPageCardDescription> {dictionary.fourthCardDescription} </AboutPageCardDescription>
+            <AboutPageCardHeader> {dictionary.cards[3].title} </AboutPageCardHeader>
+            <AboutPageCardDescription> {dictionary.cards[3].description} </AboutPageCardDescription>
           </AboutPageCard>
       </AboutPageCards>
     </AboutPageContainer>

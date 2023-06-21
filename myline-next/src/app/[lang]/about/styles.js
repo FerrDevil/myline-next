@@ -10,13 +10,17 @@ import Image from "next/image"
 
 
 export const AboutPageContainer = styled.div`
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
     align-items: flex-start;
     height: 100%;
-    padding-top: clamp(40px, 20px + 3vw, 80px);
+    padding-block: clamp(40px, 20px + 3vw, 80px) 20px;
     gap: 40px;
-    
+    @media (max-width: 1366px) {
+        display: flex;
+        flex-direction: column;
+        
+    }
 `
 
 export const AboutPageMainContentWrapper = styled.div`
@@ -24,6 +28,7 @@ export const AboutPageMainContentWrapper = styled.div`
     flex-direction: column;
     align-items: flex-start;
     gap: clamp(25px, 13px + 1vw, 30px);
+    height: 100%;
     
 `
 export const AboutPageHeader = styled.h1`
@@ -36,21 +41,10 @@ export const AboutPageHeader = styled.h1`
 
 export const AboutPageMainContent = styled.div`
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     align-items: flex-start;
     gap: clamp(25px, 13px + 1vw, 30px);
-
-    
-    @media (min-width: 1001px) {
-        & > *{
-        max-width: 50%;
-    }
-    }
-
-    @media (max-width: 1000px) {
-        flex-direction: column;
-    }
-    
+    height: 100%;
 `
 
 export const AboutPageDescriptions = styled.section`
@@ -91,6 +85,74 @@ export const AboutPageLinkWrapper = styled.div`
     flex-direction: column;
     align-items: flex-start;
     isolation: isolate;
+    height: 100%;
+
+    @media (max-width: 1366px) {
+        min-height: 200px;
+    }
+    @media (max-width: 768px) {
+        min-height: 250px;
+    }
+`
+
+export const AboutPageCallMeButton = styled.button`
+    font-size: clamp(14px, 7px + 1vw, 16px);
+    background-color: var(--color-aquamarine);
+    color: #404342;
+    text-align: center;
+    padding: clamp(20px, 10px + 1vw, 30px) 80px;
+    border-radius: 4px;
+    font-weight: 600;
+    border: 1px solid transparent;
+    transition: background-color 0.3s, border-color 0.3s;
+    cursor: pointer;
+    &:hover, &:focus-visible{
+        outline: 1px solid transparent;
+        background-color: #fff;
+        border-color: var(--color-aquamarine);
+    }
+` 
+
+export const AboutPageAlignerBGWrapper = styled.div`
+    position: absolute;
+    
+    right: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    pointer-events: none;
+    user-select: none;
+    
+    @media (min-width: 1366px) {
+        max-height: 300px;
+        top: 0;
+        
+    }
+
+    @media (max-width: 1366px) {
+        width: 50%;
+        bottom: 0;
+        
+    }
+    @media (max-width: 600px) {
+        width: 100%;
+        transform: translateX(10%);
+        height: 180px;
+    }
+`
+export const AboutPageAlignerBG = styled(Image).attrs({
+    width: 0,
+    height: 0,
+    sizes: "100vw",
+    src: "/images/aligner-bg.png",
+    loading: "eager",
+    alt: "bgAligner"
+})`
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    overflow: visible;
+
 `
 
 
@@ -147,21 +209,9 @@ export const AboutPageJoinUsLogo = styled(Image).attrs({
 
 export const AboutPageCards = styled.div`
     display: grid;
-    
+    grid-template-columns: 1fr 1fr;
     gap: clamp(10px, 5px + 2vw, 30px);
-    padding-bottom: 20px;
     
-
-    
-    @media (max-width: 1366px) {
-        grid-template-columns: 1fr 1fr;
-        
-    }
-    
-    @media (min-width: 1366px) {
-        grid-template-columns: repeat(4, 1fr);
-        
-    }
     @media (max-width: 620px) {
         grid-template-columns: unset;
        

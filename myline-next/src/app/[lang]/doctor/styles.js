@@ -2,21 +2,23 @@
 import styled from "styled-components"
 
 
-import TechnologiesSVG from "@/app/[lang]/about/public/technologies.svg"
-import TimeSVG from "@/app/[lang]/about/public/time.svg"
-import LikeSVG from "@/app/[lang]/about/public/like.svg"
-import JoySVG from "@/app/[lang]/about/public/joy.svg"
+import ScanSVG from "@/app/[lang]/doctor/public/scan.svg"
+import ScheduleSVG from "@/app/[lang]/doctor/public/schedule.svg"
+import AlignerSVG from "@/app/[lang]/doctor/public/aligner.svg"
+import DeliverySVG from "@/app/[lang]/doctor/public/delivery.svg"
 import Image from "next/image"
 
 
 export const AboutPageContainer = styled.div`
     display: flex;
-    flex-direction: column;
     align-items: flex-start;
     height: 100%;
-    padding-top: clamp(40px, 20px + 3vw, 80px);
+    padding-block: clamp(40px, 20px + 3vw, 80px) 20px;
     gap: 40px;
-    
+    @media (max-width: 1366px) {
+        flex-direction: column;
+        
+    }
 `
 
 export const AboutPageMainContentWrapper = styled.div`
@@ -36,21 +38,10 @@ export const AboutPageHeader = styled.h1`
 
 export const AboutPageMainContent = styled.div`
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     align-items: flex-start;
     gap: clamp(25px, 13px + 1vw, 30px);
 
-    
-    @media (min-width: 1001px) {
-        & > *{
-        max-width: 50%;
-    }
-    }
-
-    @media (max-width: 1000px) {
-        flex-direction: column;
-    }
-    
 `
 
 export const AboutPageDescriptions = styled.section`
@@ -69,6 +60,9 @@ export const AboutPageDescription = styled.p`
 `
 
 export const AboutPageDecriptionList = styled.ul`
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
     font-size: clamp(16px, 8px + 1vw, 18px);
     font-weight: ${props => props.$isBold ? 500 : 400};
     list-style: none;
@@ -147,21 +141,8 @@ export const AboutPageJoinUsLogo = styled(Image).attrs({
 
 export const AboutPageCards = styled.div`
     display: grid;
-    
-    gap: clamp(10px, 5px + 2vw, 30px);
-    padding-bottom: 20px;
-    
-
-    
-    @media (max-width: 1366px) {
-        grid-template-columns: 1fr 1fr;
-        
-    }
-    
-    @media (min-width: 1366px) {
-        grid-template-columns: repeat(4, 1fr);
-        
-    }
+    grid-template-columns: 1fr 1fr;
+    gap: clamp(10px, 5px + 1vw, 30px);
     @media (max-width: 620px) {
         grid-template-columns: unset;
        
@@ -173,7 +154,7 @@ export const AboutPageCard = styled.div`
     padding: 30px;
     display: flex;
     flex-direction: column;
-    gap: 15px;
+    gap: 5px;
     box-shadow: 2px 2px 10px 0px rgba(0, 0, 0, 0.15);
     border-radius: 15px;
     background-color: ${props => props.$isAlternated ? "var(--color-aquamarine)" : "#fff" };
@@ -197,28 +178,28 @@ export const AboutPageCardIconWrapper = styled.div`
     padding: 25px;
 `
 
-export const TechnologiesIconSVG = styled(TechnologiesSVG)`
+export const ScanIconSVG = styled(ScanSVG)`
     display: block;
     width: 100%;
     height: 100%;
     object-fit: contain;
     fill: #fff;
 `
-export const TimeIconSVG = styled(TimeSVG)`
+export const ScheduleIconSVG = styled(ScheduleSVG)`
     display: block;
     width: 100%;
     height: 100%;
     object-fit: contain;
     fill: var(--color-aquamarine);
 `
-export const LikeIconSVG = styled(LikeSVG)`
+export const AlignerIconSVG = styled(AlignerSVG)`
     display: block;
     width: 100%;
     height: 100%;
     object-fit: contain;
     fill: #fff;
 `
-export const JoyIconSVG = styled(JoySVG)`
+export const DeliveryIconSVG = styled(DeliverySVG)`
     display: block;
     width: 100%;
     height: 100%;

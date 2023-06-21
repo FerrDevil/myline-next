@@ -90,7 +90,20 @@ export default async function NewsPage({params: {lang}}) {
     return(
         <NewsPageContainer>
             <NewsPageHeader>{dictionary.pageTitle}</NewsPageHeader>
-            <BenefitCards>
+            <NewsPageDescriptions>
+                <NewsPageDescription>
+                    {dictionary.pageDescription}
+                </NewsPageDescription>
+                <NewsPageAddition>{dictionary.addition}</NewsPageAddition>
+            </NewsPageDescriptions>
+           
+            <NewsSlider dictionary={dictionary} content={links}/>
+        </NewsPageContainer>
+    )
+}
+
+
+/*  <BenefitCards>
                 <BenefitCard>
                     <BenefitCardIconWrapper>
                         <TechnologiesIconSVG/>
@@ -122,16 +135,4 @@ export default async function NewsPage({params: {lang}}) {
                     <BenefitCardHeader> {dictionary.cards[3].title} </BenefitCardHeader>
                     <BenefitCardDescription> {dictionary.cards[3].description} </BenefitCardDescription>
                 </BenefitCard>
-            </BenefitCards>
-
-            <NewsPageDescriptions>
-                <NewsPageDescription>
-                    {dictionary.pageDescription}
-                </NewsPageDescription>
-                {/* <NewsPageAddition>{dictionary.addition}</NewsPageAddition> */}
-            </NewsPageDescriptions>
-           
-            <NewsSlider dictionary={dictionary} content={links}/>
-        </NewsPageContainer>
-    )
-}
+            </BenefitCards> */

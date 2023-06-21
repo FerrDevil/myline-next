@@ -1,16 +1,39 @@
 "use client"
 
 import Modal from "@/components/Modal/Modal"
-import { useEffect, useState } from "react"
+import { createContext, useContext, useEffect, useState } from "react"
 import { AboutPageCallMeSVG, AboutPageCallMeText, AboutPageCallMeWrapper, AboutPageJoinUsPopupButton, JoinUsForm, JoinUsFormContainer, JoinUsFormHeader, JoinUsFormSubmitButton } from "./styles"
-import InputField from "../../InputField/InputField"
-import CheckboxField from "../../CheckboxField/CheckboxField"
+import InputField from "../InputField/InputField"
+import CheckboxField from "../CheckboxField/CheckboxField"
 import { useNewMessage } from "@/components/ToastMessage/ToastMessageProvider"
 import ToastMessage from "@/components/ToastMessage/ToastMessage"
 import FormSubmit from "@/components/FormSubmit/FormSubmit"
+import { DogGif, DogGifWrapper } from "../BaseLayout/styles"
+
+export const callMeContext = createContext(null)
+
+
+export function useOpenCallMeModal() {
+    const [isOpen, setOpen] = useContext(callMeContext)
+    return () => {
+        setOpen(true)
+    }
+}
+
+export const CallMeProvider = ({ children }) => {
+
+    const [isOpen, setOpen] = useState(false)
+
+    return (
+        <callMeContext.Provider value={[isOpen, setOpen]}>
+            {children}
+        </callMeContext.Provider>
+    )
+}
 
 export default function CallMeModal() {
-    const [isOpen, setOpen] = useState(false)
+    const [isOpen, setOpen] = useContext(callMeContext)
+
 
     const [callMeInfo, setCallMeUsInfo] = useState({
         name: " ",
@@ -112,6 +135,9 @@ export default function CallMeModal() {
                 <AboutPageCallMeSVG/>
                 <AboutPageCallMeText>Перезвоните мне</AboutPageCallMeText>
             </AboutPageCallMeWrapper>
+            <DogGifWrapper onClick={() => {setOpen(true)}}>
+                <DogGif src="/images/dog.gif"/>
+            </DogGifWrapper>
             <Modal isOpen={isOpen} setOpen={setOpen}>
                 <JoinUsForm>
                     <ToastMessage/>

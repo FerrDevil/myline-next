@@ -3,7 +3,7 @@ import Header from "./Header/Header"
 import PageSlider from "../PageSlider/PageSlider"
 import LoadingScreen from "./LoadingScreen/LoadingScreen"
 import { cookies } from "next/dist/client/components/headers"
-import CallMeModal from "@/components/BaseLayout/CallMeModal/CallMeModal"
+import CallMeModal from "@/components/CallMeModal/CallMeModal"
 import ToastMessage from "../ToastMessage/ToastMessage"
 
 
@@ -17,9 +17,7 @@ const BaseLayout = ({ children }) => {
                 <CallMeModal/>
             </PageSlider>
             <ToastMessage/>
-            <DogGifWrapper>
-                <DogGif src="/images/dog.gif"/>
-            </DogGifWrapper>
+            
              
         </>
         
