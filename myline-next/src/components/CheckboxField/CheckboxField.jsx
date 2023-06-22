@@ -1,7 +1,7 @@
 "use client"
 
 import { useState } from "react"
-import { Checkbox, CheckboxLabel, CheckboxWrapper, CheckedCheckboxIconSVG, DefaultCheckboxIconSVG } from "./styles"
+import { Checkbox, CheckboxDescription, CheckboxLabel, CheckboxWrapper, CheckedCheckboxIconSVG, DefaultCheckboxIconSVG } from "./styles"
 
 const CheckboxField = ({onChange, label=""}) => {
     const [isChecked, setChecked] = useState(false)
@@ -24,9 +24,9 @@ const CheckboxField = ({onChange, label=""}) => {
             </CheckboxWrapper>
             {
                 !!label && 
-                <span>
+                <CheckboxDescription>
                     {label}
-                </span>
+                </CheckboxDescription>
             }
         </CheckboxLabel>
     )

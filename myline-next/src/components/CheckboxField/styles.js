@@ -10,6 +10,7 @@ export const CheckboxLabel = styled.label`
     flex-direction: row;
     align-items: center;
     gap: clamp(13px, 7px + 1vw, 20px);
+    text-align: center;
     user-select: none;
     cursor: pointer;
 `
@@ -43,8 +44,9 @@ export const Checkbox = styled.input.attrs(() => ({
 `
 
 export const CheckboxDescription = styled.span`
-    font-size: 18px;
+    font-size: clamp(14px, 7px + 1vw, 18px);
     font-weight: 400;
     color: #404342;
     text-align: left;
+    
 `

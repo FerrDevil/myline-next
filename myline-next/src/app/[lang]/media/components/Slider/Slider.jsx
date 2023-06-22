@@ -1,7 +1,7 @@
 "use client"
 import { useState } from "react"
 import { SliderContainer, SliderDot, SliderButtons, SliderWrapper, SliderContainerWrapper, SliderItems, SliderArrowButton, SliderLeftArrowButtonSVG, SliderRightArrowButtonSVG } from "./styles"
-import { SliderImage, SliderImageFullViewButton, SliderImageWrapper, ZoomInIconSVG } from "../../styles"
+import { SliderImage, SliderImageFullViewButton, SliderImageWrapper, SliderItemDescription, SliderItemTextBlock, SliderItemTitle, SliderItemWrapper, ZoomInIconSVG } from "../../styles"
 import FullImageViewModal from "../FullImageViewModal/FullImageViewModal"
 
 const Slider = ({images=[]}) => {
@@ -56,12 +56,20 @@ const Slider = ({images=[]}) => {
           <SliderItems $currentGroupIndex={currentItemIndex}>
             {
             images.map((image, index) => (
-              <SliderImageWrapper key={image.id}>
-                <SliderImage src={image.image}/>
-                  <SliderImageFullViewButton onClick={() => {setCurrentFullViewImageIndex(index)}}>
-                    <ZoomInIconSVG/>
-                  </SliderImageFullViewButton>
-              </SliderImageWrapper>
+              <SliderItemWrapper key={image.id}>
+                <SliderImageWrapper >
+                  <SliderImage src={image.image}/>
+                    <SliderImageFullViewButton onClick={() => {setCurrentFullViewImageIndex(index)}}>
+                      <ZoomInIconSVG/>
+                    </SliderImageFullViewButton>
+                </SliderImageWrapper>
+                <SliderItemTextBlock>
+                  <SliderItemTitle>{image.title}</SliderItemTitle>
+                  <SliderItemDescription>{image.description}</SliderItemDescription>
+                </SliderItemTextBlock>
+                
+              </SliderItemWrapper>
+              
             ))
           }
           </SliderItems>

@@ -68,14 +68,15 @@ export const SliderRightArrowButtonSVG = styled(RightArrowSVG)`
 `
 
 export const SliderContainer = styled.div`
-    
+    height: 100%;
+    display: flex;
     overflow: hidden;
     width: 100%;
 `
 
 export const SliderItems = styled.div`
     display: flex;
-    flex-grow: 1;
+    max-width: 100%;
     --_gap: 10px;
     gap: var(--_gap);
     --_one-element: calc((100% - (var(--_gap) * 3)) / 4 );
@@ -86,17 +87,12 @@ export const SliderItems = styled.div`
         flex: 0 0 var(--_one-element);
     }
     @media (max-width: 1024px) {
-        transform: translateX(${props => -100 / 2.5 * props.$currentGroupIndex}%);
-        & > *{
-            flex: 0 0 calc((100% - (var(--_gap) * 2.5)) / 2.5 );
-        }
+        --_one-element: calc((100% - (var(--_gap) * 2)) / 2.5 );
     }
 
     @media (max-width: 600px) {
-        transform: translateX(${props => -100 / 1.1 * props.$currentGroupIndex}%);
-        & > *{
-            flex: 0 0 calc(${100 / 1.1}% - var(--_gap)) ;
-        }
+        --_one-element: calc((100% - (var(--_gap) * 1)) / 1.1 );
+       
     }
 `
 

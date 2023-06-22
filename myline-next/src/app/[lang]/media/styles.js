@@ -11,6 +11,7 @@ export const MediaPageContainer = styled.div`
     padding-top: clamp(40px, 20px + 3vw, 80px);
     padding-bottom: 20px;
     gap: 20px;
+    width: 100%;
     
 
     @media (min-width: 1000px) {
@@ -63,7 +64,7 @@ export const YouTubeLink = styled.a`
     background-color: var(--color-aquamarine);
     color: var(--color-main-gray);
     text-align: center;
-    padding: 30px;
+    padding: 30px 0;
     width: 100%;
     justify-content: center;
     max-width: 320px;
@@ -72,7 +73,7 @@ export const YouTubeLink = styled.a`
     font-weight: 600;
     border: 1px solid transparent;
     transition: background-color 0.3s, border-color 0.3s;
-    &:hover, &:focus-visible{
+    &:hover, &:focus-visible, &:active{
         outline: 1px solid transparent;
         border-color: var(--color-aquamarine);
         background-color: transparent;
@@ -91,13 +92,23 @@ export const MediaPageSliderBlock = styled.div`
     align-items: flex-start;
     gap: 30px;
     padding-bottom: 20px;
+    width: 100%;
     
 `
 
-export const SliderImageWrapper = styled.div`
+export const SliderItemWrapper = styled.div`
+    display: flex;
+    flex-direction: column;
     width: 100%;
     height: 100%;
+    align-items: flex-start;
+    gap: 10px;
+
+`
+
+export const SliderImageWrapper = styled.div`
     position: relative;
+    width: 100%;
     &:hover > button, &:focus-visible > button, &:active > button{
         opacity: 1;
         pointer-events: all;
@@ -141,4 +152,32 @@ export const ZoomInIconSVG = styled(ZoomInSVG)`
     height: 60px;
     object-fit: cover;
 
-  `
+`
+
+export const SliderItemTextBlock = styled.div`
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    align-items: flex-start;
+    width: 100%;
+    max-width: 100%;
+    height: 100%;
+
+`
+
+export const SliderItemTitle = styled.h2`
+    display: block;
+    max-width: 33ch;
+    color: var(--color-main-gray);
+    font-size: clamp(10px, 8px + 1vw, 18px);
+    font-style: italic;
+    font-weight: 600;
+
+`
+
+export const SliderItemDescription = styled.p`
+    display: block;
+    color: var(--color-light-gray);
+    font-size: clamp(10px, 8px + 1vw, 18px);
+    font-style: italic;
+`

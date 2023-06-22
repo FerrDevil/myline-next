@@ -6,37 +6,31 @@ import { MediaPageContainer, MediaPageHeader, MediaPageSliderBlock, MediaPageVid
 export default async function MediaPage({params: {lang}}) {
   const images = [
     {
-      id: 1,
+      id: 2,
       image: "/images/mediaSlider/img1.png",
+      title: "Скученность во фронтальном отделе верхней и нижней челюстей",
+      description: "Срок лечения: 6 месяцев"
+      
     },
     {
-      id: 2,
-      image: "/images/mediaSlider/img2.png",
+      id: 1,
+      image: "/images/mediaSlider/img3.png",
+      title: "Диастема, тремы",
+      description: "Срок лечения: 6 месяцев"
     },
+    
     {
       id: 3,
-      image: "/images/mediaSlider/img3.png",
+      image: "/images/mediaSlider/img2.png",
+      title: "Диастема",
+      description: "Срок лечения: 3 месяца"
     },
     {
       id: 4,
       image: "/images/mediaSlider/img4.png",
-    },
-    {
-      id: 5,
-      image: "/images/mediaSlider/img1.png",
-    },
-    {
-      id: 6,
-      image: "/images/mediaSlider/img2.png",
-    },
-    {
-      id: 7,
-      image: "/images/mediaSlider/img3.png",
-    },
-    {
-      id: 8,
-      image: "/images/mediaSlider/img4.png",
-    },
+      title: "Перекрестный прикус, скученность во фронтальном отделе",
+      description: "Срок лечения: 9 месяцев"
+    }
   ]
   
   const dictionary = await getMediaDictionary(lang) 

@@ -14,7 +14,11 @@ export const VideoWrapper = styled.div`
     position: relative;
 
     @media (min-width: 1000px) {
-        max-height: 300px;
+        max-height: 250px;
+    }
+
+    @media (max-width: 768px) {
+        aspect-ratio: 4 / 3;
     }
 `
 
