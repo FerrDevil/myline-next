@@ -64,4 +64,13 @@ export const ArticleModalOrderedList = styled.ol`
     
 `
 
+export const ArticleModalUnorderedList = styled.ul`
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    padding-left: 1em;
+    gap: clamp(10px, 5px + 1vw, 20px);
+    
+`
+
 

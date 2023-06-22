@@ -1,7 +1,7 @@
 import NewsSlider from "./components/Slider/NewsSlider";
 import { getNewsDictionary } from "@/app/[lang]/patient/dictionaries/dictionaries";
 import { BenefitCard, BenefitCardDescription, BenefitCardHeader, BenefitCardIconWrapper, BenefitCards, JoyIconSVG, LikeIconSVG, NewsPageAddition, NewsPageContainer, NewsPageDescription, NewsPageDescriptions, NewsPageHeader, TechnologiesIconSVG, TimeIconSVG } from "./styles"
-import { ArticleModalOrderedList, ArticleModalParagraph } from "./components/ArticleModal/styles";
+import { ArticleModalOrderedList, ArticleModalParagraph, ArticleModalUnorderedList } from "./components/ArticleModal/styles";
 
 export default async function NewsPage({params: {lang}}) {
     const dictionary = await getNewsDictionary(lang)
@@ -83,7 +83,38 @@ export default async function NewsPage({params: {lang}}) {
                 </>
             )
         },
-        
+        {
+            id: 4,
+            image: "/images/articles/article3.png",
+            title: "Отличие элайнеры/брекеты.",
+            article: (
+                <>
+                    <ArticleModalParagraph>
+                    Элайнеры и брекеты – это две разные системы, которые решают одни и те же проблемы, при этом имея между собой существенные различия: 
+                    </ArticleModalParagraph>
+                    <ArticleModalUnorderedList>
+                        <li>
+                            Внешний вид. Элайнеры относительно брекетов имеют более эстетичный вид , что является одним из основных плюсов.
+                        </li>
+                        <li>
+                            Сроки лечения. Лечение на элайнерах происходит быстрее, чем на брекетах.
+                        </li>
+                        <li>
+                            Комфорт в лечении. В силу того, что объем движения зубов на элайнерах строго контролируемое, зубы двигаются менее травматично как для окружающей костной ткани, так и для самих зубов. Поэтому лечение на элайнерах проходит безболезненно для пациента.
+                        </li>
+                        <li>
+                            Принцип работы. Элайнеры работают посредством давления, которые они оказывают на зубы. Для этого иногда на зубы фиксируются специальные элементы – аттачменты.  
+                        </li>
+                        <li>
+                            Мобильность конструкции. Элайнеры можно снять в течении лечения (для гигиены или принятия пищи), тогда как брекеты являются несъемной конструкцией.
+                        </li>
+                        <li>
+                            Уход и гигиена. Уход за элайнерами и гигиена в разы проще, нежели за брекетами. В силу того, что элайнеры можно снимать, для ухода достаточно почистить их щеткой и промыть под прохладной водой. Не используя дополнительные средства гигиены, которые необходимы при лечеии на брекет-системе.
+                        </li>
+                    </ArticleModalUnorderedList>
+                </>
+            )
+        },
     ]
     
 

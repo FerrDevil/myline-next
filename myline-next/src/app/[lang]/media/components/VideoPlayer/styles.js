@@ -14,7 +14,7 @@ export const VideoWrapper = styled.div`
     position: relative;
 
     @media (min-width: 1000px) {
-        max-height: 250px;
+        max-height: 230px;
     }
 
     @media (max-width: 768px) {
