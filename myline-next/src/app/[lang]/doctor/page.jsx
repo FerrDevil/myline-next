@@ -7,6 +7,30 @@ export default async function AboutPage({params: { lang }}) {
 
   const dictionary = await getDoctorDictionary(lang)
 
+  const joinUs = (
+    <AboutPageJoinUsWrapper>
+      <AboutPageJoinUsMessage>
+        <p>сотрудничество с</p>
+        <AboutPageJoinUsLogoWrapper>
+          <AboutPageJoinUsLogo/>
+        </AboutPageJoinUsLogoWrapper>
+      </AboutPageJoinUsMessage>
+      <JoinUsModal dictionary={dictionary.joinUsForm}/>
+    </AboutPageJoinUsWrapper>
+  )
+
+  const joinUsMobile = (
+    <AboutPageJoinUsWrapper $isMobile={true}>
+      <AboutPageJoinUsMessage>
+        <p>сотрудничество с</p>
+        <AboutPageJoinUsLogoWrapper>
+          <AboutPageJoinUsLogo/>
+        </AboutPageJoinUsLogoWrapper>
+      </AboutPageJoinUsMessage>
+      <JoinUsModal dictionary={dictionary.joinUsForm}/>
+    </AboutPageJoinUsWrapper>
+  )
+
   return (
     <AboutPageContainer>
       <AboutPageMainContentWrapper>
@@ -31,16 +55,8 @@ export default async function AboutPage({params: { lang }}) {
               {dictionary.secondDescription}
             </AboutPageDescription>
           </AboutPageDescriptions>
-
-          <AboutPageJoinUsWrapper>
-            <AboutPageJoinUsMessage>
-              <p>сотрудничество с</p>
-              <AboutPageJoinUsLogoWrapper>
-                <AboutPageJoinUsLogo/>
-              </AboutPageJoinUsLogoWrapper>
-            </AboutPageJoinUsMessage>
-            <JoinUsModal dictionary={dictionary.joinUsForm}/>
-          </AboutPageJoinUsWrapper>
+          {joinUs}
+         
         </AboutPageMainContent>
         
 
@@ -78,6 +94,7 @@ export default async function AboutPage({params: { lang }}) {
             <AboutPageCardDescription> {dictionary.cards[3].description} </AboutPageCardDescription>
           </AboutPageCard>
       </AboutPageCards>
+      {joinUsMobile}
     </AboutPageContainer>
   )
 } 

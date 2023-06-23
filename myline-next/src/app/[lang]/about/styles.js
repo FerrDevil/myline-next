@@ -81,7 +81,7 @@ export const AboutPageDecriptionList = styled.ul`
 export const AboutPageLinkWrapper = styled.div`
     position: relative;
     width: 100%;
-    display: flex;
+    display: ${props => props.$isMobile ? "none" : "flex" };
     flex-direction: column;
     align-items: flex-start;
     isolation: isolate;
@@ -89,6 +89,7 @@ export const AboutPageLinkWrapper = styled.div`
 
     @media (max-width: 1366px) {
         min-height: 200px;
+        display: ${props => props.$isMobile ? "flex" : "none" };
     }
     @media (max-width: 768px) {
         min-height: 250px;
@@ -100,16 +101,21 @@ export const AboutPageCallMeButton = styled.button`
     background-color: var(--color-aquamarine);
     color: #404342;
     text-align: center;
-    padding: clamp(20px, 10px + 1vw, 30px) 80px;
+    padding: clamp(20px, 10px + 1vw, 30px) 0;
     border-radius: 4px;
     font-weight: 600;
     border: 1px solid transparent;
     transition: background-color 0.3s, border-color 0.3s;
+    max-width: 360px;
+    width: 100%;
     cursor: pointer;
-    &:hover, &:focus-visible{
+    &:hover, &:focus-visible, &:active{
         outline: 1px solid transparent;
         background-color: #fff;
         border-color: var(--color-aquamarine);
+    }
+    @media (max-width: 768px) {
+        max-width: unset; 
     }
 ` 
 

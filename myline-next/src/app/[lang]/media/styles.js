@@ -51,7 +51,6 @@ export const MediaPageVideoBlockDescriptionTexts = styled.section`
 export const MediaPageVideoBlockDescriptionText = styled.p`
     font-weight: 400;
     font-size: clamp(16px, 8px + 1vw, 18px);
-    max-width: 53ch;
     color: var(--color-light-gray); 
 `
 

@@ -12,12 +12,13 @@ import Image from "next/image"
 export const AboutPageContainer = styled.div`
     display: flex;
     align-items: flex-start;
+    justify-content: space-between;
     height: 100%;
     padding-block: clamp(40px, 20px + 3vw, 80px) 20px;
-    gap: 40px;
+    gap: clamp(40px, 20px + 3vw, 80px);
     @media (max-width: 1366px) {
         flex-direction: column;
-        
+        gap: 40px;
     }
 `
 
@@ -49,7 +50,6 @@ export const AboutPageDescriptions = styled.section`
     flex-direction: column;
     align-items: flex-start;
     gap: clamp(10px, 5px + 1vw, 20px);
-    padding-inline-end: 40px;
     
 `
 
@@ -89,7 +89,7 @@ export const AboutPageLinkWrapper = styled.div`
 
 
 export const AboutPageJoinUsWrapper = styled.div`
-    display: flex;
+    display: ${props => props.$isMobile ? "none": "flex"};
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
@@ -100,6 +100,9 @@ export const AboutPageJoinUsWrapper = styled.div`
     width: 100%;
     @media (max-width: 1250px) {
         flex-direction: column;
+    }
+    @media (max-width: 1366px) {
+        display: ${props => props.$isMobile ? "flex": "none"};
     }
     
 `
@@ -143,10 +146,9 @@ export const AboutPageCards = styled.div`
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: clamp(10px, 5px + 1vw, 30px);
+    
     @media (max-width: 620px) {
-        grid-template-columns: unset;
-       
-        
+        grid-template-columns: unset; 
     }
 `
 
@@ -170,8 +172,8 @@ export const AboutPageCard = styled.div`
 `
 
 export const AboutPageCardIconWrapper = styled.div`
-    width: clamp(70px, 35px + 4vw, 80px);
-    height: clamp(70px, 35px + 4vw, 80px);
+    width: clamp(70px, 35px + 2vw, 80px);
+    height: clamp(70px, 35px + 2vw, 80px);
     aspect-ratio: 1;
     border-radius: 1000vw;
     background-color: var(--color-aquamarine);
@@ -209,13 +211,13 @@ export const DeliveryIconSVG = styled(DeliverySVG)`
 
 
 export const AboutPageCardHeader = styled.h2`
-    font-size: clamp(20px, 10px + 1vw, 22px);
+    font-size: clamp(20px, 1vw, 22px);
     font-weight: 700;
     color: var(--color-main-gray);
 `
 
 export const AboutPageCardDescription = styled.p`
-    font-size: clamp(16px, 8px + 1vw, 18px);
+    font-size: clamp(16px, 1vw, 18px);
     font-weight: 400;
     color: var(--color-light-gray);
 `

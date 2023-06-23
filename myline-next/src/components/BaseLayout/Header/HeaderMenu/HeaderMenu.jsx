@@ -36,11 +36,11 @@ const HeaderMenu = ({isAuthorized}) => {
                             <HeaderMenuLink href={`${lang}/about`} onClick={() => {setShown(false)}}>
                                 <HeaderMenuLinkTitle> {lang === "ru" ? "О компании": "About us"} </HeaderMenuLinkTitle>
                             </HeaderMenuLink>
-                            <HeaderMenuLink href={`${lang}/doctor`} onClick={() => {setShown(false)}}>
-                                <HeaderMenuLinkTitle> {lang === "ru" ? "Врачам": "About us"} </HeaderMenuLinkTitle>
-                            </HeaderMenuLink>
                             <HeaderMenuLink href={`${lang}/catalog`} onClick={() => {setShown(false)}}>
                                 <HeaderMenuLinkTitle> {lang === "ru" ? "Каталог": "Catalog"} </HeaderMenuLinkTitle>
+                            </HeaderMenuLink>
+                            <HeaderMenuLink href={`${lang}/doctor`} onClick={() => {setShown(false)}}>
+                                <HeaderMenuLinkTitle> {lang === "ru" ? "Врачам": "About us"} </HeaderMenuLinkTitle>
                             </HeaderMenuLink>
                             <HeaderMenuLink href={`${lang}/patient`} onClick={() => {setShown(false)}}>
                                 <HeaderMenuLinkTitle> {lang === "ru" ? "Пациентам": "For patients"} </HeaderMenuLinkTitle>

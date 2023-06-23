@@ -7,6 +7,24 @@ export default async function AboutPage({params: { lang }}) {
 
   const dictionary = await getAboutDictionary(lang)
 
+  const modal = (
+    <AboutPageLinkWrapper>
+      <CallMeModal/>
+      <AboutPageAlignerBGWrapper>
+        <AboutPageAlignerBG/>
+      </AboutPageAlignerBGWrapper>
+    </AboutPageLinkWrapper>
+  )
+
+  const modalMobile = (
+    <AboutPageLinkWrapper $isMobile={true}>
+      <CallMeModal/>
+      <AboutPageAlignerBGWrapper>
+        <AboutPageAlignerBG/>
+      </AboutPageAlignerBGWrapper>
+    </AboutPageLinkWrapper>
+  )
+
   return (
     <AboutPageContainer>
       <AboutPageMainContentWrapper>
@@ -31,12 +49,7 @@ export default async function AboutPage({params: { lang }}) {
               {dictionary.secondDescription}
             </AboutPageDescription>
           </AboutPageDescriptions>
-          <AboutPageLinkWrapper>
-            <CallMeModal/>
-            <AboutPageAlignerBGWrapper>
-              <AboutPageAlignerBG/>
-            </AboutPageAlignerBGWrapper>
-          </AboutPageLinkWrapper>
+          {modal}
         </AboutPageMainContent>
         
 
@@ -74,6 +87,7 @@ export default async function AboutPage({params: { lang }}) {
             <AboutPageCardDescription> {dictionary.fourthCardDescription} </AboutPageCardDescription>
           </AboutPageCard>
       </AboutPageCards>
+      {modalMobile}
     </AboutPageContainer>
   )
 } 

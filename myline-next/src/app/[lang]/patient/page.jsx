@@ -85,7 +85,7 @@ export default async function NewsPage({params: {lang}}) {
         },
         {
             id: 4,
-            image: "/images/articles/article3.png",
+            image: "/images/articles/article4.png",
             title: "Отличие элайнеры/брекеты.",
             article: (
                 <>
