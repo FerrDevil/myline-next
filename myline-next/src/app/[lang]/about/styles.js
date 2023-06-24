@@ -13,7 +13,7 @@ export const AboutPageContainer = styled.div`
     display: grid;
     grid-template-columns: 1fr 1fr;
     align-items: flex-start;
-    height: 100%;
+    
     padding-block: clamp(40px, 20px + 3vw, 80px) 20px;
     gap: 40px;
     @media (max-width: 1366px) {

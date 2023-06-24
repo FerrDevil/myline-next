@@ -8,18 +8,19 @@ import RightArrowSVG from "@/app/[lang]/media/public/right-arrow.svg"
 
 export const SliderWrapper = styled.div`
     width: 100%;
-    height: 100%;
+    max-width: 100%;
     
     display: flex;
     flex-direction: column;
     align-items: center;
     align-self: center;
     gap: 20px;
+    overflow: auto;
     user-select: none;
 
 
     @media (min-width: 1024px){
-        padding: 0 60px;
+        /* padding: 0 clamp(20px, 60px - 1vw, 60px); */
     }
 `
 
@@ -37,12 +38,13 @@ export const SliderArrowButton = styled.button`
     background-color: transparent;
     padding: 5px;
     width: 40px;
+    height: 40px;
     aspect-ratio: 1;
     cursor: pointer;
     &:hover  > svg, &:focus-visible  > svg, &:active  > svg {
         fill: var(--color-aquamarine);
     }
-    @media (max-width: 1024px) {
+    @media (max-width: 1024px){
         display: none;
     }
 
@@ -68,10 +70,9 @@ export const SliderRightArrowButtonSVG = styled(RightArrowSVG)`
 `
 
 export const SliderContainer = styled.div`
-    height: 100%;
+    
     display: flex;
-    overflow: hidden;
-    width: 100%;
+    overflow-x: hidden;
 `
 
 export const SliderItems = styled.div`
@@ -85,21 +86,29 @@ export const SliderItems = styled.div`
     transition: transform 0.8s;
     & > * {
         flex: 0 0 var(--_one-element);
+        max-width: var(--_one-element);
     }
     @media (max-width: 1024px) {
+        /* --_one-element: calc(100%  / 2.5 ); */
+        
         --_one-element: calc((100% - (var(--_gap) * 2)) / 2.5 );
     }
 
     @media (max-width: 600px) {
-        --_one-element: calc((100% - (var(--_gap) * 1)) / 1.1 );
+        --_one-element: calc((100% - (var(--_gap) * 1)) / 1.2 );
+        /* --_one-element: calc(100%  / 1.1 ); */
        
     }
 `
 
 export const SliderButtons = styled.div`
-    display: flex;
+    display: ${props => props.$isMobile? "flex": "none"};
     align-items: center;
     gap: clamp(10px, 1vw, 15px);
+    @media (min-width: 1024px){
+        display: ${props => props.$isMobile? "none": "flex"};
+    }
+    
 `
 
 export const SliderDot = styled.button`

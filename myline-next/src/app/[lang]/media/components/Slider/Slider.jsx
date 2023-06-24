@@ -14,6 +14,7 @@ const Slider = ({images=[]}) => {
     end: [-1, -1]
   }
 
+
   const onTouch = (event) => {
     swipeParams.start = [event.touches[0].clientX, event.touches[0].clientY]
   }
@@ -48,12 +49,12 @@ const Slider = ({images=[]}) => {
       
       <SliderContainerWrapper onTouchStart={onTouch} onTouchMove={onTouchMove} onTouchEnd={onTouchEnd}>
         <SliderArrowButton onClick={() => {
-          setCurrentItemIndex(prev => prev === 0 ? prev : prev - 1)
+          setCurrentItemIndex(prev => prev <= 0 ? images.length  - 4 : prev - 1)
         }}>
           <SliderLeftArrowButtonSVG/>
         </SliderArrowButton>
         <SliderContainer>
-          <SliderItems $currentGroupIndex={currentItemIndex}>
+          <SliderItems $sliderLength={images.length} $currentGroupIndex={currentItemIndex}>
             {
             images.map((image, index) => (
               <SliderItemWrapper key={image.id}>
@@ -76,13 +77,21 @@ const Slider = ({images=[]}) => {
         </SliderContainer>
         <SliderArrowButton>
           <SliderRightArrowButtonSVG onClick={() => {
-          setCurrentItemIndex(prev => prev === images.length - 1 ? prev : prev + 1)
+          setCurrentItemIndex(prev => prev === images.length  - 4 ? 0 : prev + 1)
         }}/>
         </SliderArrowButton>
         
       </SliderContainerWrapper>
       
       <SliderButtons>
+        {
+         images.filter((_, index) => index > images.length - 1 - 4)
+         .map((_, id) => (
+            <SliderDot key={id} onClick={() => {setCurrentItemIndex(id)}} $isActive={id === currentItemIndex} />
+          ))
+        }
+      </SliderButtons>
+      <SliderButtons $isMobile={true}>
         {
          images.map((_, id) => (
             <SliderDot key={id} onClick={() => {setCurrentItemIndex(id)}} $isActive={id === currentItemIndex} />

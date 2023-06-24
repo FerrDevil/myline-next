@@ -22,9 +22,8 @@ export const ContactPageWrapper = styled.div`
     display: flex;
     flex-direction: column;
     gap: 30px;
-    padding-top: clamp(40px, 20px + 3vw, 80px);
+    padding-block: clamp(40px, 20px + 3vw, 80px) 20px;
     width: 100%;
-    height: 100%;
 `
 
 export const ContactPageHeader = styled.h1`
@@ -45,6 +44,7 @@ export const ContactPageContainer = styled.div`
     }
     @media (max-width: 1280px) {
         grid-template-rows: 1fr 1fr;
+        gap: 20px;
         
     }
 `

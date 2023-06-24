@@ -11,7 +11,7 @@ export const MediaPageContainer = styled.div`
     padding-top: clamp(40px, 20px + 3vw, 80px);
     padding-bottom: 20px;
     gap: 20px;
-    width: 100%;
+
     
 
     @media (min-width: 1000px) {
@@ -32,7 +32,7 @@ export const MediaPageVideoBlock = styled.div`
     
     column-gap: clamp(30px, 15px + 5vw, 100px);
     row-gap: 30px;
-    @media (min-width: 1000px) {
+    @media (min-width: 1300px) {
         display: grid;
         grid-template-columns: 3fr 2fr;
 
@@ -102,6 +102,8 @@ export const SliderItemWrapper = styled.div`
     height: 100%;
     align-items: flex-start;
     gap: 10px;
+    flex-shrink: 0;
+    flex-grow: 0;
 
 `
 
@@ -158,25 +160,21 @@ export const SliderItemTextBlock = styled.div`
     flex-direction: column;
     gap: 5px;
     align-items: flex-start;
-    width: 100%;
     max-width: 100%;
-    height: 100%;
 
 `
 
 export const SliderItemTitle = styled.h2`
-    display: block;
-    max-width: 33ch;
     color: var(--color-main-gray);
     font-size: clamp(10px, 8px + 1vw, 18px);
     font-style: italic;
     font-weight: 600;
-
+    max-width: 33ch;
 `
 
 export const SliderItemDescription = styled.p`
-    display: block;
     color: var(--color-light-gray);
     font-size: clamp(10px, 8px + 1vw, 18px);
     font-style: italic;
+    max-width: 33ch;
 `

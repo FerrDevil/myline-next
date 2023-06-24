@@ -30,7 +30,25 @@ export default async function MediaPage({params: {lang}}) {
       image: "/images/mediaSlider/img4.png",
       title: "Перекрестный прикус, скученность во фронтальном отделе",
       description: "Срок лечения: 9 месяцев"
-    }
+    },
+    {
+      id: 5,
+      image: "/images/mediaSlider/img6.png",
+      title: "Диастема",
+      description: "Срок лечения: 6 месяцев"
+    },
+    {
+      id: 6,
+      image: "/images/mediaSlider/img5.png",
+      title: "Скученность",
+      description: ""
+    },
+    {
+      id: 7,
+      image: "/images/mediaSlider/img7.png",
+      title: "Скученность",
+      description: ""
+    },
   ]
   
   const dictionary = await getMediaDictionary(lang) 
@@ -41,6 +59,7 @@ export default async function MediaPage({params: {lang}}) {
         <MediaPageSliderBlock>
           <MediaPageHeader> { dictionary.pageTitle } </MediaPageHeader>
           <Slider images={images}/>
+
           
         </MediaPageSliderBlock>
         <MediaPageVideoBlock>

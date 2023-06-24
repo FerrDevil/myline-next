@@ -7,8 +7,7 @@ export const CatalogPageContainer = styled.div`
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    height: 100%;
-    padding-top: clamp(40px, 20px + 3vw, 80px);
+    padding-block: clamp(40px, 20px + 3vw, 80px) 20px;
     gap: 30px;
     
 `
@@ -33,7 +32,6 @@ export const CatalogPageProducts = styled.div`
     grid-auto-flow: column;
     align-items: flex-start;
     gap: clamp(20px, 10px + 1vw, 30px);
-    padding-bottom: 20px;
     
     @media (max-width: 900px) {
         grid-auto-flow: row;

@@ -13,7 +13,6 @@ export const AboutPageContainer = styled.div`
     display: flex;
     align-items: flex-start;
     justify-content: space-between;
-    height: 100%;
     padding-block: clamp(40px, 20px + 3vw, 80px) 20px;
     gap: clamp(40px, 20px + 3vw, 80px);
     @media (max-width: 1366px) {
