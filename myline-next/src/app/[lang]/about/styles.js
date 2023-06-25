@@ -30,6 +30,7 @@ export const AboutPageMainContentWrapper = styled.div`
     align-items: flex-start;
     gap: clamp(25px, 13px + 1vw, 30px);
     height: 100%;
+    isolation: isolate;
     
 `
 export const AboutPageHeader = styled.h1`
@@ -54,6 +55,8 @@ export const AboutPageDescriptions = styled.section`
     align-items: flex-start;
     gap: clamp(10px, 5px + 1vw, 20px);
     padding-inline-end: 40px;
+    background-color: #f5f5f577;
+    backdrop-filter:  blur(3px);
     
 `
 
@@ -85,13 +88,12 @@ export const AboutPageLinkWrapper = styled.div`
     display: ${props => props.$isMobile ? "none" : "flex" };
     flex-direction: column;
     align-items: flex-start;
-    isolation: isolate;
-    height: 100%;
-    overflow: hidden;
+    min-height: 100%;
 
     @media (max-width: 1366px) {
         min-height: 200px;
         display: ${props => props.$isMobile ? "flex" : "none" };
+        isolation: isolate;
     }
     @media (max-width: 768px) {
         min-height: 250px;
@@ -133,9 +135,10 @@ export const AboutPageAlignerBGWrapper = styled.div`
     user-select: none;
     
     @media (min-width: 1366px) {
-        max-height: 300px;
+        max-height: 400px;
         top: 0;
-        
+        bottom: 0;
+        width: 100%;
     }
 
     @media (max-width: 1366px) {
@@ -157,7 +160,7 @@ export const AboutPageAlignerBG = styled(Image).attrs({
 })`
     width: 100%;
     height: 100%;
-    object-fit: contain;
+    object-fit: cover;
     overflow: visible;
 
 `
