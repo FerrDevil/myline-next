@@ -87,6 +87,7 @@ export const AboutPageLinkWrapper = styled.div`
     align-items: flex-start;
     isolation: isolate;
     height: 100%;
+    overflow: hidden;
 
     @media (max-width: 1366px) {
         min-height: 200px;
@@ -152,11 +153,11 @@ export const AboutPageAlignerBG = styled(Image).attrs({
     sizes: "100vw",
     src: "/images/aligner-bg.png",
     loading: "eager",
-    alt: "bgAligner"
+    alt: "bgAligner",
 })`
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: contain;
     overflow: visible;
 
 `
