@@ -38,11 +38,9 @@ html{
 
 
 body {
-  display: flex;
-  flex-direction: column;
   height: 100%;
   position: relative;
-  overflow-x: hidden;
+  /* overflow-x: hidden; */
 }
 
 html::-webkit-scrollbar{

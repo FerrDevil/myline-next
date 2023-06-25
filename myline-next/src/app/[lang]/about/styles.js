@@ -13,6 +13,7 @@ export const AboutPageContainer = styled.div`
     display: grid;
     grid-template-columns: 1fr 1fr;
     align-items: flex-start;
+    width: 100%;
     
     padding-block: clamp(40px, 20px + 3vw, 80px) 20px;
     gap: 40px;
@@ -93,6 +94,7 @@ export const AboutPageLinkWrapper = styled.div`
     }
     @media (max-width: 768px) {
         min-height: 250px;
+        
     }
 `
 
@@ -141,9 +143,7 @@ export const AboutPageAlignerBGWrapper = styled.div`
         
     }
     @media (max-width: 600px) {
-        width: 100%;
-        transform: translateX(10%);
-        height: 180px;
+        width: unset;
     }
 `
 export const AboutPageAlignerBG = styled(Image).attrs({
