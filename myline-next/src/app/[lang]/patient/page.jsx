@@ -1,4 +1,4 @@
-import NewsSlider from "./components/Slider/NewsSlider";
+import NewsSlider from "./components/Slider/ArticlesSlider";
 import { getNewsDictionary } from "@/app/[lang]/patient/dictionaries/dictionaries";
 import { BenefitCard, BenefitCardDescription, BenefitCardHeader, BenefitCardIconWrapper, BenefitCards, JoyIconSVG, LikeIconSVG, NewsPageAddition, NewsPageContainer, NewsPageDescription, NewsPageDescriptions, NewsPageHeader, TechnologiesIconSVG, TimeIconSVG } from "./styles"
 import { ArticleModalOrderedList, ArticleModalParagraph, ArticleModalUnorderedList } from "./components/ArticleModal/styles";

@@ -48,7 +48,7 @@ export const SliderToggleGroupButton = styled.button`
     font-weight: 600;
     border-radius: 4px;
     padding: 10px 15px;
-    color:  ${props => props.$isActive ? "#fff" : "#404342"};
+    color:  ${props => props.$isActive ? "#fff" : "var(--color-main-gray)"};
     background-color: ${props => props.$isActive ? "var(--color-aquamarine)" : "transparent"};
     cursor: pointer;
 `

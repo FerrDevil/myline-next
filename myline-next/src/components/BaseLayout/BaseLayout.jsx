@@ -11,7 +11,7 @@ const BaseLayout = ({ children }) => {
     const lang = cookies().get("MYLINE-LOCALE-COOKIE")?.value 
     return (
         <>
-            <Header isAuthorized={true}/>
+            <Header isAuthorized={false}/>
             <PageSlider lang={lang}>
                 {children}
                 <CallMeModal/>

@@ -30,7 +30,7 @@ export const HeaderMenuToggleButton = styled.button`
     place-items: center;
 
     & > svg{
-        fill: ${props => props.$shouldChangeColor ? "#404342" : "var(--color-aquamarine)"};
+        fill: ${props => props.$shouldChangeColor ? "var(--color-main-gray)" : "var(--color-aquamarine)"};
     }
 `
 
@@ -147,7 +147,7 @@ export const HeaderMenuLinkWrapper = styled.div`
 export const HeaderMenuRegisterLink = styled(Link)`
     font-size: clamp(14px, 7px + 1vh, 16px);
     background-color: var(--color-aquamarine);
-    color: #404342;
+    color: var(--color-main-gray);
     text-align: center;
     padding: clamp(10px, 7px + 1vh, 15px);
     border-radius: 4px;
@@ -164,7 +164,7 @@ export const HeaderMenuRegisterLink = styled(Link)`
 export const HeaderMenuProfileLink = styled(Link)`
     font-size: clamp(14px, 7px + 1vh, 16px);
     background-color: var(--color-aquamarine);
-    color: #404342;
+    color: var(--color-main-gray);
     text-align: center;
     padding: clamp(10px, 7px + 1vh, 15px);
     border-radius: 4px;
@@ -181,7 +181,7 @@ export const HeaderMenuProfileLink = styled(Link)`
 export const HeaderMenuLoginLink = styled(Link)`
     font-size: clamp(14px, 7px + 1vh, 16px);
     border: 1px solid var(--color-aquamarine);
-    background-color: #404342;
+    background-color: var(--color-main-gray);
     color: var(--color-aquamarine);
     text-align: center;
     padding: clamp(10px, 7px + 1vh, 15px);
@@ -199,7 +199,7 @@ export const HeaderMenuLoginLink = styled(Link)`
 export const HeaderMenuLogoutLink = styled.button`
     font-size: clamp(14px, 7px + 1vh, 16px);
     border: 1px solid var(--color-aquamarine);
-    background-color: #404342;
+    background-color: var(--color-main-gray);
     color: var(--color-aquamarine);
     text-align: center;
     padding: clamp(10px, 7px + 1vh, 15px);

@@ -28,8 +28,8 @@ export default async function Home({params: { lang }} ) {
             </MainPageStatistic>
           </MainPageStatistics>
           <AuthorizationButtons>
-            <RegisterLink href={`/${lang}/register`}>{dictionary.registerLink}</RegisterLink>
-            <LoginLink href={`${lang}/signIn`}>{dictionary.signInLink}</LoginLink>
+            <RegisterLink href={`/${lang}`}>{dictionary.registerLink}</RegisterLink>
+            <LoginLink href={`${lang}`}>{dictionary.signInLink}</LoginLink>
           </AuthorizationButtons>
         </MainPageContainer>
       </>

@@ -104,7 +104,7 @@ export const AboutPageLinkWrapper = styled.div`
 export const AboutPageCallMeButton = styled.button`
     font-size: clamp(14px, 7px + 1vw, 16px);
     background-color: var(--color-aquamarine);
-    color: #404342;
+    color: var(--color-main-gray);
     text-align: center;
     padding: clamp(20px, 10px + 1vw, 30px) 0;
     border-radius: 4px;

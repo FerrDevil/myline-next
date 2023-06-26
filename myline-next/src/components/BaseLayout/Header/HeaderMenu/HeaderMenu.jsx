@@ -70,7 +70,7 @@ const HeaderMenu = ({isAuthorized}) => {
                         {
                             isAuthorized ? 
                             <>
-                                <HeaderMenuProfileLink href={`${lang}/profile`} onClick={() => {setShown(false)}}>
+                                <HeaderMenuProfileLink href={`#`} onClick={() => {setShown(false)}}>
                                     {lang === "ru" ? "Личный кабинет": "Profile"}
                                 </HeaderMenuProfileLink>
                                 <HeaderMenuLogoutLink onClick={() => {setShown(false)}}>
@@ -78,10 +78,10 @@ const HeaderMenu = ({isAuthorized}) => {
                                 </HeaderMenuLogoutLink>
                             </> :
                             <>
-                            <HeaderMenuRegisterLink href={`${lang}/register`} onClick={() => {setShown(false)}}>
+                            <HeaderMenuRegisterLink href={`#`} onClick={() => {setShown(false)}}>
                                 {lang === "ru" ? "Зарегистрироваться": "Register"}
                             </HeaderMenuRegisterLink>
-                            <HeaderMenuLoginLink href={`${lang}/signIn`} onClick={() => {setShown(false)}}>
+                            <HeaderMenuLoginLink href={`#`} onClick={() => {setShown(false)}}>
                                 {lang === "ru" ? "Войти": "Sign in"}
                             </HeaderMenuLoginLink>
                             </>

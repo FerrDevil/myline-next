@@ -17,7 +17,7 @@ export const NewsPageHeader = styled.h2`
     font-size: clamp(30px, 15px + 5vw, 60px);
     font-weight: 700;
     text-transform: uppercase;
-    color: #404342;
+    color: var(--color-main-gray);
     
 `
 export const NewsPageDescriptions = styled.div`
@@ -77,15 +77,20 @@ export const NewsPageLinkInsidesWrapper = styled.div`
 export const NewsPageLinkTitle = styled.h2`
     font-weight: 700;
     font-size: clamp(20px, 10px + 1vw, 22px);
-    color: #404342; 
+    color: var(--color-main-gray); 
    
 `
 
-export const NewsPageLinkSocialsLink = styled.a`
+export const NewsPageLinkSocialsLink = styled.button`
     font-weight: 600;
-    
+    display: inline;
+    width: fit-content;
     font-size: clamp(14px, 7px + 1vw, 16px);
     color: var(--color-aquamarine);
+    background-color: transparent;
+    border: 1px solid transparent;
+    text-align: left;
+    cursor: pointer;
     &:hover, &:focus-visible, &:active{
         text-decoration: underline;
     } 

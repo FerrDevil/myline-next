@@ -2,14 +2,14 @@
 import { useState } from "react"
 import { SliderContainer, SliderGroupContainer, SliderToggleGroupButton, SliderToggleGroupButtons, SliderWrapper } from "./styles"
 import { NewsPageLinkImage, NewsPageLinkImageWrapper, NewsPageLinkInsidesWrapper, NewsPageLinkSocialsLink, NewsPageLinkTitle, NewsPageLinkWrapper } from "../../styles"
-import ArticleModal from "../ArticleModal/ArticleModal"
+import NewsModal from "../NewsModal/NewsModal"
 
-const NewsSlider = ({ dictionary, content=[] }) => {
+const NewsSlider = ({content=[], dictionary=null }) => {
     const [currentGroupIndex, setCurrentGroupIndex] = useState(0)
-    const [currentArticleIndex, setCurrentArticleIndex] = useState(-1)
-    
+    const [currentNewsIndex, setCurrentNewsIndex] = useState(-1)
 
     const sliderItemsLength = 4 
+    
     const linkElements = content.map((link, linkIndex) => (
       <NewsPageLinkWrapper key={link.id}>
           <NewsPageLinkImageWrapper>
@@ -18,7 +18,7 @@ const NewsSlider = ({ dictionary, content=[] }) => {
           <NewsPageLinkInsidesWrapper>
               <NewsPageLinkTitle>{link.title}</NewsPageLinkTitle>
               <NewsPageLinkSocialsLink onClick={() => {
-                setCurrentArticleIndex(linkIndex)
+                setCurrentNewsIndex(linkIndex)
               }}>
                   {dictionary.newsLink}
               </NewsPageLinkSocialsLink>
@@ -42,26 +42,28 @@ const NewsSlider = ({ dictionary, content=[] }) => {
 
 
   return (
-    <SliderWrapper>
-      <ArticleModal 
-        currentArticleIndex={currentArticleIndex} 
-        setCurrentArticleIndex={setCurrentArticleIndex}
-        articles={content}
+    <>
+      <NewsModal
+        currentNewsIndex={currentNewsIndex} 
+        setCurrentNewsIndex={setCurrentNewsIndex}
+        news={content}
       />
-      <SliderContainer>
-        {contentGroups[currentGroupIndex]}
-      </SliderContainer>
-      <SliderToggleGroupButtons>
-        {
-         content.length - 1 >= sliderItemsLength && 
-          Array.from(Array(contentGroupsCount).keys()).map(id => (
-            <SliderToggleGroupButton key={id} onClick={() => {setCurrentGroupIndex(id)}} $isActive={id === currentGroupIndex} >
-              {id + 1}
-            </SliderToggleGroupButton>
-          ))
-        }
-      </SliderToggleGroupButtons>
-    </SliderWrapper>
+      <SliderWrapper>
+        <SliderContainer>
+          {contentGroups[currentGroupIndex]}
+        </SliderContainer>
+        <SliderToggleGroupButtons>
+          { content.length-1 >= sliderItemsLength &&
+            Array.from(Array(contentGroupsCount).keys()).map(id => (
+              <SliderToggleGroupButton key={id} onClick={() => {setCurrentGroupIndex(id)}} $isActive={id === currentGroupIndex} >
+                {id + 1}
+              </SliderToggleGroupButton>
+            ))
+          }
+        </SliderToggleGroupButtons>
+      </SliderWrapper>
+    </>
+    
   )
 }
 

@@ -155,7 +155,7 @@ export const AboutPageCard = styled.div`
     padding: 30px;
     display: flex;
     flex-direction: column;
-    gap: 5px;
+    gap: 10px;
     box-shadow: 2px 2px 10px 0px rgba(0, 0, 0, 0.15);
     border-radius: 15px;
     background-color: ${props => props.$isAlternated ? "var(--color-aquamarine)" : "#fff" };

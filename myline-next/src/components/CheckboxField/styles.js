@@ -46,7 +46,7 @@ export const Checkbox = styled.input.attrs(() => ({
 export const CheckboxDescription = styled.span`
     font-size: clamp(14px, 7px + 1vw, 18px);
     font-weight: 400;
-    color: #404342;
+    color: var(--color-main-gray);
     text-align: left;
     
 `
