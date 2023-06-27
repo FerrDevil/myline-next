@@ -17,7 +17,7 @@ export const AboutPageCallMeWrapper = styled.button`
     right: 0;
     top: 50%;
     max-width: 40px;
-    padding: 10px;
+    padding: clamp(6px, 1vw, 10px);
     border: 1px solid transparent;
     cursor: pointer;
 `

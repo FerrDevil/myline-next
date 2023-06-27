@@ -3,7 +3,7 @@ import styled from "styled-components"
 import Link from "next/link"
 
 export const VideoBackground = styled.video.attrs(() => ({
-    src: "/videos/background.mp4"
+    src: "/videos/bg.MOV"
 }))`
     width: 100%;
     height: 100%;
