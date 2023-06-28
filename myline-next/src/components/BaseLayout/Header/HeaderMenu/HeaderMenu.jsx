@@ -97,7 +97,7 @@ const HeaderMenu = ({isAuthorized}) => {
                         <SocialsLink target="_blank" href="https://vk.com/mylinegroup"><VKLinkSVG/></SocialsLink>
                         <SocialsLink target="_blank" href="https://www.youtube.com/@Myline.inform"><YoutubeLinkSVG/></SocialsLink>
                         <SocialsLink target="_blank" href="https://wa.me/79048304445"><WhatsAppLinkSVG/></SocialsLink>
-                        <SocialsLink target="_blank" href="https://t.me/da"><TelegramLinkSVG/></SocialsLink>
+                        <SocialsLink target="_blank" href="https://t.me/+79048304445"><TelegramLinkSVG/></SocialsLink>
                         <SocialsLink target="_blank" href="https://viber.click/79048304445"><ViberLinkSVG/></SocialsLink>
                     </SocialsLinksContainer>
 

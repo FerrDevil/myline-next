@@ -22,7 +22,7 @@ export const ModalDialog = styled.dialog`
 
     opacity: ${props => props.$isOpen ? 1 : 0};
     pointer-events: ${props => props.$isOpen ? "all" : "none"};
-    user-select: ${props => props.$isOpen ? "all" : "none"};
+    
 
     &::backdrop{
       background-color: rgba(0 0 0 / 0.25);
@@ -42,5 +42,4 @@ export const ModalDialogContent = styled.div`
     display: grid;
     overflow: auto;
     border-radius: 5px;
-    ;
 `

@@ -16,7 +16,7 @@ export default async function ContactsPage({params: {lang}})  {
                   <ContactPageSocialsLinks>
                     <ContactPageSocialsLinksContainer>
                       <ContactPageSocialsLink target="_blank" href="https://wa.me/79048304445"><ContactPageWhatsAppSVG/></ContactPageSocialsLink>
-                      <ContactPageSocialsLink target="_blank" href="https://t.me/da"><ContactPageTelegramSVG/></ContactPageSocialsLink>
+                      <ContactPageSocialsLink target="_blank" href="https://t.me/+79048304445"><ContactPageTelegramSVG/></ContactPageSocialsLink>
                       <ContactPageSocialsLink target="_blank" href="https://viber.click/79048304445"><ContactPageViberSVG/></ContactPageSocialsLink>
                       
                     </ContactPageSocialsLinksContainer>

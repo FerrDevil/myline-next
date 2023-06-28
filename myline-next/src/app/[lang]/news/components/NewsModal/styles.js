@@ -37,7 +37,7 @@ export const ArticleModalHeader = styled.h2`
     border-bottom: 1px solid #D9D9D9;
 `
 
-export const ArticleModalContentWrapper = styled.div`
+export const ArticleModalContentWrapper = styled.article`
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -46,7 +46,17 @@ export const ArticleModalContentWrapper = styled.div`
     font-weight: 400;
     color: var(--color-light-gray);
     text-align: justify;
-    
+
+    & p{
+        width: 100%;
+        display: block;
+    }
+    & a{
+        text-decoration: underline;
+    }
+    & a:hover, & a:active, & a:focus-visible{
+        text-decoration: none;
+    }
 `
 
 export const ArticleModalParagraph = styled.p`
