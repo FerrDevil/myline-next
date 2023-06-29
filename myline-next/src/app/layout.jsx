@@ -10,7 +10,8 @@ export const metadata = {
   description: 'Добро пожаловать на сайт Майлайн! Мы предлагаем элайнеры для исправления прикуса без металлических брекетов и проволоки.',
   keywords: "элайнеры, исправление прикуса, прозрачные пластинки, индивидуальное изготовление, консультация",
   other: {
-    "yandex-verification": "78f55d525413a2be"
+    "yandex-verification": "78f55d525413a2be",
+    "google-site-verification": "_A7t_K0MHeWQuCQr09rC34IE01NB3ebze9WwYblaVp0"
   },
   icons: {
     icon:  [
