@@ -13,7 +13,7 @@ export const VideoWrapper = styled.div`
     background-color: #ccc;
     position: relative;
 
-    @media (min-width: 1000px) {
+    @media (min-width: 1300px) {
         max-height: 230px;
     }
 
