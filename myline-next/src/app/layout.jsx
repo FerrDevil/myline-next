@@ -11,7 +11,7 @@ export const metadata = {
   keywords: "элайнеры, исправление прикуса, прозрачные пластинки, индивидуальное изготовление, консультация",
   other: {
     "yandex-verification": "78f55d525413a2be",
-    "google-site-verification": "_A7t_K0MHeWQuCQr09rC34IE01NB3ebze9WwYblaVp0"
+    "google-site-verification": "I7pX4jvHf48FDPtJoejsqeWGO7aSIVxcpD5VNHHPmvs"
   },
   icons: {
     icon:  [

@@ -88,7 +88,7 @@ export const AboutPageLinkWrapper = styled.div`
     display: ${props => props.$isMobile ? "none" : "flex" };
     flex-direction: column;
     align-items: flex-start;
-    min-height: 100%;
+    min-height: 300px;
 
     @media (max-width: 1366px) {
         min-height: 200px;
