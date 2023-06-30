@@ -258,7 +258,7 @@ export const ContactPageReviewsButtons = styled.div`
     width: 100%;
 `
 
-export const ContactPageReviewsButton = styled.button`
+export const ContactPageReviewsButton = styled.a`
     display: flex;
     align-items: center;
     justify-content: center;

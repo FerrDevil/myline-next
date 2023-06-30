@@ -73,10 +73,10 @@ export default async function ContactsPage({params: {lang}})  {
                   <ContactPageReviewsContainer>
                     <ContactPageReviewsHeader>{dictionary.reviews}:</ContactPageReviewsHeader>
                     <ContactPageReviewsButtons>
-                      <ContactPageReviewsButton>
+                      <ContactPageReviewsButton target="_blank" href="https://yandex.ru/maps/org/maylayn/111104297735/?from=mapframe&ll=53.223115%2C56.884238&source=mapframe&utm_source=mapframe&z=12">
                         <ContactPageYandexSVG/>
                       </ContactPageReviewsButton>
-                      <ContactPageReviewsButton>
+                      <ContactPageReviewsButton target="_blank" href={"https://2gis.ru/izhevsk/firm/70000001076390822/53.222668%2C56.861336/tab/reviews?floor=1&m=53.223138%2C56.861208%2F18.57%2Fr%2F4.02"}>
                         <ContactPageGisSVG/>
                       </ContactPageReviewsButton>
                     </ContactPageReviewsButtons>

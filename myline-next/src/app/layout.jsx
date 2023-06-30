@@ -4,10 +4,11 @@ import Providers from './providers'
 import { rubik } from './font'
 import { cookies } from 'next/dist/client/components/headers'
 import AcceptCookiesMessage from './components/AcceptCookiesMessage/AcceptCookiesMessage'
+import Script from 'next/script'
 
 export const metadata = {
   title: 'Myline',
-  description: 'Добро пожаловать на сайт Майлайн! Мы предлагаем элайнеры для исправления прикуса без металлических брекетов и проволоки.',
+  description: 'Добро пожаловать на сайт Майлайн! Мы предлагаем элайнеры для исправления прикуса без металлических брекетов и проволоки. Наша технология основана на использовании прозрачных пластинок, которые позволяют вам незаметно корректировать положение зубов. Не стесняйтесь улыбаться!',
   keywords: "элайнеры, исправление прикуса, прозрачные пластинки, индивидуальное изготовление, консультация",
   other: {
     "yandex-verification": "78f55d525413a2be",
@@ -45,7 +46,17 @@ export default async function RootLayout({children}) {
               }
               <AcceptCookiesMessage acceptCookies={acceptCookies}/>
           </StyledComponentsRegistry>
-        </Providers> 
+        </Providers>
+        <Script src={`https://www.googletagmanager.com/gtag/js?id=${process.env.GA_MEASUREMENT_ID}`} />
+        <Script id="google-analytics">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag() {dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', '${process.env.GA_MEASUREMENT_ID}');
+          `}
+        </Script> 
         </body>
     </html>
   )
