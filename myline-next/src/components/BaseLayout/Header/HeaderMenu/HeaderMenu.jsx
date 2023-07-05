@@ -40,13 +40,16 @@ const HeaderMenu = ({isAuthorized}) => {
                                 <HeaderMenuLinkTitle> {lang === "ru" ? "Каталог": "Catalog"} </HeaderMenuLinkTitle>
                             </HeaderMenuLink>
                             <HeaderMenuLink href={`${lang}/doctor`} onClick={() => {setShown(false)}}>
-                                <HeaderMenuLinkTitle> {lang === "ru" ? "Врачам": "About us"} </HeaderMenuLinkTitle>
+                                <HeaderMenuLinkTitle> {lang === "ru" ? "Врачам": "For doctors"} </HeaderMenuLinkTitle>
                             </HeaderMenuLink>
                             <HeaderMenuLink href={`${lang}/patient`} onClick={() => {setShown(false)}}>
                                 <HeaderMenuLinkTitle> {lang === "ru" ? "Пациентам": "For patients"} </HeaderMenuLinkTitle>
                             </HeaderMenuLink>
                             <HeaderMenuLink href={`${lang}/media`} onClick={() => {setShown(false)}}>
                                 <HeaderMenuLinkTitle> {lang === "ru" ? "Что могут элайнеры?": "Media"} </HeaderMenuLinkTitle>
+                            </HeaderMenuLink>
+                            <HeaderMenuLink href={`${lang}/partners`} onClick={() => {setShown(false)}}>
+                                <HeaderMenuLinkTitle> {lang === "ru" ? "Наши партнеры": "Partners"} </HeaderMenuLinkTitle>
                             </HeaderMenuLink>
                             <HeaderMenuLink href={`${lang}/news`} onClick={() => {setShown(false)}}>
                                 <HeaderMenuLinkTitle> {lang === "ru" ? "Новости": "News"} </HeaderMenuLinkTitle>

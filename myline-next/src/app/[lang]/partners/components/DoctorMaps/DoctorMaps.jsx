@@ -27,28 +27,16 @@ const DoctorMaps = ({ymaps, lang="ru"}) => {
     const doctors = [
         {
             id: 1,
-            name: "Серебренников Иван Иванович",
-            address: "г. Ижевск, ул. Ленина, д. 1, офис 207",
-            geolocation: [56.8663104, 53.234616]
+            name: "Стоматология «Ресто»",
+            address: "г. Ижевск, ул. Удмуртская 304н, офис 307",
+            geolocation: [56.86126240383427,53.222655556378946]
         },
         {
             id: 2,
-            name: "Серебренников Иван Иванович",
-            address: "г. Ижевск, ул. Ленина, д. 2, офис 207",
-            geolocation: [56.8613104, 53.243616]
+            name: "Клиника «WHITE»",
+            address: "г. Ижевск, ул. 40 лет Победы, д. 138",
+            geolocation: [56.840577067866334,53.281702499999994]
         },
-        {
-            id: 3,
-            name: "Серебренников Иван Иванович",
-            address: "г. Ижевск, ул. Ленина, д. 3, офис 207",
-            geolocation: [56.8763104, 53.134616]
-        },
-        {
-            id: 4,
-            name: "Серебренников Иван Иванович",
-            address: "г. Ижевск, ул. Ленина, д. 4, офис 207",
-            geolocation: [56.8723104, 53.124616]
-        }
     ]
     
 
@@ -70,10 +58,13 @@ const DoctorMaps = ({ymaps, lang="ru"}) => {
     }, [map.current]);
 
     return (
-        <YandexMapWrapper>
+        <YandexMapWrapper onWheel={(event) => {
+            event.preventDefault()
+            event.stopPropagation()
+        }}>
             <YandexMap 
                 instanceRef={map}
-                state={{ center: currentUserGeolocationInfo, zoom: 14 }} 
+                state={{ center: currentUserGeolocationInfo, zoom: 12 }} 
                 modules={ [ 'geoObject.addon.balloon', 'geoObject.addon.hint' ] }
                 
                 
@@ -89,12 +80,12 @@ const DoctorMaps = ({ymaps, lang="ru"}) => {
                             }}
                             options={{
                                 iconColor: '#51CACD',
-                                preset: "islands#dotIcon",
+                                preset: "islands",
                                 hideIconOnBalloonOpen: false,
                                 balloonMinWidth: 300,
                                 balloonMaxWidth: 320,
-                                balloonMaxHeigh: 400,
-                                balloonMinHeight: 150,
+                                balloonMaxHeight: 200,
+                                balloonMinHeight: 100,
                                 balloonCloseButton: false,
                                 balloonOffset: [0, -30]
                                 
@@ -110,13 +101,9 @@ const DoctorMaps = ({ymaps, lang="ru"}) => {
             {   currentDoctorIndex !== -1 &&
                 <Portal key={doctors[currentDoctorIndex].id} getHTMLElementId={ `doctor${doctors[currentDoctorIndex].id}` }>
                     <DoctorWrapper className={rubik.className}>
-                        <DoctorImageWrapper>
-                            <DoctorImage src="/images/doctor.png"/>
-                        </DoctorImageWrapper>
                         <DoctorContent>
                             <DoctorName>{doctors[currentDoctorIndex].name}</DoctorName>
                             <DoctorAddress>{doctors[currentDoctorIndex].address}</DoctorAddress>
-                            <DoctorChooseButton>{lang === "ru"? "Выбрать" : "Select"}</DoctorChooseButton>
                         </DoctorContent>
                     </DoctorWrapper>
                 </Portal>

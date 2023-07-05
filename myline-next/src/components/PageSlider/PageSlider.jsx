@@ -10,7 +10,7 @@ export const pageStore = createContext()
 const PageSlider = ({children, lang="ru"}) => {
 
     const pathname = usePathname()
-    const links = [`/${lang}`, `/${lang}/about`, `/${lang}/catalog`, `/${lang}/doctor`, `/${lang}/patient`, `/${lang}/media`, `/${lang}/news`, `/${lang}/contacts`]
+    const links = [`/${lang}`, `/${lang}/about`, `/${lang}/catalog`, `/${lang}/doctor`, `/${lang}/patient`, `/${lang}/media`, `/${lang}/partners`, `/${lang}/news`, `/${lang}/contacts`]
     const currentLinkId = links.findIndex(link => link === pathname)
     const [linkId, setLinkId] = useState(currentLinkId)
     const [isLoading, setLoading] = useState(false)

@@ -1,7 +1,7 @@
 "use client"
 import styled from "styled-components"
 
-export const ChooseDoctorPageWrapper = styled.div`
+export const PartnersPageWrapper = styled.div`
     
     display: grid;
     align-items: flex-start;
@@ -11,7 +11,7 @@ export const ChooseDoctorPageWrapper = styled.div`
     gap: 30px;
     
 `
-export const ChooseDoctorPageHeader = styled.h1`
+export const PartnersPageHeader = styled.h1`
     font-size: clamp(30px, 15px + 5vw, 60px);
     font-weight: 700;
     color: var(--color-main-gray);
@@ -19,8 +19,14 @@ export const ChooseDoctorPageHeader = styled.h1`
     
 `
 
-export const ChooseDoctorPageContainer = styled.div`
-    
+export const PartnersPageDescription = styled.p`
+    display: inline;
+    font-size: clamp(16px, 8px + 1vw, 18px);
+    font-weight: 500;
+    color: var(--color-light-gray);
+`
+
+export const PartnersPageContainer = styled.div`
     display: flex;
     flex-direction: row;
     align-items: flex-start;
