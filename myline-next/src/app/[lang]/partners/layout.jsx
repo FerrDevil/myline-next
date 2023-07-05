@@ -1,8 +1,8 @@
 export async function generateMetadata({ params : {lang}}){
   return {
     title: lang === "ru" ? 'Наши партнеры': "Partners",
-    description: 'Партнеры',
-    keywords: "местоположение, партнеры, клиники, "
+    description: 'Партнеры нашей компании',
+    keywords: "местоположение, партнеры, клиники, метки, карта, сотрудничество"
   }
 }
 
