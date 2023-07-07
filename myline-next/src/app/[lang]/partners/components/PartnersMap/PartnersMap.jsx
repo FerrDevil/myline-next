@@ -1,46 +1,44 @@
 "use client"
 
-import { Placemark, withYMaps } from "@pbe/react-yandex-maps"
-import { DoctorAddress, DoctorChooseButton, DoctorContent, DoctorImage, DoctorImageWrapper, DoctorName, DoctorWrapper, YandexMap, YandexMapWrapper } from "./styles"
+import { Placemark } from "@pbe/react-yandex-maps"
+import { DoctorAddress, DoctorContent, DoctorName, DoctorWrapper, YandexMap, YandexMapWrapper } from "./styles"
 import { useEffect, useRef, useState } from "react"
 import Portal from "./Portal"
 import { rubik } from "@/app/font"
 
 
+const PartnersMaps = () => {
+    const currentUserGeolocationInfo = [56.85235931108874,53.19983949999994]
 
-const useUserGeolocation = (ymaps) => {
-    const [currentUserGeolocationInfo, setCurrentUserGeolocationInfo] =  useState([55, 55])
-    useEffect(() => {
-        ymaps.geolocation.get().then( ({geoObjects: { position }}) => {
-            
-            setCurrentUserGeolocationInfo(position)
-        })
-        
-    }, [ymaps])
-    return currentUserGeolocationInfo
-}
-
-
-const DoctorMaps = ({ymaps, lang="ru"}) => {
-    const currentUserGeolocationInfo = useUserGeolocation(ymaps)
-
-    const doctors = [
+    const partners = [
         {
             id: 1,
             name: "Стоматология «Ресто»",
             address: "г. Ижевск, ул. Удмуртская 304н, офис 307",
-            geolocation: [56.86126240383427,53.222655556378946]
+            geolocation: [56.86126240383427, 53.222655556378946]
         },
         {
             id: 2,
+            name: "Стоматология «Ресто»",
+            address: "г. Ижевск, ул. К. Либкнехта, д. 26",
+            geolocation: [56.83772390210355, 53.22638140112073]
+        },
+        {
+            id: 3,
+            name: "Детская стоматология «Ресто»",
+            address: "г. Ижевск, ул. Пушкинская, д. 221В",
+            geolocation: [56.85228477224477, 53.21063318650822]
+        },
+        {
+            id: 4,
             name: "Клиника «WHITE»",
             address: "г. Ижевск, ул. 40 лет Победы, д. 138",
-            geolocation: [56.840577067866334,53.281702499999994]
+            geolocation: [56.840577067866334, 53.281702499999994]
         },
     ]
     
 
-    const [currentDoctorIndex, setCurrentDoctorIndex] = useState(-1)
+    const [currentPartnerIndex, setCurrentPartnerIndex] = useState(-1)
 
     const map = useRef(null);
     
@@ -52,30 +50,29 @@ const DoctorMaps = ({ymaps, lang="ru"}) => {
         
         map.current.events.add('click', () => { 
             map.current.balloon.close();
-            setTimeout(() => { setCurrentDoctorIndex(-1)}, 0)
+            setTimeout(() => { setCurrentPartnerIndex(-1)}, 0)
         });
         
     }, [map.current]);
 
     return (
         <YandexMapWrapper onWheel={(event) => {
-            event.preventDefault()
             event.stopPropagation()
         }}>
             <YandexMap 
                 instanceRef={map}
-                state={{ center: currentUserGeolocationInfo, zoom: 12 }} 
+                state={{ center: currentUserGeolocationInfo, zoom: 11 }} 
                 modules={ [ 'geoObject.addon.balloon', 'geoObject.addon.hint' ] }
                 
                 
             >
                 {
-                    doctors.map((doctor, doctorIndex) => (
+                    partners.map((partner, partnerIndex) => (
                         <Placemark
-                            key={doctor.id}
-                            geometry={doctor.geolocation}
+                            key={partner.id}
+                            geometry={partner.geolocation}
                             properties={{
-                                balloonContent: `<div id="doctor${doctor.id}" style="width: 100%; height: 100%;"></div>`,
+                                balloonContent: `<div id="partners${partner.id}" style="width: 100%; height: 100%;"></div>`,
                                 
                             }}
                             options={{
@@ -91,19 +88,19 @@ const DoctorMaps = ({ymaps, lang="ru"}) => {
                                 
                             }}
                             onClick={() => {
-                                setTimeout(() => { setCurrentDoctorIndex(prev => prev === doctorIndex ? -1 : doctorIndex )}, 0)
+                                setTimeout(() => { setCurrentPartnerIndex(prev => prev === partnerIndex ? -1 : partnerIndex )}, 0)
                             }}
                         />
                     ))
                 }
                 
             </YandexMap>
-            {   currentDoctorIndex !== -1 &&
-                <Portal key={doctors[currentDoctorIndex].id} getHTMLElementId={ `doctor${doctors[currentDoctorIndex].id}` }>
+            {   currentPartnerIndex !== -1 &&
+                <Portal key={partners[currentPartnerIndex].id} getHTMLElementId={ `partners${partners[currentPartnerIndex].id}` }>
                     <DoctorWrapper className={rubik.className}>
                         <DoctorContent>
-                            <DoctorName>{doctors[currentDoctorIndex].name}</DoctorName>
-                            <DoctorAddress>{doctors[currentDoctorIndex].address}</DoctorAddress>
+                            <DoctorName>{partners[currentPartnerIndex].name}</DoctorName>
+                            <DoctorAddress>{partners[currentPartnerIndex].address}</DoctorAddress>
                         </DoctorContent>
                     </DoctorWrapper>
                 </Portal>
@@ -115,4 +112,4 @@ const DoctorMaps = ({ymaps, lang="ru"}) => {
 
 
 
-export default withYMaps(DoctorMaps, true, ["geolocation"])
+export default PartnersMaps
