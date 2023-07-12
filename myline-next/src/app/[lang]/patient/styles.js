@@ -60,7 +60,7 @@ export const NewsPageLinkImageWrapper = styled.div`
     max-width: 100%;
     @media (min-width: 600px) {
         
-        height: clamp(310px, 10vw, 350px);
+        height: clamp(310px, 20vw, 370px);
     }
 `
 
