@@ -2,7 +2,6 @@
 
 import Modal from "@/components/Modal/Modal"
 import { useParams } from "next/navigation"
-import { useState } from "react"
 import { ProductModalWrapper, ProductModalContainer, ProductModalProductWrapper, ProductModalProductTitle, ProductModalProductVendorCode, ProductModalProductPrice, ProductModalProductStockWrapper, ProductModalProductStockHeader, ProductModalProductStockCount, ProductModalProductSelectButton, ProductModalProductDescription, ProductModalProductCaution, ProductModalProductDescriptionList } from "./styles"
 import ProductShowcaseSlider from "../ProductShowcaseSlider/ProductShowcaseSlider"
 
@@ -14,9 +13,7 @@ const ProductModal = ({product, isOpen, setOpen, isAuthorized, setNoAuthModalOpe
     <Modal isOpen={isOpen} setOpen={setOpen}>
       <ProductModalWrapper>
         <ProductModalContainer>
-
             <ProductShowcaseSlider images={product.media}/>
-
             <ProductModalProductWrapper>
               <ProductModalProductTitle>{product.title}</ProductModalProductTitle>
              {/*  <ProductModalProductVendorCode>{dictionary.vendorCode}: {product.vendorCode}</ProductModalProductVendorCode> */}

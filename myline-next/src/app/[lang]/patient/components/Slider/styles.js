@@ -23,10 +23,10 @@ export const SliderContainer = styled.div`
 export const SliderGroupContainer = styled.div`
     display: grid;
     
-    @media (min-width: 1000px) {
+    @media (min-width: 1280px) {
         grid-template-columns: repeat(4, 1fr);  
     }
-    @media (max-width: 1000px) {
+    @media (max-width: 1280px) {
         grid-template-columns: repeat(2, 1fr);  
     }
     @media (max-width: 600px) {

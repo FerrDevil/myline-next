@@ -29,11 +29,16 @@ export const CatalogPageDescription = styled.p`
 export const CatalogPageProducts = styled.div`
     align-self: center;
     display: grid;
+    grid-template-columns: repeat(3, 1fr);
     grid-auto-flow: column;
     align-items: flex-start;
     gap: clamp(20px, 10px + 1vw, 30px);
     
+    @media (max-width: 1280px) {
+        
+    }
     @media (max-width: 900px) {
+        grid-template-columns: unset;
         grid-auto-flow: row;
         width: 100%;
         & > *{
@@ -57,9 +62,19 @@ export const CatalogPageProduct = styled.div`
 
 export const CatalogPageProductImageWrapper = styled.div`
     width: 100%;
-    height: auto;
+    
+    height: clamp(200px, 100px + 10vw, 300px);
+    
     border-radius: 8px;
     overflow: hidden;
+    @media (max-width: 900px) {
+        height: auto;
+        max-height: 450px;
+    }
+
+    @media (max-width: 400px) {
+        max-height: 300px;
+    }
   `
 
 export const CatalogPageProductImage = styled(Image).attrs(() => ({
@@ -70,7 +85,7 @@ export const CatalogPageProductImage = styled(Image).attrs(() => ({
   }))`
     width: 100%;
     height: 100%;
-    object-fit: contain;
+    object-fit: cover;
   `
 
 export const CatalogPageProductHeader = styled.h2`

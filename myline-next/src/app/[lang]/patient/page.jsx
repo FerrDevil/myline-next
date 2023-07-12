@@ -1,7 +1,7 @@
-import NewsSlider from "./components/Slider/ArticlesSlider";
+import ArticlesSlider from "./components/Slider/ArticlesSlider";
 import { getNewsDictionary } from "@/app/[lang]/patient/dictionaries/dictionaries";
 import { BenefitCard, BenefitCardDescription, BenefitCardHeader, BenefitCardIconWrapper, BenefitCards, JoyIconSVG, LikeIconSVG, NewsPageAddition, NewsPageContainer, NewsPageDescription, NewsPageDescriptions, NewsPageHeader, TechnologiesIconSVG, TimeIconSVG } from "./styles"
-import { ArticleModalOrderedList, ArticleModalParagraph, ArticleModalUnorderedList } from "./components/ArticleModal/styles";
+import { ArticleModalHR, ArticleModalOrderedList, ArticleModalParagraph, ArticleModalUnorderedList } from "./components/ArticleModal/styles";
 
 export default async function NewsPage({params: {lang}}) {
     const dictionary = await getNewsDictionary(lang)
@@ -115,6 +115,132 @@ export default async function NewsPage({params: {lang}}) {
                 </>
             )
         },
+        {
+            id: 5,
+            image: "/images/articles/article5.png",
+            title: "Подготовка к лечению.",
+            article: (
+                <>
+                    <ArticleModalParagraph>
+                        Как подготовиться к лечению на элайнерах? ⤵️
+                    </ArticleModalParagraph>
+                    <ArticleModalParagraph>
+                        Все просто!
+                    </ArticleModalParagraph>
+                    <ArticleModalParagraph>
+                        ✔️ Как и при любом другом ортодонтическом лечении необходимо провести профессиональную гигиену полости рта и вылечить все острые процессы (кариесы), которые могут нарушить ход лечения.
+                    </ArticleModalParagraph>
+                    <ArticleModalParagraph>
+                        ✔️ Провести замену пломб и реставраций, если это необходимо.
+                    </ArticleModalParagraph>
+                    <ArticleModalParagraph>
+                        <div>
+                            <p>
+                                При этом следует помнить 🔔
+                            </p >
+                            <p>
+                                Зубы в процессе лечения на элайнерах будут менять свое положение и может возникнуть необходимость в дополнительных реставрациях,  протезировании, имплантации!
+                            </p>
+                        </div>
+                    </ArticleModalParagraph>
+                    <ArticleModalParagraph>
+                        Грамотный план лечения  с четкими указаниями  может составить только доктор и только после консультации 👩🏽‍⚕️ 
+                    </ArticleModalParagraph>
+                    <ArticleModalParagraph>
+                        Доверьтесь МАЙЛАЙН💙
+                    </ArticleModalParagraph>
+                    <ArticleModalHR/>
+                    <ArticleModalParagraph>
+                        <div>
+                            <p>
+                                Остались вопросы?
+                            </p>
+                            <p>
+                                Получите подробную консультацию ⤵️
+                            </p>
+                        </div>
+                    </ArticleModalParagraph>
+                    <ArticleModalParagraph>
+                        <div>
+                            <p>
+                                📧 myline.info@yandex.ru
+                            </p>
+                            <p>
+                                📲 89048304445 WhatsApp, Viber, Telegram
+                            </p>
+                        </div>
+                    </ArticleModalParagraph>
+                </>
+            )
+        },
+        {
+            id: 6,
+            image: "/images/articles/article6.jpg",
+            title: "Мифы об элайнерах.",
+            article: (
+                
+                <>
+                    <ArticleModalParagraph>
+                        Сейчас мы развеем как минимум 6 самых распространенных мифов, поехали!  
+                    </ArticleModalParagraph>
+                    <ArticleModalParagraph>
+                        1️⃣ Лечение на элайнерах слишком длительное 
+                    </ArticleModalParagraph>
+                    <ArticleModalParagraph>
+                        На самом деле средний срок лечение 5-8 месяце, в зависимости от сложности каждого случая! 
+                    </ArticleModalParagraph>
+                    <ArticleModalParagraph>
+                        Тогда как на брекетах средний срок составляет 18-20 месяцев 😯 
+                    </ArticleModalParagraph>
+
+                    <ArticleModalParagraph>
+                        2️⃣ Элайнеры могут исправить только легкие случаи 
+                    </ArticleModalParagraph>
+                    <ArticleModalParagraph>
+                        В современной практике врачи берутся подготавливать на элайнерах даже к обширным хирургическим вмешательствам 🫣 
+                    </ArticleModalParagraph>
+
+                    <ArticleModalParagraph>
+                        3️⃣ Элайнеры подходят только детям и подросткам 
+                    </ArticleModalParagraph>
+                    <ArticleModalParagraph>
+                        Возраст лечения на элайнерах варьируется от 7 лет и верхняя граница не установлена 😉 
+                    </ArticleModalParagraph>
+
+                    <ArticleModalParagraph>
+                        4️⃣ Элайнеры - это каппы ПОСЛЕ брекетов 
+                    </ArticleModalParagraph>
+                    <ArticleModalParagraph>
+                        Лечение с помощью элайнеров - это самостоятельный, всемирно популярный способ ортодонтического лечения 🌍 
+                    </ArticleModalParagraph>
+
+                    <ArticleModalParagraph>
+                        5️⃣ Элайнеры - это дорого
+                    </ArticleModalParagraph>
+                    <ArticleModalParagraph>
+                        В некоторых случаях лечение на элайнерах может обойтись выгоднее, чем лечение на брекет-системе 💰 
+                    </ArticleModalParagraph>
+
+                    <ArticleModalParagraph>
+                        6️⃣ Элайнеры-это неудобно 
+                    </ArticleModalParagraph>
+                    <ArticleModalParagraph>
+                        Элайнеры являются САМЫМ комфортным вариантом ортодонтического лечения 😌 
+                    </ArticleModalParagraph>
+
+                    <ArticleModalParagraph>
+                        Для того чтобы начать лечение на элайнерах Myline свяжитесь с нами любым удобным способом!
+                    </ArticleModalParagraph>
+                    
+
+                   
+  
+ 
+  
+ 
+                </>
+            )
+        },
     ]
     
 
@@ -128,42 +254,7 @@ export default async function NewsPage({params: {lang}}) {
                 <NewsPageAddition>{dictionary.addition}</NewsPageAddition>
             </NewsPageDescriptions>
            
-            <NewsSlider dictionary={dictionary} content={links}/>
+            <ArticlesSlider dictionary={dictionary} content={links}/>
         </NewsPageContainer>
     )
 }
-
-
-/*  <BenefitCards>
-                <BenefitCard>
-                    <BenefitCardIconWrapper>
-                        <TechnologiesIconSVG/>
-                    </BenefitCardIconWrapper>
-                    <BenefitCardHeader> {dictionary.cards[0].title} </BenefitCardHeader>
-                    <BenefitCardDescription> {dictionary.cards[0].description} </BenefitCardDescription>
-                </BenefitCard>
-
-                <BenefitCard>
-                    <BenefitCardIconWrapper>
-                        <TimeIconSVG/>
-                    </BenefitCardIconWrapper>
-                    <BenefitCardHeader> {dictionary.cards[1].title} </BenefitCardHeader>
-                    <BenefitCardDescription> {dictionary.cards[1].description} </BenefitCardDescription>
-                </BenefitCard>
-
-                <BenefitCard>
-                    <BenefitCardIconWrapper>
-                        <LikeIconSVG/>
-                    </BenefitCardIconWrapper>
-                    <BenefitCardHeader> {dictionary.cards[2].title} </BenefitCardHeader>
-                    <BenefitCardDescription> {dictionary.cards[2].description} </BenefitCardDescription>
-                </BenefitCard>
-
-                <BenefitCard $isAlternated={true}>
-                    <BenefitCardIconWrapper>
-                        <JoyIconSVG/>
-                    </BenefitCardIconWrapper>
-                    <BenefitCardHeader> {dictionary.cards[3].title} </BenefitCardHeader>
-                    <BenefitCardDescription> {dictionary.cards[3].description} </BenefitCardDescription>
-                </BenefitCard>
-            </BenefitCards> */

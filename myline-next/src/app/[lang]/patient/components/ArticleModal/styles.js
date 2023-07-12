@@ -54,6 +54,11 @@ export const ArticleModalParagraph = styled.p`
     display: block;
     
 `
+export const ArticleModalHR = styled.hr`
+    width: 100%;
+    display: block;
+    
+`
 
 export const ArticleModalOrderedList = styled.ol`
     width: 100%;

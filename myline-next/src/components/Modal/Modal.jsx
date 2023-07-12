@@ -24,7 +24,7 @@ const Modal = ({children, isOpen, setOpen}) => {
     <ModalDialog $isOpen={isOpen} ref={modal} >
       <ModalDialogBackdrop onClick={closeModal}/>
       <ModalDialogContent >
-        {children}
+          {children}
       </ModalDialogContent>
     </ModalDialog>
   )

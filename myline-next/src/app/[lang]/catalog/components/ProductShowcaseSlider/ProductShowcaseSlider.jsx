@@ -13,11 +13,12 @@ const ProductShowcaseSlider = ({images=[]}) => {
     
 
     const slideToLeft = () => {
-        setCurrentImageIndex(prev => prev === 0 ? prev : prev-1)
+        console.log(currentImageIndex === 0 ? currentImageIndex : images.length - 1)
+        setCurrentImageIndex(prev => prev === 0 ? images.length - 1 : prev-1)
     }
 
     const slideToRight = () => {
-        setCurrentImageIndex(prev => prev === images.length-1 ? prev : prev+1)
+        setCurrentImageIndex(prev => prev === images.length - 1 ? 0 : prev + 1)
     }
     
     return (

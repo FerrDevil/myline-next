@@ -86,7 +86,7 @@ export const ProductShowcaseSliderContainer = styled.div`
     grid-auto-flow: column;
     grid-auto-columns: calc(25% - 10px);
     gap: 10px;
-    transform: translateX( calc(${props => props.$maxIndex - 3 - props.$currentImageIndex > 0 ? -25 * props.$currentImageIndex : -25 * (props.$maxIndex - 3)}% ));
+    transform: translateX( calc(${props => props.$maxIndex - 3 - props.$currentImageIndex > 0 ? -25 * props.$currentImageIndex : -25 * (props.$maxIndex + 1 >= 4 ? (props.$maxIndex - 3) : 0) }% ));
     transition: transform 1s;
 `
 

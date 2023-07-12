@@ -7,7 +7,7 @@ export default async function CatalogPage({params: {lang}}) {
   const products = [
     {
       id: 1,
-      logo: "/images/aligner.png",
+      logo: "/images/catalogItems/mini/logo.jpg",
       title: "кейс MINI",
       vendorCode: "75785057",
       stockCount: 15,
@@ -24,25 +24,21 @@ export default async function CatalogPage({params: {lang}}) {
       media: [
         {
           id: 1,
-          image: "/images/mediaSlider/img1.jpg"
+          image: "/images/catalogItems/mini/image1.png"
         },
         {
             id: 2,
-            image: "/images/aligner.png"
+            image: "/images/catalogItems/mini/image2.png"
         },
         {
             id: 3,
-            image: "/images/aligner.png"
-        },
-        {
-            id: 4,
-            image: "/images/aligner.png"
+            image: "/images/catalogItems/mini/image3.png"
         },
       ]
     },
     {
       id: 2,
-      logo: "/images/aligner.png",
+      logo: "/images/catalogItems/max/logo.png",
       title: "кейс MAX",
       vendorCode: "75785058",
       stockCount: 30,
@@ -60,29 +56,21 @@ export default async function CatalogPage({params: {lang}}) {
       media: [
         {
           id: 1,
-          image: "/images/mediaSlider/img2.jpg"
+          image: "/images/catalogItems/max/image1.png"
         },
         {
             id: 2,
-            image: "/images/aligner.png"
+            image: "/images/catalogItems/max/image2.png"
         },
         {
             id: 3,
-            image: "/images/aligner.png"
-        },
-        {
-            id: 4,
-            image: "/images/aligner.png"
-        },
-        {
-          id: 5,
-          image: "/images/mediaSlider/img4.jpg"
+            image: "/images/catalogItems/max/image3.png"
         },
       ]
     },
     {
       id: 3,
-      logo: "/images/aligner.png",
+      logo: "/images/catalogItems/maxPlus/logo.png",
       title: "кейс MAX+",
       vendorCode: "75785059",
       stockCount: 60,
@@ -100,19 +88,15 @@ export default async function CatalogPage({params: {lang}}) {
       media: [
         {
           id: 1,
-          image: "/images/mediaSlider/img3.jpg"
+          image: "/images/catalogItems/maxPlus/image1.png"
         },
         {
             id: 2,
-            image: "/images/aligner.png"
+            image: "/images/catalogItems/maxPlus/image2.png"
         },
         {
             id: 3,
-            image: "/images/aligner.png"
-        },
-        {
-            id: 4,
-            image: "/images/aligner.png"
+            image: "/images/catalogItems/maxPlus/image3.png"
         },
       ]
     },
