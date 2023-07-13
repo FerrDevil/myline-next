@@ -24,3 +24,6 @@ certbot:
   ssl_certificate_key /etc/letsencrypt/live/myline.clinic/privkey.pem;
   include /etc/letsencrypt/options-ssl-nginx.conf;
   ssl_dhparam /etc/letsencrypt/ssl-dhparams.pem;
+
+
+certonly --webroot -w /var/www/certbot/ --email ferrdevil220@gmail.com  -d myline.clinic -d www.myline.clinic --agree-tos
