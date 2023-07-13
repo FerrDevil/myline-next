@@ -175,10 +175,9 @@ export default async function NewsPage({params: {lang}}) {
         },
         {
             id: 6,
-            image: "/images/articles/article6.jpg",
+            image: "/images/articles/article6.png",
             title: "Мифы об элайнерах.",
             article: (
-                
                 <>
                     <ArticleModalParagraph>
                         Сейчас мы развеем как минимум 6 самых распространенных мифов, поехали!  
@@ -231,13 +230,6 @@ export default async function NewsPage({params: {lang}}) {
                     <ArticleModalParagraph>
                         Для того чтобы начать лечение на элайнерах Myline свяжитесь с нами любым удобным способом!
                     </ArticleModalParagraph>
-                    
-
-                   
-  
- 
-  
- 
                 </>
             )
         },
